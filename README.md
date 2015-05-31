@@ -24,6 +24,10 @@ public enum Fonts {
 ## Basic Usage (Fontawesome)
 
 ````
+import SDevIconFonts
+
+...
+
 var label: UILabel = UILabel(frame: CGRectMake(50, 50, 100, 50))
 label.font = UIFont.iconFontOfSize(.FontAwesome, fontSize: 50.0)
 label.text = String.fontAwesomeIconWithName("twitter")
