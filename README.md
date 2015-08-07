@@ -21,7 +21,11 @@ public enum Fonts {
 }
 ````
 
-## Basic Usage (Fontawesome)
+## Basic Usage 
+==============
+
+
+### Fontawesome
 
 ````
 import SDevIconFonts
@@ -34,7 +38,7 @@ label.text = String.fontAwesomeIconWithName("twitter")
 ````
 
 
-## Basic Usage (Iconic)
+### Iconic
 
 ````
 var label4: UILabel = UILabel(frame: CGRectMake(210, 50, 100, 50))
@@ -42,7 +46,7 @@ label4.font = UIFont.iconFontOfSize(.Iconic, fontSize: 50.0)
 label4.text = String.fontIconicIconWithName("dial")
 ````
 
-## Basic Usage (Ionicon)
+### Ionicon
 
 ````
 var label2: UILabel = UILabel(frame: CGRectMake(100, 50, 100, 50))
@@ -50,7 +54,7 @@ label2.font = UIFont.iconFontOfSize(.Ionicon, fontSize: 50.0)
 label2.text = String.fontIonIconWithName("ionic")
 ````
 
-## Basic Usage (Octicon)
+### Octicon
 
 ````
 var label3: UILabel = UILabel(frame: CGRectMake(150, 50, 100, 50))
