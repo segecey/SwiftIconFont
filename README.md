@@ -6,7 +6,7 @@ SDevIconFonts
 
 ## Installation
 
-````
+````ruby
 pod 'SDevIconFonts'
 ````
 
@@ -15,7 +15,7 @@ Add the Fonts provided by application key to Info.plist
 # ![Screenshot](https://raw.githubusercontent.com/0x73/SDevIconFonts/master/Screenshots/font.png)
 
 ## Fonts
-````
+````swift
 public enum Fonts {
     case FontAwesome, Iconic, Ionicon, Octicon
 }
@@ -25,7 +25,7 @@ public enum Fonts {
 
 ### Fontawesome
 
-````
+````swift
 import SDevIconFonts
 
 ...
@@ -43,7 +43,7 @@ label.text = String.fontAwesomeIconWithCode("twitter")
 
 ### Iconic
 
-````
+````swift
 var label4: UILabel = UILabel(frame: CGRectMake(210, 50, 100, 50))
 label4.font = UIFont.iconFontOfSize(.Iconic, fontSize: 50.0)
 label4.text = String.fontIconicIconWithName(.Dial)
@@ -55,7 +55,7 @@ label4.text = String.fontIconicIconWithCode("dial")
 
 ### Ionicon
 
-````
+````swift
 var label2: UILabel = UILabel(frame: CGRectMake(100, 50, 100, 50))
 label2.font = UIFont.iconFontOfSize(.Ionicon, fontSize: 50.0)
 label2.text = String.fontIonIconWithName(.Ionic)
@@ -67,7 +67,7 @@ label2.text = String.fontIonIconWithCode("ionic")
 
 ### Octicon
 
-````
+````swift
 var label3: UILabel = UILabel(frame: CGRectMake(150, 50, 100, 50))
 label3.font = UIFont.iconFontOfSize(.Octicon, fontSize: 50.0)
 label3.text = String.fontOcticonWithName(.Octoface)
