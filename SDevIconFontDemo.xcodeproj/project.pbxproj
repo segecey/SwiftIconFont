@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E8346A251A9B383A00F65B83 /* UIFont+SDevIconFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8346A241A9B383A00F65B83 /* UIFont+SDevIconFont.swift */; };
+		E8346A251A9B383A00F65B83 /* SDevIconFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8346A241A9B383A00F65B83 /* SDevIconFonts.swift */; };
 		E87954341A9B2B4900A93D00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87954331A9B2B4900A93D00 /* AppDelegate.swift */; };
 		E87954361A9B2B4900A93D00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87954351A9B2B4900A93D00 /* ViewController.swift */; };
 		E87954391A9B2B4900A93D00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E87954371A9B2B4900A93D00 /* Main.storyboard */; };
@@ -18,10 +18,11 @@
 		E879545D1A9B2BD200A93D00 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E87954591A9B2BD200A93D00 /* ionicons.ttf */; };
 		E879545E1A9B2BD200A93D00 /* octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E879545A1A9B2BD200A93D00 /* octicons.ttf */; };
 		E879545F1A9B2BD200A93D00 /* open-iconic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E879545B1A9B2BD200A93D00 /* open-iconic.ttf */; };
-		E87954681A9B2F3D00A93D00 /* String+FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87954641A9B2F3D00A93D00 /* String+FontAwesome.swift */; };
-		E87954691A9B2F3D00A93D00 /* String+Iconic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87954651A9B2F3D00A93D00 /* String+Iconic.swift */; };
-		E879546A1A9B2F3D00A93D00 /* String+IonIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87954661A9B2F3D00A93D00 /* String+IonIcons.swift */; };
-		E879546B1A9B2F3D00A93D00 /* String+Octicon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87954671A9B2F3D00A93D00 /* String+Octicon.swift */; };
+		E87954681A9B2F3D00A93D00 /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87954641A9B2F3D00A93D00 /* FontAwesome.swift */; };
+		E87954691A9B2F3D00A93D00 /* Iconic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87954651A9B2F3D00A93D00 /* Iconic.swift */; };
+		E879546A1A9B2F3D00A93D00 /* IonIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87954661A9B2F3D00A93D00 /* IonIcons.swift */; };
+		E879546B1A9B2F3D00A93D00 /* Octicon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87954671A9B2F3D00A93D00 /* Octicon.swift */; };
+		E891221F1B9CB7F600396C15 /* FontLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891221E1B9CB7F600396C15 /* FontLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E8346A241A9B383A00F65B83 /* UIFont+SDevIconFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+SDevIconFont.swift"; sourceTree = "<group>"; };
+		E8346A241A9B383A00F65B83 /* SDevIconFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDevIconFonts.swift; sourceTree = "<group>"; };
 		E879542E1A9B2B4900A93D00 /* SDevIconFontDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDevIconFontDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E87954321A9B2B4900A93D00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E87954331A9B2B4900A93D00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,10 +51,11 @@
 		E87954591A9B2BD200A93D00 /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
 		E879545A1A9B2BD200A93D00 /* octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = octicons.ttf; sourceTree = "<group>"; };
 		E879545B1A9B2BD200A93D00 /* open-iconic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "open-iconic.ttf"; sourceTree = "<group>"; };
-		E87954641A9B2F3D00A93D00 /* String+FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+FontAwesome.swift"; sourceTree = "<group>"; };
-		E87954651A9B2F3D00A93D00 /* String+Iconic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Iconic.swift"; sourceTree = "<group>"; };
-		E87954661A9B2F3D00A93D00 /* String+IonIcons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+IonIcons.swift"; sourceTree = "<group>"; };
-		E87954671A9B2F3D00A93D00 /* String+Octicon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Octicon.swift"; sourceTree = "<group>"; };
+		E87954641A9B2F3D00A93D00 /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
+		E87954651A9B2F3D00A93D00 /* Iconic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Iconic.swift; sourceTree = "<group>"; };
+		E87954661A9B2F3D00A93D00 /* IonIcons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IonIcons.swift; sourceTree = "<group>"; };
+		E87954671A9B2F3D00A93D00 /* Octicon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Octicon.swift; sourceTree = "<group>"; };
+		E891221E1B9CB7F600396C15 /* FontLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,11 +145,12 @@
 		E87954561A9B2BD200A93D00 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E87954641A9B2F3D00A93D00 /* String+FontAwesome.swift */,
-				E87954651A9B2F3D00A93D00 /* String+Iconic.swift */,
-				E87954661A9B2F3D00A93D00 /* String+IonIcons.swift */,
-				E87954671A9B2F3D00A93D00 /* String+Octicon.swift */,
-				E8346A241A9B383A00F65B83 /* UIFont+SDevIconFont.swift */,
+				E87954641A9B2F3D00A93D00 /* FontAwesome.swift */,
+				E87954651A9B2F3D00A93D00 /* Iconic.swift */,
+				E87954661A9B2F3D00A93D00 /* IonIcons.swift */,
+				E87954671A9B2F3D00A93D00 /* Octicon.swift */,
+				E8346A241A9B383A00F65B83 /* SDevIconFonts.swift */,
+				E891221E1B9CB7F600396C15 /* FontLoader.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 		E87954261A9B2B4900A93D00 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Sedat Ciftci";
 				TargetAttributes = {
@@ -267,13 +271,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E879546B1A9B2F3D00A93D00 /* String+Octicon.swift in Sources */,
-				E87954691A9B2F3D00A93D00 /* String+Iconic.swift in Sources */,
-				E87954681A9B2F3D00A93D00 /* String+FontAwesome.swift in Sources */,
+				E879546B1A9B2F3D00A93D00 /* Octicon.swift in Sources */,
+				E891221F1B9CB7F600396C15 /* FontLoader.swift in Sources */,
+				E87954691A9B2F3D00A93D00 /* Iconic.swift in Sources */,
+				E87954681A9B2F3D00A93D00 /* FontAwesome.swift in Sources */,
 				E87954361A9B2B4900A93D00 /* ViewController.swift in Sources */,
-				E8346A251A9B383A00F65B83 /* UIFont+SDevIconFont.swift in Sources */,
+				E8346A251A9B383A00F65B83 /* SDevIconFonts.swift in Sources */,
 				E87954341A9B2B4900A93D00 /* AppDelegate.swift in Sources */,
-				E879546A1A9B2F3D00A93D00 /* String+IonIcons.swift in Sources */,
+				E879546A1A9B2F3D00A93D00 /* IonIcons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
