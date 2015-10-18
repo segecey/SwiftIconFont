@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		458BF4DE1BD364A300127CB2 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8D7A6051BC088E70017994E /* FontAwesome.ttf */; settings = {ASSET_TAGS = (); }; };
+		458BF4DF1BD364A300127CB2 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8D7A6061BC088E70017994E /* ionicons.ttf */; settings = {ASSET_TAGS = (); }; };
+		458BF4E01BD364A300127CB2 /* octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8D7A6071BC088E70017994E /* octicons.ttf */; settings = {ASSET_TAGS = (); }; };
+		458BF4E11BD364A300127CB2 /* open-iconic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8D7A6081BC088E70017994E /* open-iconic.ttf */; settings = {ASSET_TAGS = (); }; };
 		E852DAAE1BC082B1005CC1EF /* SDevIconFonts.h in Headers */ = {isa = PBXBuildFile; fileRef = E852DAAD1BC082B1005CC1EF /* SDevIconFonts.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E8D7A5C91BC084190017994E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D7A5C81BC084190017994E /* AppDelegate.swift */; };
 		E8D7A5CB1BC084190017994E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D7A5CA1BC084190017994E /* ViewController.swift */; };
@@ -287,6 +291,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				458BF4DF1BD364A300127CB2 /* ionicons.ttf in Resources */,
+				458BF4E01BD364A300127CB2 /* octicons.ttf in Resources */,
+				458BF4DE1BD364A300127CB2 /* FontAwesome.ttf in Resources */,
+				458BF4E11BD364A300127CB2 /* open-iconic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
