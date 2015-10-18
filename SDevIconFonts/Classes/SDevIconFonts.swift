@@ -40,9 +40,6 @@ public extension UIFont{
         case .Octicon:
             fontName = "octicons"
             break
-        default:
-            fontName = "FontAwesome"
-            break
         }
         return fontName
     }
