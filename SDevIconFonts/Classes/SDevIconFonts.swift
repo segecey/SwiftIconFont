@@ -38,10 +38,7 @@ public extension UIFont{
             fontName = "Ionicons"
             break
         case .Octicon:
-            fontName = "octicons"
-            break
-        default:
-            fontName = "FontAwesome"
+            fontName = "open-iconic"
             break
         }
         return fontName

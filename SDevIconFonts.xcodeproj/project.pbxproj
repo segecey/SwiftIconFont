@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		458BF4DE1BD364A300127CB2 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8D7A6051BC088E70017994E /* FontAwesome.ttf */; settings = {ASSET_TAGS = (); }; };
+		458BF4DF1BD364A300127CB2 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8D7A6061BC088E70017994E /* Ionicons.ttf */; settings = {ASSET_TAGS = (); }; };
+		458BF4E01BD364A300127CB2 /* octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8D7A6071BC088E70017994E /* octicons.ttf */; settings = {ASSET_TAGS = (); }; };
+		458BF4E11BD364A300127CB2 /* open-iconic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8D7A6081BC088E70017994E /* open-iconic.ttf */; settings = {ASSET_TAGS = (); }; };
 		E852DAAE1BC082B1005CC1EF /* SDevIconFonts.h in Headers */ = {isa = PBXBuildFile; fileRef = E852DAAD1BC082B1005CC1EF /* SDevIconFonts.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E8D7A5C91BC084190017994E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D7A5C81BC084190017994E /* AppDelegate.swift */; };
 		E8D7A5CB1BC084190017994E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D7A5CA1BC084190017994E /* ViewController.swift */; };
@@ -55,12 +59,8 @@
 		E8D7A5ED1BC0844A0017994E /* IonIcons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IonIcons.swift; sourceTree = "<group>"; };
 		E8D7A5EE1BC0844A0017994E /* Octicon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Octicon.swift; sourceTree = "<group>"; };
 		E8D7A5EF1BC0844A0017994E /* SDevIconFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDevIconFonts.swift; sourceTree = "<group>"; };
-		E8D7A6001BC088C90017994E /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
-		E8D7A6011BC088C90017994E /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
-		E8D7A6021BC088C90017994E /* octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = octicons.ttf; sourceTree = "<group>"; };
-		E8D7A6031BC088C90017994E /* open-iconic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "open-iconic.ttf"; sourceTree = "<group>"; };
 		E8D7A6051BC088E70017994E /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = Resources/FontAwesome.ttf; sourceTree = "<group>"; };
-		E8D7A6061BC088E70017994E /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ionicons.ttf; path = Resources/ionicons.ttf; sourceTree = "<group>"; };
+		E8D7A6061BC088E70017994E /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = Resources/Ionicons.ttf; sourceTree = "<group>"; };
 		E8D7A6071BC088E70017994E /* octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = octicons.ttf; path = Resources/octicons.ttf; sourceTree = "<group>"; };
 		E8D7A6081BC088E70017994E /* open-iconic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "open-iconic.ttf"; path = "Resources/open-iconic.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,10 +125,6 @@
 		E8D7A5C71BC084190017994E /* SDevIconFontsDemo */ = {
 			isa = PBXGroup;
 			children = (
-				E8D7A6001BC088C90017994E /* FontAwesome.ttf */,
-				E8D7A6011BC088C90017994E /* ionicons.ttf */,
-				E8D7A6021BC088C90017994E /* octicons.ttf */,
-				E8D7A6031BC088C90017994E /* open-iconic.ttf */,
 				E8D7A5C81BC084190017994E /* AppDelegate.swift */,
 				E8D7A5CA1BC084190017994E /* ViewController.swift */,
 				E8D7A5CC1BC084190017994E /* Main.storyboard */,
@@ -166,7 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				E8D7A6051BC088E70017994E /* FontAwesome.ttf */,
-				E8D7A6061BC088E70017994E /* ionicons.ttf */,
+				E8D7A6061BC088E70017994E /* Ionicons.ttf */,
 				E8D7A6071BC088E70017994E /* octicons.ttf */,
 				E8D7A6081BC088E70017994E /* open-iconic.ttf */,
 			);
@@ -287,6 +283,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				458BF4DF1BD364A300127CB2 /* Ionicons.ttf in Resources */,
+				458BF4E01BD364A300127CB2 /* octicons.ttf in Resources */,
+				458BF4DE1BD364A300127CB2 /* FontAwesome.ttf in Resources */,
+				458BF4E11BD364A300127CB2 /* open-iconic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
