@@ -1,9 +1,9 @@
 //
-//  UIFont+SDevIconFont.swift
-//  SDevIconFontDemo
+//  UIFont+SwiftIconFont.swift
+//  SwiftIconFont
 //
-//  Created by Sedat Ciftci on 23/02/15.
-//  Copyright (c) 2015 Sedat Ciftci. All rights reserved.
+//  Created by Sedat Ciftci on 18/03/16.
+//  Copyright © 2016 Sedat Gokbek Ciftci. All rights reserved.
 //
 
 import UIKit
