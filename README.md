@@ -1,19 +1,19 @@
-SDevIconFonts
+SwiftIconFont
 ==================
 
 
-# ![Screenshot](https://raw.githubusercontent.com/0x73/SDevIconFonts/master/Screenshots/screenshot0.png)
+# ![Screenshot](https://raw.githubusercontent.com/0x73/SwiftIconFont/master/Screenshots/screenshot0.png)
 
 
 ## Installation
 
 ````ruby
-pod 'SDevIconFonts'
+pod 'SwiftIconFont'
 ````
 
 Add the Fonts provided by application key to Info.plist
 
-# ![Screenshot](https://raw.githubusercontent.com/0x73/SDevIconFonts/master/Screenshots/font.png)
+# ![Screenshot](https://raw.githubusercontent.com/0x73/SwiftIconFont/master/Screenshots/font.png)
 
 ## Fonts
 ````swift
@@ -27,7 +27,7 @@ public enum Fonts {
 ### Fontawesome
 
 ````swift
-import SDevIconFonts
+import SwiftIconFont
 
 ...
 
@@ -78,7 +78,7 @@ label.text = String.fontOcticonWithName("octoface")
 
 ## Contributing
 
-1. Fork it (http://github.com/0x73/SDevIconFonts/fork)
+1. Fork it (http://github.com/0x73/SwiftIconFont/fork)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
