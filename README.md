@@ -22,6 +22,7 @@ public enum Fonts {
 }
 ````
 
+
 ## Basic Usage
 
 ### Fontawesome
