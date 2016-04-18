@@ -4,11 +4,11 @@ Pod::Spec.new do |s|
   s.name = "SwiftIconFont"
   s.summary = "Icons fonts for Swift (FontAwesome, Ionicons, Octicons, Iconic)"
   s.requires_arc = true
-  s.version = "0.0.2"
+  s.version = "0.0.5"
   s.license = { :type => "MIT", :file => "LICENSE" }
   s.author = { "Sedat CIFTCI" => "me@sedat.us" }
   s.homepage = "http://sedat.ninja"
-  s.source = { :git => "https://github.com/0x73/SwiftIconFont", :tag => "#{s.version}"}
+  s.source = { :git => "https://github.com/0x73/SwiftIconFont.git", :tag => "#{s.version}"}
   s.framework = "UIKit"
   s.source_files = "SwiftIconFont/Classes/**/*.{swift}"
   s.resources = "SwiftIconFont/**/*.{ttf}"

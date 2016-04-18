@@ -14,15 +14,13 @@ class FontLoader: NSObject {
         let bundle = NSBundle(forClass: FontLoader.self)
         var fontURL = NSURL()
         let identifier = bundle.bundleIdentifier
-
-        if identifier?.hasPrefix("org.cocoapods") == true {
-            fontURL = bundle.URLForResource(fontName, withExtension: "ttf", subdirectory: "SwiftIconFont.swift.bundle")!
-        } else {
-            fontURL = bundle.URLForResource(fontName, withExtension: "ttf")!
+        for var name in bundle.pathsForResourcesOfType("ttf", inDirectory: nil) {
+            if name.rangeOfString(fontName) != nil {
+                fontURL = NSURL(fileURLWithPath: name)
+            }
         }
 
         let data = NSData(contentsOfURL: fontURL)!
-
         let provider = CGDataProviderCreateWithCFData(data)
         let font = CGFontCreateWithDataProvider(provider)!
 
