@@ -11,10 +11,6 @@ SwiftIconFont
 pod 'SwiftIconFont'
 ````
 
-Add the Fonts provided by application key to Info.plist
-
-# ![Screenshot](https://raw.githubusercontent.com/0x73/SwiftIconFont/master/Screenshots/font.png)
-
 ## Fonts
 ````swift
 public enum Fonts {
