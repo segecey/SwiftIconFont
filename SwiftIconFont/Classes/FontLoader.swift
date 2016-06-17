@@ -13,9 +13,10 @@ class FontLoader: NSObject {
     class func loadFont(fontName: String) {
         let bundle = NSBundle(forClass: FontLoader.self)
         var fontURL = NSURL()
-        for name : String in bundle.pathsForResourcesOfType("ttf", inDirectory: nil) {
-            if name.rangeOfString(fontName) != nil {
-                fontURL = NSURL(fileURLWithPath: name)
+        for filePath : String in bundle.pathsForResourcesOfType("ttf", inDirectory: nil) {
+            let filename = NSURL(fileURLWithPath: filePath).lastPathComponent!
+            if filename.lowercaseString.rangeOfString(fontName.lowercaseString) != nil {
+                fontURL = NSURL(fileURLWithPath: filePath)
             }
         }
 
