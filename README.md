@@ -26,11 +26,20 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 | Ion Icons    | io:    | [List](http://ionicons.com)               |
 | Octicons     | oc:    | [List](https://octicons.github.com)       |
 | Open Iconic  | ic:    | [List](https://useiconic.com/open/)       |
+| Material Icon   | ma:    | [List](https://design.google.com/icons/)       |
+| Themify   | ti:    | [List](https://themify.me/themify-icons)       |
+| Map Icons   | mi:    | [List](http://map-icons.com)       |
 
 ## Fonts
 ````swift
 public enum Fonts {
-    case FontAwesome, Iconic, Ionicon, Octicon
+    case FontAwesome
+    case Iconic
+    case Ionicon
+    case Octicon
+    case Themify
+    case MapIcon
+    case MaterialIcon
 }
 ````
 

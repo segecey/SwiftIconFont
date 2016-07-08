@@ -9,7 +9,13 @@
 import UIKit
 
 public enum Fonts {
-    case FontAwesome, Iconic, Ionicon, Octicon
+    case FontAwesome
+    case Iconic
+    case Ionicon
+    case Octicon
+    case Themify
+    case MapIcon
+    case MaterialIcon
 }
 
 public extension UIFont{
@@ -39,6 +45,15 @@ public extension UIFont{
             break
         case .Octicon:
             fontName = "octicons"
+            break
+        case .Themify:
+            fontName = "themify"
+            break
+        case .MapIcon:
+            fontName = "map-icons"
+            break
+        case .MaterialIcon:
+            fontName = "MaterialIcons-Regular"
             break
         }
         return fontName
@@ -76,6 +91,28 @@ public extension String {
     }
     
     
+    public static func fontThemifyIconWithCode(code: String) -> String? {
+        if let icon = temifyIconArr[code] {
+            return icon
+        }
+        return nil
+    }
+    
+    public static func fontMapIconWithCode(code: String) -> String? {
+        if let icon = mapIconArr[code] {
+            return icon
+        }
+        return nil
+    }
+    
+    public static func fontMaterialIconWithCode(code: String) -> String? {
+        if let icon = materialIconArr[code] {
+            return icon
+        }
+        return nil
+    }
+    
+    
     public static func fontAwesomeIconWithName(name: FontAwesome) -> String {
         return name.rawValue
     }
@@ -89,6 +126,18 @@ public extension String {
     }
     
     public static func fontIconicIconWithName(name: Iconic) -> String? {
+        return name.rawValue
+    }
+    
+    public static func fontThemifyIconWithName(name: Themify) -> String? {
+        return name.rawValue
+    }
+    
+    public static func fontMapIconWithName(name: MapIcon) -> String? {
+        return name.rawValue
+    }
+    
+    public static func fontMaterialIconWithName(name: MaterialIcon) -> String? {
         return name.rawValue
     }
 }
@@ -147,6 +196,24 @@ public extension UILabel {
                 let newRange = _NSRange(location: substringRange.location, length: 1)
                 attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Octicon, fontSize: self.font!.pointSize), range: newRange)
             }
+                        
+            if let _ = temifyIconArr[s[1]] where s[0].lowercaseString == "ti"{
+                attributedString.replaceCharactersInRange(substringRange, withString: String.fontThemifyIconWithCode(s[1])!)
+                let newRange = _NSRange(location: substringRange.location, length: 1)
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Themify, fontSize: self.font!.pointSize), range: newRange)
+            }
+            
+            if let _ = mapIconArr[s[1]] where s[0].lowercaseString == "mi"{
+                attributedString.replaceCharactersInRange(substringRange, withString: String.fontMapIconWithCode(s[1])!)
+                let newRange = _NSRange(location: substringRange.location, length: 1)
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.MapIcon, fontSize: self.font!.pointSize), range: newRange)
+            }
+            
+            if let _ = materialIconArr[s[1]] where s[0].lowercaseString == "ma"{
+                attributedString.replaceCharactersInRange(substringRange, withString: String.fontMaterialIconWithCode(s[1])!)
+                let newRange = _NSRange(location: substringRange.location, length: 1)
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.MaterialIcon, fontSize: self.font!.pointSize), range: newRange)
+            }
             
             self.attributedText = attributedString
             
@@ -199,6 +266,24 @@ public extension UITextField {
                 attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Octicon, fontSize: self.font!.pointSize), range: newRange)
             }
             
+            if let _ = temifyIconArr[s[1]] where s[0].lowercaseString == "ti"{
+                attributedString.replaceCharactersInRange(substringRange, withString: String.fontThemifyIconWithCode(s[1])!)
+                let newRange = _NSRange(location: substringRange.location, length: 1)
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Themify, fontSize: self.font!.pointSize), range: newRange)
+            }
+            
+            if let _ = mapIconArr[s[1]] where s[0].lowercaseString == "mi"{
+                attributedString.replaceCharactersInRange(substringRange, withString: String.fontMapIconWithCode(s[1])!)
+                let newRange = _NSRange(location: substringRange.location, length: 1)
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.MapIcon, fontSize: self.font!.pointSize), range: newRange)
+            }
+            
+            if let _ = materialIconArr[s[1]] where s[0].lowercaseString == "ma"{
+                attributedString.replaceCharactersInRange(substringRange, withString: String.fontMaterialIconWithCode(s[1])!)
+                let newRange = _NSRange(location: substringRange.location, length: 1)
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.MaterialIcon, fontSize: self.font!.pointSize), range: newRange)
+            }
+            
             self.attributedText = attributedString
         })
     }
@@ -246,6 +331,24 @@ public extension UIButton {
                 attributedString.replaceCharactersInRange(substringRange, withString: String.fontOcticonWithCode(s[1])!)
                 let newRange = _NSRange(location: substringRange.location, length: 1)
                 attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Octicon, fontSize: (self.titleLabel?.font!.pointSize)!), range: newRange)
+            }
+            
+            if let _ = temifyIconArr[s[1]] where s[0].lowercaseString == "ti"{
+                attributedString.replaceCharactersInRange(substringRange, withString: String.fontThemifyIconWithCode(s[1])!)
+                let newRange = _NSRange(location: substringRange.location, length: 1)
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Themify, fontSize: (self.titleLabel?.font!.pointSize)!), range: newRange)
+            }
+            
+            if let _ = mapIconArr[s[1]] where s[0].lowercaseString == "mi"{
+                attributedString.replaceCharactersInRange(substringRange, withString: String.fontMapIconWithCode(s[1])!)
+                let newRange = _NSRange(location: substringRange.location, length: 1)
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.MapIcon, fontSize: (self.titleLabel?.font!.pointSize)!), range: newRange)
+            }
+            
+            if let _ = materialIconArr[s[1]] where s[0].lowercaseString == "ma"{
+                attributedString.replaceCharactersInRange(substringRange, withString: String.fontMaterialIconWithCode(s[1])!)
+                let newRange = _NSRange(location: substringRange.location, length: 1)
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.MaterialIcon, fontSize: (self.titleLabel?.font!.pointSize)!), range: newRange)
             }
             
             self.setAttributedTitle(attributedString, forState: .Normal)
