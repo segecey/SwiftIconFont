@@ -1,5 +1,10 @@
 <p align="center"><img src="https://raw.githubusercontent.com/0x73/SwiftIconFont/master/Assets/logo.png" alt="SwiftIconFont Banner"></p>
 
+[![Build Status](https://travis-ci.org/0x73/SwiftIconFont.svg)](https://travis-ci.org/0x73/SwiftIconFont)
+[![Version](https://img.shields.io/cocoapods/v/SwiftIconFont.svg?style=flat)](http://cocoapods.org/pods/SwiftIconFont)
+[![License](https://img.shields.io/cocoapods/l/SwiftIconFont.svg?style=flat)](http://cocoapods.org/pods/SwiftIconFont)
+[![Platform](https://img.shields.io/cocoapods/p/SwiftIconFont.svg?style=flat)](http://cocoapods.org/pods/SwiftIconFont)
+
 ## Installation
 SwiftIconFont is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
