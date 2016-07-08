@@ -32,13 +32,13 @@ public extension UIFont{
             fontName = "FontAwesome"
             break
         case .Iconic:
-            fontName = "Icons"
+            fontName = "open-iconic"
             break
         case .Ionicon:
             fontName = "Ionicons"
             break
         case .Octicon:
-            fontName = "open-iconic"
+            fontName = "octicons"
             break
         }
         return fontName
@@ -91,5 +91,166 @@ public extension String {
     public static func fontIconicIconWithName(name: Iconic) -> String? {
         return name.rawValue
     }
-    
 }
+
+func replaceString(string: NSString) -> NSString {
+    if string.lowercaseString.rangeOfString("-") != nil {
+        return string.stringByReplacingOccurrencesOfString("-", withString: "_")
+    }
+    return string
+}
+
+
+// Extensions
+
+
+public extension UILabel {
+    func parseIcon() {
+        let text = replaceString(self.text! as NSString)
+        let textRange = NSMakeRange(0, text.length)
+        let attributedString = NSMutableAttributedString(string: self.text!)
+        
+        text.enumerateSubstringsInRange(textRange, options: .ByWords, usingBlock: {
+            (substring, substringRange, _, _) in
+            var s = ["", ""]
+            s = substring!.characters.split{$0 == ":"}.map(String.init)
+            if s.count == 1{
+                return
+            }
+            
+            if s[1].lowercaseString.rangeOfString("_") != nil {
+                s[1] = s[1].stringByReplacingOccurrencesOfString("_", withString: "-")
+            }
+            
+            
+            if let _ = fontAwesomeIconArr[s[1]] where s[0].lowercaseString == "fa"{
+                attributedString.replaceCharactersInRange(substringRange, withString: String.fontAwesomeIconWithCode(s[1])!)
+                let newRange = _NSRange(location: substringRange.location, length: 1)
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.FontAwesome, fontSize: self.font!.pointSize), range: newRange)
+            }
+            
+            if let _ = iconicIconArr[s[1]] where s[0].lowercaseString == "ic"{
+                attributedString.replaceCharactersInRange(substringRange, withString: String.fontIconicIconWithCode(s[1])!)
+                let newRange = _NSRange(location: substringRange.location, length: 1)
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Iconic, fontSize: self.font!.pointSize), range: newRange)
+            }
+            
+            
+            if let _ = ioniconArr[s[1]] where s[0].lowercaseString == "io"{
+                attributedString.replaceCharactersInRange(substringRange, withString: String.fontIonIconWithCode(s[1])!)
+                let newRange = _NSRange(location: substringRange.location, length: 1)
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Ionicon, fontSize: self.font!.pointSize), range: newRange)
+            }
+            
+            if let _ = octiconArr[s[1]] where s[0].lowercaseString == "oc"{
+                attributedString.replaceCharactersInRange(substringRange, withString: String.fontOcticonWithCode(s[1])!)
+                let newRange = _NSRange(location: substringRange.location, length: 1)
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Octicon, fontSize: self.font!.pointSize), range: newRange)
+            }
+            
+            self.attributedText = attributedString
+            
+        })
+    }
+}
+
+
+public extension UITextField {
+    func parseIcon() {
+        let text = replaceString(self.text! as NSString)
+        let textRange = NSMakeRange(0, text.length)
+        let attributedString = NSMutableAttributedString(string: self.text!)
+        
+        text.enumerateSubstringsInRange(textRange, options: .ByWords, usingBlock: {
+            (substring, substringRange, _, _) in
+            var s = ["", ""]
+            s = substring!.characters.split{$0 == ":"}.map(String.init)
+            if s.count == 1{
+                return
+            }
+            
+            if s[1].lowercaseString.rangeOfString("_") != nil {
+                s[1] = s[1].stringByReplacingOccurrencesOfString("_", withString: "-")
+            }
+            
+            
+            if let _ = fontAwesomeIconArr[s[1]] where s[0].lowercaseString == "fa"{
+                attributedString.replaceCharactersInRange(substringRange, withString: String.fontAwesomeIconWithCode(s[1])!)
+                let newRange = _NSRange(location: substringRange.location, length: 1)
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.FontAwesome, fontSize: self.font!.pointSize), range: newRange)
+            }
+            
+            if let _ = iconicIconArr[s[1]] where s[0].lowercaseString == "ic"{
+                attributedString.replaceCharactersInRange(substringRange, withString: String.fontIconicIconWithCode(s[1])!)
+                let newRange = _NSRange(location: substringRange.location, length: 1)
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Iconic, fontSize: self.font!.pointSize), range: newRange)
+            }
+            
+            
+            if let _ = ioniconArr[s[1]] where s[0].lowercaseString == "io"{
+                attributedString.replaceCharactersInRange(substringRange, withString: String.fontIonIconWithCode(s[1])!)
+                let newRange = _NSRange(location: substringRange.location, length: 1)
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Ionicon, fontSize: self.font!.pointSize), range: newRange)
+            }
+            
+            if let _ = octiconArr[s[1]] where s[0].lowercaseString == "oc"{
+                attributedString.replaceCharactersInRange(substringRange, withString: String.fontOcticonWithCode(s[1])!)
+                let newRange = _NSRange(location: substringRange.location, length: 1)
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Octicon, fontSize: self.font!.pointSize), range: newRange)
+            }
+            
+            self.attributedText = attributedString
+        })
+    }
+}
+
+public extension UIButton {
+    func parseIcon() {
+        let text = replaceString((self.titleLabel?.text)! as NSString)
+        let textRange = NSMakeRange(0, text.length)
+        let attributedString = NSMutableAttributedString(string: (self.titleLabel?.text)!)
+        
+        text.enumerateSubstringsInRange(textRange, options: .ByWords, usingBlock: {
+            (substring, substringRange, _, _) in
+            var s = ["", ""]
+            s = substring!.characters.split{$0 == ":"}.map(String.init)
+            if s.count == 1{
+                return
+            }
+            
+            if s[1].lowercaseString.rangeOfString("_") != nil {
+                s[1] = s[1].stringByReplacingOccurrencesOfString("_", withString: "-")
+            }
+            
+            
+            if let _ = fontAwesomeIconArr[s[1]] where s[0].lowercaseString == "fa"{
+                attributedString.replaceCharactersInRange(substringRange, withString: String.fontAwesomeIconWithCode(s[1])!)
+                let newRange = _NSRange(location: substringRange.location, length: 1)
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.FontAwesome, fontSize: (self.titleLabel?.font!.pointSize)!), range: newRange)
+            }
+            
+            if let _ = iconicIconArr[s[1]] where s[0].lowercaseString == "ic"{
+                attributedString.replaceCharactersInRange(substringRange, withString: String.fontIconicIconWithCode(s[1])!)
+                let newRange = _NSRange(location: substringRange.location, length: 1)
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Iconic, fontSize: (self.titleLabel?.font!.pointSize)!), range: newRange)
+            }
+            
+            
+            if let _ = ioniconArr[s[1]] where s[0].lowercaseString == "io"{
+                attributedString.replaceCharactersInRange(substringRange, withString: String.fontIonIconWithCode(s[1])!)
+                let newRange = _NSRange(location: substringRange.location, length: 1)
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Ionicon, fontSize: (self.titleLabel?.font!.pointSize)!), range: newRange)
+            }
+            
+            if let _ = octiconArr[s[1]] where s[0].lowercaseString == "oc"{
+                attributedString.replaceCharactersInRange(substringRange, withString: String.fontOcticonWithCode(s[1])!)
+                let newRange = _NSRange(location: substringRange.location, length: 1)
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Octicon, fontSize: (self.titleLabel?.font!.pointSize)!), range: newRange)
+            }
+            
+            self.setAttributedTitle(attributedString, forState: .Normal)
+        })
+    }
+}
+
+
