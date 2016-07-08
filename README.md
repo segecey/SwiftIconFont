@@ -18,6 +18,9 @@ pod 'SwiftIconFont'
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+<p align="center"><img src="https://raw.githubusercontent.com/0x73/SwiftIconFont/master/Assets/example1.png" alt="SwiftIconFont Banner"></p>
+
+
 ## Prefixes
 
 | Font         | Prefix | Cheat Sheet                               |
