@@ -1,0 +1,2 @@
+use_frameworks!
+pod 'SwiftIconFont', '~> 2.1.3'
