@@ -6,10 +6,18 @@ SwiftIconFont
 
 
 ## Installation
+SwiftIconFont is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
 
 ````ruby
+use_frameworks!
 pod 'SwiftIconFont'
 ````
+
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
 
 ## Fonts
 ````swift
@@ -18,60 +26,45 @@ public enum Fonts {
 }
 ````
 
+## Structure
+> ###< Prefix >:< Icon >
 
-## Basic Usage
 
-### Fontawesome
+##Usage
+
+In your UILabel, UIButton or UITextField, set a text containing a placeholder anywhere you want the icon to be. Somethink like this
+
+> fa:building
+
+
+Then you can choose between 2 ways you can use SwiftIconFont.
+
+####1. No Custom Class
+
+Simply import SwiftIconFont and call processIcons on any UILabel, UIButton or UITextField that has a placeholder.
+
+```swift
+label.parseIcon()
+```
+
+####2. Custom Class
+
+The lazy way, just set your UILabel, UIButton class as SwiftIconLabel, SwiftIconTextField or SwiftIconButton, and thats it, your icons will be processed at runtime.
+
+
+####3. Programmatically
 
 ````swift
 import SwiftIconFont
 
-...
-
 label.font = UIFont.iconFontOfSize(.FontAwesome, fontSize: 50.0)
 label.text = String.fontAwesomeIconWithName(.Twitter)
-
 
 label.font = UIFont.iconFontOfSize(.FontAwesome, fontSize: 50.0)
 label.text = String.fontAwesomeIconWithCode("twitter")
 ````
 
 
-### Iconic
-
-````swift
-...
-label.font = UIFont.iconFontOfSize(.Iconic, fontSize: 50.0)
-label.text = String.fontIconicIconWithName(.Dial)
-
-...
-label.font = UIFont.iconFontOfSize(.Iconic, fontSize: 50.0)
-label.text = String.fontIconicIconWithCode("dial")
-````
-
-### Ionicon
-
-````swift
-...
-label.font = UIFont.iconFontOfSize(.Ionicon, fontSize: 50.0)
-label.text = String.fontIonIconWithName(.Ionic)
-
-...
-label.font = UIFont.iconFontOfSize(.Ionicon, fontSize: 50.0)
-label.text = String.fontIonIconWithCode("ionic")
-````
-
-### Octicon
-
-````swift
-...
-label.font = UIFont.iconFontOfSize(.Octicon, fontSize: 50.0)
-label.text = String.fontOcticonWithName(.Octoface)
-
-...
-label.font = UIFont.iconFontOfSize(.Octicon, fontSize: 50.0)
-label.text = String.fontOcticonWithName("octoface")
-````
 
 ## Contributing
 
