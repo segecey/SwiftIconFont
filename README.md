@@ -1,5 +1,4 @@
-# ![Logo](https://raw.githubusercontent.com/0x73/SwiftIconFont/master/Assets/logo.png)
-
+-> # ![Logo](https://raw.githubusercontent.com/0x73/SwiftIconFont/master/Assets/logo.png) <-
 
 ## Installation
 SwiftIconFont is available through [CocoaPods](http://cocoapods.org). To install
