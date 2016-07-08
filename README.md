@@ -1,8 +1,4 @@
-SwiftIconFont
-==================
-
-
-# ![Screenshot](https://raw.githubusercontent.com/0x73/SwiftIconFont/master/Screenshots/screenshot0.png)
+# ![Logo](https://raw.githubusercontent.com/0x73/SwiftIconFont/master/Assets/logo.png)
 
 
 ## Installation
