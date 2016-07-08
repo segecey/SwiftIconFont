@@ -18,6 +18,14 @@ pod 'SwiftIconFont'
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+## Prefixes
+
+| Font         | Prefix | Cheat Sheet                               |
+|--------------|--------|-------------------------------------------|
+| Font Awesome | fa:    | [List](http://fontawesome.io/cheatsheet/) |
+| Ion Icons    | io:    | [List](http://ionicons.com)               |
+| Octicons     | oc:    | [List](https://octicons.github.com)       |
+| Open Iconic  | ic:    | [List](https://useiconic.com/open/)       |
 
 ## Fonts
 ````swift
