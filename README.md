@@ -67,7 +67,13 @@ label.font = UIFont.iconFontOfSize(.FontAwesome, fontSize: 50.0)
 label.text = String.fontAwesomeIconWithCode("twitter")
 ````
 
+## Author
 
+Sedat Gokbek CIFTCI, me@sedat.ninja
+
+## License
+
+SwiftIconFont is available under the MIT license. See the LICENSE file for more info.
 
 ## Contributing
 
