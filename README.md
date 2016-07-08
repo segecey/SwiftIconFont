@@ -34,7 +34,7 @@ public enum Fonts {
 
 In your UILabel, UIButton or UITextField, set a text containing a placeholder anywhere you want the icon to be. Somethink like this
 
-> fa:building
+> oc:logo-github
 
 
 Then you can choose between 2 ways you can use SwiftIconFont.
