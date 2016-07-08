@@ -26,7 +26,7 @@ public enum Fonts {
 }
 ````
 
-## Structure
+## Runtime Structure
 > ###< Prefix >:< Icon >
 
 
