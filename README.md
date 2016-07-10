@@ -69,7 +69,7 @@ label.parseIcon()
 
 ####2. Custom Class
 
-The lazy way, just set your UILabel, UITextField, UIButton, UITextView class as SwiftIconLabel, SwiftIconTextField, SwiftIconButton or SwiftIconTextView, and thats it, your icons will be processed at runtime.
+The lazy way, just set your UILabel, UITextField, UIButton, UITextView, UIBarButtonItem class as SwiftIconLabel, SwiftIconTextField, SwiftIconButton, SwiftIconTextView, SwiftBarButtonItem, and thats it, your icons will be processed at runtime.
 
 
 ####3. Programmatically
@@ -79,6 +79,15 @@ import SwiftIconFont
 
 label.font = UIFont.iconFontOfSize(.FontAwesome, fontSize: 50.0)
 label.text = String.fontAwesomeIconWithCode("twitter")
+````
+
+
+####UIBarButtonItem
+
+````swift
+import SwiftIconFont
+
+twitterBarButton.setFont(Fonts.FontAwesome, icon: "twitter", fontSize: 20)
 ````
 
 ## Author

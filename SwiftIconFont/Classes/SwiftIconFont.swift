@@ -199,6 +199,71 @@ func getAttributedString(text: NSString, fontSize: CGFloat) -> NSAttributedStrin
     return attributedString
 }
 
+func GetIconIndexWithSelectedIcon(icon: String) -> String {
+    let text = icon as NSString
+    let textRange = NSMakeRange(0, text.length)
+    var iconIndex: String = ""
+    text.enumerateSubstringsInRange(textRange, options: .ByWords, usingBlock: {
+        (substring, substringRange, _, _) in
+        var splitArr = ["", ""]
+        splitArr = substring!.characters.split{$0 == ":"}.map(String.init)
+        if splitArr.count == 1{
+            return
+        }
+        
+        var fontCode: String = splitArr[1]
+        
+        if fontCode.lowercaseString.rangeOfString("_") != nil {
+            fontCode = fontCode.stringByReplacingOccurrencesOfString("_", withString: "-")
+        }
+        iconIndex = fontCode
+    })
+    
+    return iconIndex
+}
+
+func GetFontTypeWithSelectedIcon(icon: String) -> Fonts {
+    let text = icon as NSString
+    let textRange = NSMakeRange(0, text.length)
+    var fontType: Fonts = Fonts.FontAwesome
+    
+    text.enumerateSubstringsInRange(textRange, options: .ByWords, usingBlock: {
+        (substring, substringRange, _, _) in
+        var splitArr = ["", ""]
+        splitArr = substring!.characters.split{$0 == ":"}.map(String.init)
+        if splitArr.count == 1{
+            return
+        }
+        
+        let fontPrefix: String  = splitArr[0].lowercaseString
+        var fontCode: String = splitArr[1]
+        
+        if fontCode.lowercaseString.rangeOfString("_") != nil {
+            fontCode = fontCode.stringByReplacingOccurrencesOfString("_", withString: "-")
+        }
+        
+        
+        if fontPrefix == "fa" {
+            fontType = Fonts.FontAwesome
+        } else if fontPrefix == "ic" {
+            fontType = Fonts.Iconic
+        } else if fontPrefix == "io" {
+            fontType = Fonts.Ionicon
+        } else if fontPrefix == "oc" {
+            fontType = Fonts.Octicon
+        } else if fontPrefix == "ti" {
+            fontType = Fonts.Themify
+        } else if fontPrefix == "mi" {
+            fontType = Fonts.MapIcon
+        } else if fontPrefix == "ma" {
+            fontType = Fonts.MaterialIcon
+        }
+        
+    })
+    
+    return fontType
+}
+
 // Extensions
 
 
@@ -228,5 +293,22 @@ public extension UIButton {
     func parseIcon() {
         let text = replaceString((self.titleLabel?.text)! as NSString)
         self.setAttributedTitle(getAttributedString(text, fontSize: (self.titleLabel?.font!.pointSize)!), forState: .Normal)
+    }
+}
+
+extension UIBarButtonItem {
+    func setFont(font: Fonts, icon: String, fontSize: CGFloat){
+        var textAttributes: [String: AnyObject] = [NSFontAttributeName: UIFont.iconFontOfSize(font, fontSize: fontSize)]
+        let currentTextAttributes: [String: AnyObject]? = self.titleTextAttributesForState(.Normal)
+        
+        if currentTextAttributes != nil {
+            for (key, value) in currentTextAttributes! {
+                if key != "NSFont" {
+                    textAttributes[key] = value
+                }
+            }
+        }
+        self.setTitleTextAttributes(textAttributes, forState: .Normal)
+        self.title = String.getIcon(font, code: icon)
     }
 }
