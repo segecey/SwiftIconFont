@@ -62,6 +62,27 @@ public extension UIFont{
 
 
 public extension String {
+    
+    
+    public static func getIcon(font: Fonts, code: String) -> String? {
+        switch font {
+        case .FontAwesome:
+            return fontAwesomeIconWithCode(code)
+        case .Iconic:
+            return fontIconicIconWithCode(code)
+        case .Ionicon:
+            return fontIonIconWithCode(code)
+        case .MapIcon:
+            return fontMapIconWithCode(code)
+        case .MaterialIcon:
+            return fontMaterialIconWithCode(code)
+        case .Octicon:
+            return fontOcticonWithCode(code)
+        case .Themify:
+            return fontThemifyIconWithCode(code)
+        }
+    }
+    
     public static func fontAwesomeIconWithCode(code: String) -> String? {
         if let icon = fontAwesomeIconArr[code] {
             return icon
@@ -150,74 +171,67 @@ func replaceString(string: NSString) -> NSString {
 }
 
 
+func getAttributedString(text: NSString, fontSize: CGFloat) -> NSAttributedString {
+    let textRange = NSMakeRange(0, text.length)
+    let attributedString = NSMutableAttributedString(string: text as String)
+    
+    text.enumerateSubstringsInRange(textRange, options: .ByWords, usingBlock: {
+        (substring, substringRange, _, _) in
+        var s = ["", ""]
+        s = substring!.characters.split{$0 == ":"}.map(String.init)
+        if s.count == 1{
+            return
+        }
+        
+        if s[1].lowercaseString.rangeOfString("_") != nil {
+            s[1] = s[1].stringByReplacingOccurrencesOfString("_", withString: "-")
+        }
+        
+        let fontPrefix: String  = s[0].lowercaseString
+        var fontType: Fonts = Fonts.FontAwesome
+        var fontArr: [String: String] = ["": ""]
+        
+        if fontPrefix == "fa" {
+            fontType = Fonts.FontAwesome
+            fontArr = fontAwesomeIconArr
+        } else if fontPrefix == "ic" {
+            fontType = Fonts.Iconic
+            fontArr = iconicIconArr
+        } else if fontPrefix == "io" {
+            fontType = Fonts.Ionicon
+            fontArr = ioniconArr
+        } else if fontPrefix == "oc" {
+            fontType = Fonts.Octicon
+            fontArr = octiconArr
+        } else if fontPrefix == "ti" {
+            fontType = Fonts.Themify
+            fontArr = temifyIconArr
+        } else if fontPrefix == "mi" {
+            fontType = Fonts.MapIcon
+            fontArr = mapIconArr
+        } else if fontPrefix == "ma" {
+            fontType = Fonts.MaterialIcon
+            fontArr = materialIconArr
+        }
+        
+        if let _ = fontArr[s[1]] {
+            attributedString.replaceCharactersInRange(substringRange, withString: String.getIcon(fontType, code: s[1])!)
+            let newRange = NSRange(location: substringRange.location, length: 1)
+            attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(fontType, fontSize: fontSize), range: newRange)
+        }
+        
+    })
+    
+    return attributedString
+}
+
 // Extensions
 
 
 public extension UILabel {
     func parseIcon() {
         let text = replaceString(self.text! as NSString)
-        let textRange = NSMakeRange(0, text.length)
-        let attributedString = NSMutableAttributedString(string: self.text!)
-        
-        text.enumerateSubstringsInRange(textRange, options: .ByWords, usingBlock: {
-            (substring, substringRange, _, _) in
-            var s = ["", ""]
-            s = substring!.characters.split{$0 == ":"}.map(String.init)
-            if s.count == 1{
-                return
-            }
-            
-            if s[1].lowercaseString.rangeOfString("_") != nil {
-                s[1] = s[1].stringByReplacingOccurrencesOfString("_", withString: "-")
-            }
-            
-            
-            if let _ = fontAwesomeIconArr[s[1]] where s[0].lowercaseString == "fa"{
-                attributedString.replaceCharactersInRange(substringRange, withString: String.fontAwesomeIconWithCode(s[1])!)
-                let newRange = _NSRange(location: substringRange.location, length: 1)
-                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.FontAwesome, fontSize: self.font!.pointSize), range: newRange)
-            }
-            
-            if let _ = iconicIconArr[s[1]] where s[0].lowercaseString == "ic"{
-                attributedString.replaceCharactersInRange(substringRange, withString: String.fontIconicIconWithCode(s[1])!)
-                let newRange = _NSRange(location: substringRange.location, length: 1)
-                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Iconic, fontSize: self.font!.pointSize), range: newRange)
-            }
-            
-            
-            if let _ = ioniconArr[s[1]] where s[0].lowercaseString == "io"{
-                attributedString.replaceCharactersInRange(substringRange, withString: String.fontIonIconWithCode(s[1])!)
-                let newRange = _NSRange(location: substringRange.location, length: 1)
-                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Ionicon, fontSize: self.font!.pointSize), range: newRange)
-            }
-            
-            if let _ = octiconArr[s[1]] where s[0].lowercaseString == "oc"{
-                attributedString.replaceCharactersInRange(substringRange, withString: String.fontOcticonWithCode(s[1])!)
-                let newRange = _NSRange(location: substringRange.location, length: 1)
-                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Octicon, fontSize: self.font!.pointSize), range: newRange)
-            }
-                        
-            if let _ = temifyIconArr[s[1]] where s[0].lowercaseString == "ti"{
-                attributedString.replaceCharactersInRange(substringRange, withString: String.fontThemifyIconWithCode(s[1])!)
-                let newRange = _NSRange(location: substringRange.location, length: 1)
-                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Themify, fontSize: self.font!.pointSize), range: newRange)
-            }
-            
-            if let _ = mapIconArr[s[1]] where s[0].lowercaseString == "mi"{
-                attributedString.replaceCharactersInRange(substringRange, withString: String.fontMapIconWithCode(s[1])!)
-                let newRange = _NSRange(location: substringRange.location, length: 1)
-                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.MapIcon, fontSize: self.font!.pointSize), range: newRange)
-            }
-            
-            if let _ = materialIconArr[s[1]] where s[0].lowercaseString == "ma"{
-                attributedString.replaceCharactersInRange(substringRange, withString: String.fontMaterialIconWithCode(s[1])!)
-                let newRange = _NSRange(location: substringRange.location, length: 1)
-                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.MaterialIcon, fontSize: self.font!.pointSize), range: newRange)
-            }
-            
-            self.attributedText = attributedString
-            
-        })
+        self.attributedText = getAttributedString(text, fontSize: self.font!.pointSize)
     }
 }
 
@@ -225,134 +239,14 @@ public extension UILabel {
 public extension UITextField {
     func parseIcon() {
         let text = replaceString(self.text! as NSString)
-        let textRange = NSMakeRange(0, text.length)
-        let attributedString = NSMutableAttributedString(string: self.text!)
-        
-        text.enumerateSubstringsInRange(textRange, options: .ByWords, usingBlock: {
-            (substring, substringRange, _, _) in
-            var s = ["", ""]
-            s = substring!.characters.split{$0 == ":"}.map(String.init)
-            if s.count == 1{
-                return
-            }
-            
-            if s[1].lowercaseString.rangeOfString("_") != nil {
-                s[1] = s[1].stringByReplacingOccurrencesOfString("_", withString: "-")
-            }
-            
-            
-            if let _ = fontAwesomeIconArr[s[1]] where s[0].lowercaseString == "fa"{
-                attributedString.replaceCharactersInRange(substringRange, withString: String.fontAwesomeIconWithCode(s[1])!)
-                let newRange = _NSRange(location: substringRange.location, length: 1)
-                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.FontAwesome, fontSize: self.font!.pointSize), range: newRange)
-            }
-            
-            if let _ = iconicIconArr[s[1]] where s[0].lowercaseString == "ic"{
-                attributedString.replaceCharactersInRange(substringRange, withString: String.fontIconicIconWithCode(s[1])!)
-                let newRange = _NSRange(location: substringRange.location, length: 1)
-                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Iconic, fontSize: self.font!.pointSize), range: newRange)
-            }
-            
-            
-            if let _ = ioniconArr[s[1]] where s[0].lowercaseString == "io"{
-                attributedString.replaceCharactersInRange(substringRange, withString: String.fontIonIconWithCode(s[1])!)
-                let newRange = _NSRange(location: substringRange.location, length: 1)
-                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Ionicon, fontSize: self.font!.pointSize), range: newRange)
-            }
-            
-            if let _ = octiconArr[s[1]] where s[0].lowercaseString == "oc"{
-                attributedString.replaceCharactersInRange(substringRange, withString: String.fontOcticonWithCode(s[1])!)
-                let newRange = _NSRange(location: substringRange.location, length: 1)
-                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Octicon, fontSize: self.font!.pointSize), range: newRange)
-            }
-            
-            if let _ = temifyIconArr[s[1]] where s[0].lowercaseString == "ti"{
-                attributedString.replaceCharactersInRange(substringRange, withString: String.fontThemifyIconWithCode(s[1])!)
-                let newRange = _NSRange(location: substringRange.location, length: 1)
-                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Themify, fontSize: self.font!.pointSize), range: newRange)
-            }
-            
-            if let _ = mapIconArr[s[1]] where s[0].lowercaseString == "mi"{
-                attributedString.replaceCharactersInRange(substringRange, withString: String.fontMapIconWithCode(s[1])!)
-                let newRange = _NSRange(location: substringRange.location, length: 1)
-                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.MapIcon, fontSize: self.font!.pointSize), range: newRange)
-            }
-            
-            if let _ = materialIconArr[s[1]] where s[0].lowercaseString == "ma"{
-                attributedString.replaceCharactersInRange(substringRange, withString: String.fontMaterialIconWithCode(s[1])!)
-                let newRange = _NSRange(location: substringRange.location, length: 1)
-                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.MaterialIcon, fontSize: self.font!.pointSize), range: newRange)
-            }
-            
-            self.attributedText = attributedString
-        })
+        self.attributedText = getAttributedString(text, fontSize: self.font!.pointSize)
     }
 }
 
 public extension UIButton {
     func parseIcon() {
         let text = replaceString((self.titleLabel?.text)! as NSString)
-        let textRange = NSMakeRange(0, text.length)
-        let attributedString = NSMutableAttributedString(string: (self.titleLabel?.text)!)
-        
-        text.enumerateSubstringsInRange(textRange, options: .ByWords, usingBlock: {
-            (substring, substringRange, _, _) in
-            var s = ["", ""]
-            s = substring!.characters.split{$0 == ":"}.map(String.init)
-            if s.count == 1{
-                return
-            }
-            
-            if s[1].lowercaseString.rangeOfString("_") != nil {
-                s[1] = s[1].stringByReplacingOccurrencesOfString("_", withString: "-")
-            }
-            
-            
-            if let _ = fontAwesomeIconArr[s[1]] where s[0].lowercaseString == "fa"{
-                attributedString.replaceCharactersInRange(substringRange, withString: String.fontAwesomeIconWithCode(s[1])!)
-                let newRange = _NSRange(location: substringRange.location, length: 1)
-                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.FontAwesome, fontSize: (self.titleLabel?.font!.pointSize)!), range: newRange)
-            }
-            
-            if let _ = iconicIconArr[s[1]] where s[0].lowercaseString == "ic"{
-                attributedString.replaceCharactersInRange(substringRange, withString: String.fontIconicIconWithCode(s[1])!)
-                let newRange = _NSRange(location: substringRange.location, length: 1)
-                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Iconic, fontSize: (self.titleLabel?.font!.pointSize)!), range: newRange)
-            }
-            
-            
-            if let _ = ioniconArr[s[1]] where s[0].lowercaseString == "io"{
-                attributedString.replaceCharactersInRange(substringRange, withString: String.fontIonIconWithCode(s[1])!)
-                let newRange = _NSRange(location: substringRange.location, length: 1)
-                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Ionicon, fontSize: (self.titleLabel?.font!.pointSize)!), range: newRange)
-            }
-            
-            if let _ = octiconArr[s[1]] where s[0].lowercaseString == "oc"{
-                attributedString.replaceCharactersInRange(substringRange, withString: String.fontOcticonWithCode(s[1])!)
-                let newRange = _NSRange(location: substringRange.location, length: 1)
-                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Octicon, fontSize: (self.titleLabel?.font!.pointSize)!), range: newRange)
-            }
-            
-            if let _ = temifyIconArr[s[1]] where s[0].lowercaseString == "ti"{
-                attributedString.replaceCharactersInRange(substringRange, withString: String.fontThemifyIconWithCode(s[1])!)
-                let newRange = _NSRange(location: substringRange.location, length: 1)
-                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.Themify, fontSize: (self.titleLabel?.font!.pointSize)!), range: newRange)
-            }
-            
-            if let _ = mapIconArr[s[1]] where s[0].lowercaseString == "mi"{
-                attributedString.replaceCharactersInRange(substringRange, withString: String.fontMapIconWithCode(s[1])!)
-                let newRange = _NSRange(location: substringRange.location, length: 1)
-                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.MapIcon, fontSize: (self.titleLabel?.font!.pointSize)!), range: newRange)
-            }
-            
-            if let _ = materialIconArr[s[1]] where s[0].lowercaseString == "ma"{
-                attributedString.replaceCharactersInRange(substringRange, withString: String.fontMaterialIconWithCode(s[1])!)
-                let newRange = _NSRange(location: substringRange.location, length: 1)
-                attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(Fonts.MaterialIcon, fontSize: (self.titleLabel?.font!.pointSize)!), range: newRange)
-            }
-            
-            self.setAttributedTitle(attributedString, forState: .Normal)
-        })
+        self.setAttributedTitle(getAttributedString(text, fontSize: (self.titleLabel?.font!.pointSize)!), forState: .Normal)
     }
 }
 
