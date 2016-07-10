@@ -98,9 +98,6 @@ import SwiftIconFont
 twitterTabBarButton.setFontIcon(Fonts.FontAwesome, iconCode: "twitter", imageSize: CGSizeMake(20, 20), fontSize: 20)
 ````
 
-
-tabbarB.setFontIcon(Fonts.FontAwesome, iconCode: "twitter", imageSize: CGSizeMake(20, 20), fontSize: 20)
-
 ## Author
 
 Sedat Gokbek CIFTCI, me@sedat.ninja
