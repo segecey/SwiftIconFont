@@ -8,8 +8,8 @@
 
 import UIKit
 
-class SwiftIconButton: UIButton {
-    
+@IBDesignable
+class SwiftIconButton: UIButton {    
     @IBInspectable var Icon: String = "" {
         didSet {
             self.titleLabel?.text = Icon
@@ -22,3 +22,5 @@ class SwiftIconButton: UIButton {
     }
 
 }
+
+

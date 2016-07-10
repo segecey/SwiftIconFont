@@ -238,6 +238,13 @@ public extension UILabel {
     }
 }
 
+public extension UITextView {
+    func parseIcon() {
+        let text = replaceString(self.text! as NSString)
+        self.attributedText = getAttributedString(text, fontSize: self.font!.pointSize)
+    }
+}
+
 
 public extension UITextField {
     func parseIcon() {

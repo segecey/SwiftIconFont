@@ -1,15 +1,15 @@
 //
-//  SwiftIconTextField.swift
-//  icon
+//  SwiftIconTextView.swift
+//  Exm
 //
-//  Created by Sedat Gökbek ÇİFTÇİ on 08/07/16.
+//  Created by Sedat Gökbek ÇİFTÇİ on 10/07/16.
 //  Copyright © 2016 Sedat Gökbek ÇİFTÇİ. All rights reserved.
 //
 
 import UIKit
 
 @IBDesignable
-class SwiftIconTextField: UITextField {
+class SwiftIconTextView: UITextView {
     @IBInspectable var Icon: String = "" {
         didSet {
             self.text = Icon
