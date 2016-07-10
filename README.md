@@ -57,7 +57,7 @@ In your UILabel, UIButton or UITextField, set a text containing a placeholder an
 > oc:logo-github
 
 
-Then you can choose between 2 ways you can use SwiftIconFont.
+Then you can choose between 3 ways you can use SwiftIconFont.
 
 ####1. No Custom Class
 
