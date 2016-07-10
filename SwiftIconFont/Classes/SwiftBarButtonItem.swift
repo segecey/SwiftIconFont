@@ -12,13 +12,12 @@ import UIKit
 class SwiftBarButtonItem: UIBarButtonItem {
     @IBInspectable var Icon: String = ""
     @IBInspectable var FontSize: CGFloat = 15.00
-    
+
     override func awakeFromNib() {
         parseIcon()
     }
-    
+
     private func parseIcon() {
-        self.setFont(GetFontTypeWithSelectedIcon(Icon), icon: GetIconIndexWithSelectedIcon(Icon), fontSize: FontSize)
+        self.setFontIcon(GetFontTypeWithSelectedIcon(Icon), icon: GetIconIndexWithSelectedIcon(Icon), fontSize: FontSize)
     }
 }
-

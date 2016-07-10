@@ -210,15 +210,15 @@ func GetIconIndexWithSelectedIcon(icon: String) -> String {
         if splitArr.count == 1{
             return
         }
-        
+
         var fontCode: String = splitArr[1]
-        
+
         if fontCode.lowercaseString.rangeOfString("_") != nil {
             fontCode = fontCode.stringByReplacingOccurrencesOfString("_", withString: "-")
         }
         iconIndex = fontCode
     })
-    
+
     return iconIndex
 }
 
@@ -226,7 +226,7 @@ func GetFontTypeWithSelectedIcon(icon: String) -> Fonts {
     let text = icon as NSString
     let textRange = NSMakeRange(0, text.length)
     var fontType: Fonts = Fonts.FontAwesome
-    
+
     text.enumerateSubstringsInRange(textRange, options: .ByWords, usingBlock: {
         (substring, substringRange, _, _) in
         var splitArr = ["", ""]
@@ -234,15 +234,15 @@ func GetFontTypeWithSelectedIcon(icon: String) -> Fonts {
         if splitArr.count == 1{
             return
         }
-        
+
         let fontPrefix: String  = splitArr[0].lowercaseString
         var fontCode: String = splitArr[1]
-        
+
         if fontCode.lowercaseString.rangeOfString("_") != nil {
             fontCode = fontCode.stringByReplacingOccurrencesOfString("_", withString: "-")
         }
-        
-        
+
+
         if fontPrefix == "fa" {
             fontType = Fonts.FontAwesome
         } else if fontPrefix == "ic" {
@@ -258,9 +258,9 @@ func GetFontTypeWithSelectedIcon(icon: String) -> Fonts {
         } else if fontPrefix == "ma" {
             fontType = Fonts.MaterialIcon
         }
-        
+
     })
-    
+
     return fontType
 }
 
@@ -297,10 +297,10 @@ public extension UIButton {
 }
 
 extension UIBarButtonItem {
-    func setFont(font: Fonts, icon: String, fontSize: CGFloat){
+    func setFontIcon(font: Fonts, icon: String, fontSize: CGFloat){
         var textAttributes: [String: AnyObject] = [NSFontAttributeName: UIFont.iconFontOfSize(font, fontSize: fontSize)]
         let currentTextAttributes: [String: AnyObject]? = self.titleTextAttributesForState(.Normal)
-        
+
         if currentTextAttributes != nil {
             for (key, value) in currentTextAttributes! {
                 if key != "NSFont" {
@@ -310,5 +310,23 @@ extension UIBarButtonItem {
         }
         self.setTitleTextAttributes(textAttributes, forState: .Normal)
         self.title = String.getIcon(font, code: icon)
+    }
+}
+
+extension UITabBarItem {
+    func setFontIcon(font: Fonts, iconCode: String, imageSize: CGSize, fontSize: CGFloat) {
+        self.image = textToImage(font, drawText: String.getIcon(font, code: iconCode)!, imageSize: imageSize, fontSize: fontSize)
+    }
+
+    func textToImage(font: Fonts, drawText: NSString, imageSize: CGSize,fontSize: CGFloat) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(imageSize, false, 0)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = NSTextAlignment.Center
+
+
+        drawText.drawInRect(CGRectMake(0, 0, imageSize.width, imageSize.height), withAttributes: [NSFontAttributeName : UIFont.iconFontOfSize(font, fontSize: fontSize)])
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
     }
 }

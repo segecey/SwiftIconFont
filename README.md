@@ -82,13 +82,24 @@ label.text = String.fontAwesomeIconWithCode("twitter")
 ````
 
 
-####UIBarButtonItem
+####UIBarButtonItem (No Custom Class)
 
 ````swift
 import SwiftIconFont
 
-twitterBarButton.setFont(Fonts.FontAwesome, icon: "twitter", fontSize: 20)
+twitterBarButton.setFontIcon(Fonts.FontAwesome, icon: "twitter", fontSize: 20)
 ````
+
+####UITabBarItem (No Custom Class)
+
+````swift
+import SwiftIconFont
+
+twitterTabBarButton.setFontIcon(Fonts.FontAwesome, iconCode: "twitter", imageSize: CGSizeMake(20, 20), fontSize: 20)
+````
+
+
+tabbarB.setFontIcon(Fonts.FontAwesome, iconCode: "twitter", imageSize: CGSizeMake(20, 20), fontSize: 20)
 
 ## Author
 
