@@ -19,7 +19,7 @@ public enum Fonts {
 }
 
 public extension UIFont{
-    
+
     static func iconFontOfSize(font: Fonts, fontSize: CGFloat) -> UIFont {
         let fontName = UIFont.getFontName(font)
         var token: dispatch_once_t = 0
@@ -30,7 +30,7 @@ public extension UIFont{
         }
         return UIFont(name: UIFont.getFontName(font), size: fontSize)!
     }
-    
+
     class func getFontName(font: Fonts) -> String {
         var fontName: String = ""
         switch(font) {
@@ -62,8 +62,8 @@ public extension UIFont{
 
 
 public extension String {
-    
-    
+
+
     public static func getIcon(font: Fonts, code: String) -> String? {
         switch font {
         case .FontAwesome:
@@ -82,82 +82,82 @@ public extension String {
             return fontThemifyIconWithCode(code)
         }
     }
-    
+
     public static func fontAwesomeIconWithCode(code: String) -> String? {
         if let icon = fontAwesomeIconArr[code] {
             return icon
         }
         return nil
     }
-    
+
     public static func fontOcticonWithCode(code: String) -> String? {
         if let icon = octiconArr[code] {
             return icon
         }
         return nil
     }
-    
+
     public static func fontIonIconWithCode(code: String) -> String? {
         if let icon = ioniconArr[code] {
             return icon
         }
         return nil
     }
-    
+
     public static func fontIconicIconWithCode(code: String) -> String? {
         if let icon = iconicIconArr[code] {
             return icon
         }
         return nil
     }
-    
-    
+
+
     public static func fontThemifyIconWithCode(code: String) -> String? {
         if let icon = temifyIconArr[code] {
             return icon
         }
         return nil
     }
-    
+
     public static func fontMapIconWithCode(code: String) -> String? {
         if let icon = mapIconArr[code] {
             return icon
         }
         return nil
     }
-    
+
     public static func fontMaterialIconWithCode(code: String) -> String? {
         if let icon = materialIconArr[code] {
             return icon
         }
         return nil
     }
-    
-    
+
+
     public static func fontAwesomeIconWithName(name: FontAwesome) -> String {
         return name.rawValue
     }
-    
+
     public static func fontOcticonWithName(name: Octicon) -> String? {
         return name.rawValue
     }
-    
+
     public static func fontIonIconWithName(name: Ionicon) -> String? {
         return name.rawValue
     }
-    
+
     public static func fontIconicIconWithName(name: Iconic) -> String? {
         return name.rawValue
     }
-    
+
     public static func fontThemifyIconWithName(name: Themify) -> String? {
         return name.rawValue
     }
-    
+
     public static func fontMapIconWithName(name: MapIcon) -> String? {
         return name.rawValue
     }
-    
+
     public static func fontMaterialIconWithName(name: MaterialIcon) -> String? {
         return name.rawValue
     }
@@ -174,23 +174,26 @@ func replaceString(string: NSString) -> NSString {
 func getAttributedString(text: NSString, fontSize: CGFloat) -> NSAttributedString {
     let textRange = NSMakeRange(0, text.length)
     let attributedString = NSMutableAttributedString(string: text as String)
-    
+
     text.enumerateSubstringsInRange(textRange, options: .ByWords, usingBlock: {
         (substring, substringRange, _, _) in
-        var s = ["", ""]
-        s = substring!.characters.split{$0 == ":"}.map(String.init)
-        if s.count == 1{
+        var splitArr = ["", ""]
+        splitArr = substring!.characters.split{$0 == ":"}.map(String.init)
+        if splitArr.count == 1{
             return
         }
-        
-        if s[1].lowercaseString.rangeOfString("_") != nil {
-            s[1] = s[1].stringByReplacingOccurrencesOfString("_", withString: "-")
+
+        let fontPrefix: String  = splitArr[0].lowercaseString
+        var fontCode: String = splitArr[1]
+
+        if fontCode.lowercaseString.rangeOfString("_") != nil {
+            fontCode = fontCode.stringByReplacingOccurrencesOfString("_", withString: "-")
         }
-        
-        let fontPrefix: String  = s[0].lowercaseString
+
+
         var fontType: Fonts = Fonts.FontAwesome
         var fontArr: [String: String] = ["": ""]
-        
+
         if fontPrefix == "fa" {
             fontType = Fonts.FontAwesome
             fontArr = fontAwesomeIconArr
@@ -213,15 +216,15 @@ func getAttributedString(text: NSString, fontSize: CGFloat) -> NSAttributedStrin
             fontType = Fonts.MaterialIcon
             fontArr = materialIconArr
         }
-        
-        if let _ = fontArr[s[1]] {
-            attributedString.replaceCharactersInRange(substringRange, withString: String.getIcon(fontType, code: s[1])!)
+
+        if let _ = fontArr[fontCode] {
+            attributedString.replaceCharactersInRange(substringRange, withString: String.getIcon(fontType, code: fontCode)!)
             let newRange = NSRange(location: substringRange.location, length: 1)
             attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(fontType, fontSize: fontSize), range: newRange)
         }
-        
+
     })
-    
+
     return attributedString
 }
 
@@ -249,5 +252,3 @@ public extension UIButton {
         self.setAttributedTitle(getAttributedString(text, fontSize: (self.titleLabel?.font!.pointSize)!), forState: .Normal)
     }
 }
-
-
