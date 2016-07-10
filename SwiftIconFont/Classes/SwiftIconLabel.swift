@@ -10,9 +10,9 @@ import UIKit
 
 @IBDesignable
 class SwiftIconLabel: UILabel {
-    @IBInspectable var IconText: String = "" {
+    @IBInspectable var Icon: String = "" {
         didSet {
-            self.text = IconText
+            self.text = Icon
             self.parseIcon()
         }
     }

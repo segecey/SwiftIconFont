@@ -9,9 +9,9 @@
 import UIKit
 
 class SwiftIconTextField: UITextField {
-    @IBInspectable var IconText: String = "" {
+    @IBInspectable var Icon: String = "" {
         didSet {
-            self.text = IconText
+            self.text = Icon
             self.parseIcon()
         }
     }
