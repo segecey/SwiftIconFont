@@ -18,7 +18,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Tools oc:tools"/>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="map ic:map" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="z4e-nV-j3n" customClass="SwiftIconTextField" customModule="SwiftIconFont">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Map ic:map" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="z4e-nV-j3n" customClass="SwiftIconTextField" customModule="SwiftIconFont">
                                 <rect key="frame" x="59" y="205" width="205" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

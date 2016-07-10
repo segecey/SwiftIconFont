@@ -8,15 +8,7 @@
 
 import UIKit
 
-@IBDesignable
 class SwiftIconTextField: UITextField {
-    @IBInspectable var Icon: String = "" {
-        didSet {
-            self.text = Icon
-            self.parseIcon()
-        }
-    }
-    
     override func awakeFromNib() {
         self.parseIcon()
     }
