@@ -69,7 +69,7 @@ label.parseIcon()
 
 ####2. Custom Class
 
-The lazy way, just set your UILabel, UITextField, UIButton class as SwiftIconLabel, SwiftIconTextField or SwiftIconButton, and thats it, your icons will be processed at runtime.
+The lazy way, just set your UILabel, UITextField, UIButton, UITextView class as SwiftIconLabel, SwiftIconTextField, SwiftIconButton or SwiftIconTextView, and thats it, your icons will be processed at runtime.
 
 
 ####3. Programmatically
