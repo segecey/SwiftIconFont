@@ -78,9 +78,6 @@ The lazy way, just set your UILabel, UITextField, UIButton, UITextView class as 
 import SwiftIconFont
 
 label.font = UIFont.iconFontOfSize(.FontAwesome, fontSize: 50.0)
-label.text = String.fontAwesomeIconWithName(.Twitter)
-
-label.font = UIFont.iconFontOfSize(.FontAwesome, fontSize: 50.0)
 label.text = String.fontAwesomeIconWithCode("twitter")
 ````
 
