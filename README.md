@@ -6,20 +6,45 @@
 [![Platform](https://img.shields.io/cocoapods/p/SwiftIconFont.svg?style=flat)](http://cocoapods.org/pods/SwiftIconFont)
 
 ## Installation
-SwiftIconFont is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
 
-````ruby
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate SwiftIconFont into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "0x73/SwiftIconFont"
+```
+
+### Cocoapods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects.
+
+You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+
+To integrate SwiftIconFont into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
 use_frameworks!
+
 pod 'SwiftIconFont'
-````
+```
 
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-<p align="center"><img src="https://raw.githubusercontent.com/0x73/SwiftIconFont/master/Assets/example1.png" alt="SwiftIconFont Banner"></p>
-
 
 ## Prefixes
 
