@@ -60,9 +60,25 @@ public extension UIFont{
     }
 }
 
+public extension UIImage
+{
+    public static func iconToImage(font: Fonts, iconCode: String, imageSize: CGSize,fontSize: CGFloat) -> UIImage
+    {
+        let drawText = String.getIcon(font, code: iconCode)
+        
+        UIGraphicsBeginImageContextWithOptions(imageSize, false, 0)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = NSTextAlignment.Center
+        
+        drawText!.drawInRect(CGRectMake(0, 0, imageSize.width, imageSize.height), withAttributes: [NSFontAttributeName : UIFont.iconFontOfSize(font, fontSize: fontSize)])
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return image
+    }
+}
 
 public extension String {
-
 
     public static func getIcon(font: Fonts, code: String) -> String? {
         switch font {
@@ -296,7 +312,7 @@ public extension UIButton {
     }
 }
 
-extension UIBarButtonItem {
+public extension UIBarButtonItem {
     func setFontIcon(font: Fonts, icon: String, fontSize: CGFloat){
         var textAttributes: [String: AnyObject] = [NSFontAttributeName: UIFont.iconFontOfSize(font, fontSize: fontSize)]
         let currentTextAttributes: [String: AnyObject]? = self.titleTextAttributesForState(.Normal)
@@ -313,20 +329,8 @@ extension UIBarButtonItem {
     }
 }
 
-extension UITabBarItem {
+public extension UITabBarItem {
     func setFontIcon(font: Fonts, iconCode: String, imageSize: CGSize, fontSize: CGFloat) {
-        self.image = textToImage(font, drawText: String.getIcon(font, code: iconCode)!, imageSize: imageSize, fontSize: fontSize)
-    }
-
-    func textToImage(font: Fonts, drawText: NSString, imageSize: CGSize,fontSize: CGFloat) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(imageSize, false, 0)
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = NSTextAlignment.Center
-
-
-        drawText.drawInRect(CGRectMake(0, 0, imageSize.width, imageSize.height), withAttributes: [NSFontAttributeName : UIFont.iconFontOfSize(font, fontSize: fontSize)])
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image
+        self.image = UIImage.iconToImage(font, iconCode: iconCode, imageSize: imageSize, fontSize: fontSize)
     }
 }
