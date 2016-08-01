@@ -307,7 +307,7 @@ public extension UITextField {
 
 public extension UIButton {
     func parseIcon() {
-        let text = replaceString((self.titleLabel?.text)! as NSString)
+        let text = replaceString((self.currentTitle)! as NSString)
         self.setAttributedTitle(getAttributedString(text, fontSize: (self.titleLabel?.font!.pointSize)!), forState: .Normal)
     }
 }
