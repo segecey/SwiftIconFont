@@ -436,6 +436,7 @@ public let fontAwesomeIconArr: [String: String] = [
     "rub":"\u{f158}",
     "ruble":"\u{f158}",
     "rupee":"\u{f156}",
+    "safari":"\u{f267}",
     "save":"\u{f0c7}",
     "scissors":"\u{f0c4}",
     "search":"\u{f002}",
