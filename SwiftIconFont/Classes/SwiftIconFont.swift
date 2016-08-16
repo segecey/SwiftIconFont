@@ -20,7 +20,7 @@ public enum Fonts: String {
 
 public extension UIFont{
 
-    static func iconFontOfSize(font: Fonts, fontSize: CGFloat) -> UIFont {
+    static func iconFont(font: Fonts, ofSize size: CGFloat) -> UIFont {
         let fontName = font.rawValue
         var token: dispatch_once_t = 0
         if (UIFont.fontNamesForFamilyName(fontName).count == 0) {
@@ -28,7 +28,7 @@ public extension UIFont{
                 FontLoader.loadFont(fontName)
             }
         }
-        return UIFont(name: font.rawValue, size: fontSize)!
+        return UIFont(name: font.rawValue, size: size)!
     }
 
 }
@@ -43,7 +43,7 @@ public extension UIImage
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = NSTextAlignment.Center
         
-        drawText!.drawInRect(CGRectMake(0, 0, imageSize.width, imageSize.height), withAttributes: [NSFontAttributeName : UIFont.iconFontOfSize(font, fontSize: fontSize)])
+        drawText!.drawInRect(CGRectMake(0, 0, imageSize.width, imageSize.height), withAttributes: [NSFontAttributeName : UIFont.iconFont(font, ofSize: fontSize)])
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
 
@@ -180,7 +180,7 @@ func getAttributedString(text: NSString, fontSize: CGFloat) -> NSAttributedStrin
         if let _ = fontArr[fontCode] {
             attributedString.replaceCharactersInRange(substringRange, withString: String.getIcon(fontType, code: fontCode)!)
             let newRange = NSRange(location: substringRange.location, length: 1)
-            attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(fontType, fontSize: fontSize), range: newRange)
+            attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFont(fontType, ofSize: fontSize), range: newRange)
         }
 
     })
@@ -287,7 +287,7 @@ public extension UIButton {
 
 public extension UIBarButtonItem {
     func setFontIcon(font: Fonts, icon: String, fontSize: CGFloat){
-        var textAttributes: [String: AnyObject] = [NSFontAttributeName: UIFont.iconFontOfSize(font, fontSize: fontSize)]
+        var textAttributes: [String: AnyObject] = [NSFontAttributeName: UIFont.iconFont(font, ofSize: fontSize)]
         let currentTextAttributes: [String: AnyObject]? = self.titleTextAttributesForState(.Normal)
 
         if currentTextAttributes != nil {
