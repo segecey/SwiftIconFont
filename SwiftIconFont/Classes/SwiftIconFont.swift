@@ -8,56 +8,29 @@
 
 import UIKit
 
-public enum Fonts {
-    case FontAwesome
-    case Iconic
-    case Ionicon
-    case Octicon
-    case Themify
-    case MapIcon
-    case MaterialIcon
+public enum Fonts: String {
+    case FontAwesome = "FontAwesome"
+    case Iconic = "open-iconic"
+    case Ionicon = "Ionicons"
+    case Octicon = "octicons"
+    case Themify = "themify"
+    case MapIcon = "map-icons"
+    case MaterialIcon = "MaterialIcons-Regular"
 }
 
 public extension UIFont{
 
     static func iconFontOfSize(font: Fonts, fontSize: CGFloat) -> UIFont {
-        let fontName = UIFont.getFontName(font)
+        let fontName = font.rawValue
         var token: dispatch_once_t = 0
         if (UIFont.fontNamesForFamilyName(fontName).count == 0) {
             dispatch_once(&token) {
                 FontLoader.loadFont(fontName)
             }
         }
-        return UIFont(name: UIFont.getFontName(font), size: fontSize)!
+        return UIFont(name: font.rawValue, size: fontSize)!
     }
 
-    class func getFontName(font: Fonts) -> String {
-        var fontName: String = ""
-        switch(font) {
-        case Fonts.FontAwesome:
-            fontName = "FontAwesome"
-            break
-        case .Iconic:
-            fontName = "open-iconic"
-            break
-        case .Ionicon:
-            fontName = "Ionicons"
-            break
-        case .Octicon:
-            fontName = "octicons"
-            break
-        case .Themify:
-            fontName = "themify"
-            break
-        case .MapIcon:
-            fontName = "map-icons"
-            break
-        case .MaterialIcon:
-            fontName = "MaterialIcons-Regular"
-            break
-        }
-        return fontName
-    }
 }
 
 public extension UIImage
@@ -83,66 +56,66 @@ public extension String {
     public static func getIcon(font: Fonts, code: String) -> String? {
         switch font {
         case .FontAwesome:
-            return fontAwesomeIconWithCode(code)
+            return fontAwesomeIcon(code: code)
         case .Iconic:
-            return fontIconicIconWithCode(code)
+            return fontIconicIcon(code: code)
         case .Ionicon:
-            return fontIonIconWithCode(code)
+            return fontIonIcon(code: code)
         case .MapIcon:
-            return fontMapIconWithCode(code)
+            return fontMapIcon(code: code)
         case .MaterialIcon:
-            return fontMaterialIconWithCode(code)
+            return fontMaterialIcon(code: code)
         case .Octicon:
-            return fontOcticonWithCode(code)
+            return fontOcticon(code: code)
         case .Themify:
-            return fontThemifyIconWithCode(code)
+            return fontThemifyIcon(code: code)
         }
     }
 
-    public static func fontAwesomeIconWithCode(code: String) -> String? {
+    public static func fontAwesomeIcon(code code: String) -> String? {
         if let icon = fontAwesomeIconArr[code] {
             return icon
         }
         return nil
     }
-
-    public static func fontOcticonWithCode(code: String) -> String? {
+    
+    public static func fontOcticon(code code: String) -> String? {
         if let icon = octiconArr[code] {
             return icon
         }
         return nil
     }
-
-    public static func fontIonIconWithCode(code: String) -> String? {
+    
+    public static func fontIonIcon(code code: String) -> String? {
         if let icon = ioniconArr[code] {
             return icon
         }
         return nil
     }
-
-    public static func fontIconicIconWithCode(code: String) -> String? {
+    
+    public static func fontIconicIcon(code code: String) -> String? {
         if let icon = iconicIconArr[code] {
             return icon
         }
         return nil
     }
-
-
-    public static func fontThemifyIconWithCode(code: String) -> String? {
+    
+    
+    public static func fontThemifyIcon(code code: String) -> String? {
         if let icon = temifyIconArr[code] {
             return icon
         }
         return nil
     }
-
-    public static func fontMapIconWithCode(code: String) -> String? {
+    
+    public static func fontMapIcon(code code: String) -> String? {
         if let icon = mapIconArr[code] {
             return icon
         }
         return nil
     }
-
-    public static func fontMaterialIconWithCode(code: String) -> String? {
+    
+    public static func fontMaterialIcon(code code: String) -> String? {
         if let icon = materialIconArr[code] {
             return icon
         }
