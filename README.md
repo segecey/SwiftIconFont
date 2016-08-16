@@ -60,14 +60,14 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Fonts
 ````swift
-public enum Fonts {
-    case FontAwesome
-    case Iconic
-    case Ionicon
-    case Octicon
-    case Themify
-    case MapIcon
-    case MaterialIcon
+public enum Fonts: String {
+    case FontAwesome = "FontAwesome"
+    case Iconic = "open-iconic"
+    case Ionicon = "Ionicons"
+    case Octicon = "octicons"
+    case Themify = "themify"
+    case MapIcon = "map-icons"
+    case MaterialIcon = "MaterialIcons-Regular"
 }
 ````
 
@@ -102,8 +102,8 @@ The lazy way, just set your UILabel, UITextField, UIButton, UITextView, UIBarBut
 ````swift
 import SwiftIconFont
 
-label.font = UIFont.iconFontOfSize(.FontAwesome, fontSize: 50.0)
-label.text = String.fontAwesomeIconWithCode("twitter")
+label.font = UIFont.UIFont(from: .FontAwesome, ofSize: 50.0)
+label.text = String.fontAwesomeIcon(code: "twitter")
 ````
 
 
@@ -112,7 +112,7 @@ label.text = String.fontAwesomeIconWithCode("twitter")
 ````swift
 import SwiftIconFont
 
-twitterBarButton.setFontIcon(Fonts.FontAwesome, icon: "twitter", fontSize: 20)
+twitterBarButton.icon(from: .FontAwesome, code: "twitter", ofSize: 20)
 ````
 
 ####UITabBarItem (No Custom Class)
@@ -120,7 +120,7 @@ twitterBarButton.setFontIcon(Fonts.FontAwesome, icon: "twitter", fontSize: 20)
 ````swift
 import SwiftIconFont
 
-twitterTabBarButton.setFontIcon(Fonts.FontAwesome, iconCode: "twitter", imageSize: CGSizeMake(20, 20), fontSize: 20)
+twitterTabBarButton.icon(from: .FontAwesome, code: "twitter", imageSize: CGSizeMake(20, 20), ofSize: 20)
 ````
 
 ## Author
