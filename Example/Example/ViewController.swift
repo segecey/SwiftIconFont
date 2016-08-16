@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         testLabel1.parseIcon()
-        testLabel2.font = UIFont.iconFontOfSize(.FontAwesome, fontSize: 17.0)
+        testLabel2.font = UIFont.icon(from: .FontAwesome, ofSize: 17.0)
         testLabel2.text = String.fontAwesomeIcon(code: "twitter")
         // Do any additional setup after loading the view, typically from a nib.
     }
