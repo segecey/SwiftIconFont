@@ -17,7 +17,7 @@ public enum Fonts: String {
     case MapIcon = "map-icons"
     case MaterialIcon = "MaterialIcons-Regular"
     
-    var fontRealName: String {
+    var fontName: String {
         switch self {
         case .FontAwesome:
             return "FontAwesome"
@@ -42,7 +42,7 @@ public extension UIFont{
     static func icon(from font: Fonts, ofSize size: CGFloat) -> UIFont {
         let fontName = font.rawValue
         var token: dispatch_once_t = 0
-        if (UIFont.fontNamesForFamilyName(font.fontRealName).count == 0) {
+        if (UIFont.fontNamesForFamilyName(font.fontName).count == 0) {
             dispatch_once(&token) {
                 FontLoader.loadFont(fontName)
             }
