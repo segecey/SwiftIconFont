@@ -16,14 +16,33 @@ public enum Fonts: String {
     case Themify = "themify"
     case MapIcon = "map-icons"
     case MaterialIcon = "MaterialIcons-Regular"
+    
+    var fontRealName: String {
+        switch self {
+        case .FontAwesome:
+            return "FontAwesome"
+        case .Iconic:
+            return "Icons"
+        case .Ionicon:
+            return "Ionicons"
+        case .Octicon:
+            return "octicons"
+        case .Themify:
+            return "Themify"
+        case .MapIcon:
+            return "map-icons"
+        case .MaterialIcon:
+            return "Material Icons"
+        }
+    }
+    
 }
-
 public extension UIFont{
     
     static func icon(from font: Fonts, ofSize size: CGFloat) -> UIFont {
         let fontName = font.rawValue
         var token: dispatch_once_t = 0
-        if (UIFont.fontNamesForFamilyName(fontName).count == 0) {
+        if (UIFont.fontNamesForFamilyName(font.fontRealName).count == 0) {
             dispatch_once(&token) {
                 FontLoader.loadFont(fontName)
             }
