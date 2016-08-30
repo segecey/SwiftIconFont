@@ -37,15 +37,12 @@ public enum Fonts: String {
     }
     
 }
-public extension UIFont{
+public extension UIFont {
     
     static func icon(from font: Fonts, ofSize size: CGFloat) -> UIFont {
         let fontName = font.rawValue
-        var token: dispatch_once_t = 0
-        if (UIFont.fontNamesForFamilyName(font.fontName).count == 0) {
-            dispatch_once(&token) {
-                FontLoader.loadFont(fontName)
-            }
+        if (UIFont.fontNames(forFamilyName: font.fontName).count == 0) {
+            FontLoader.loadFontIfNeeded(fontName)
         }
         return UIFont(name: font.rawValue, size: size)!
     }
@@ -60,13 +57,13 @@ public extension UIImage
         
         UIGraphicsBeginImageContextWithOptions(imageSize, false, 0)
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = NSTextAlignment.Center
+        paragraphStyle.alignment = NSTextAlignment.center
         
-        drawText!.drawInRect(CGRectMake(0, 0, imageSize.width, imageSize.height), withAttributes: [NSFontAttributeName : UIFont.icon(from: font, ofSize: size)])
+        drawText!.draw(in: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height), withAttributes: [NSFontAttributeName : UIFont.icon(from: font, ofSize: size)])
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return image
+        return image!
     }
 }
 
@@ -91,28 +88,28 @@ public extension String {
         }
     }
     
-    public static func fontAwesomeIcon(code code: String) -> String? {
+    public static func fontAwesomeIcon(code: String) -> String? {
         if let icon = fontAwesomeIconArr[code] {
             return icon
         }
         return nil
     }
     
-    public static func fontOcticon(code code: String) -> String? {
+    public static func fontOcticon(code: String) -> String? {
         if let icon = octiconArr[code] {
             return icon
         }
         return nil
     }
     
-    public static func fontIonIcon(code code: String) -> String? {
+    public static func fontIonIcon(code: String) -> String? {
         if let icon = ioniconArr[code] {
             return icon
         }
         return nil
     }
     
-    public static func fontIconicIcon(code code: String) -> String? {
+    public static func fontIconicIcon(code: String) -> String? {
         if let icon = iconicIconArr[code] {
             return icon
         }
@@ -120,21 +117,21 @@ public extension String {
     }
     
     
-    public static func fontThemifyIcon(code code: String) -> String? {
+    public static func fontThemifyIcon(code: String) -> String? {
         if let icon = temifyIconArr[code] {
             return icon
         }
         return nil
     }
     
-    public static func fontMapIcon(code code: String) -> String? {
+    public static func fontMapIcon(code: String) -> String? {
         if let icon = mapIconArr[code] {
             return icon
         }
         return nil
     }
     
-    public static func fontMaterialIcon(code code: String) -> String? {
+    public static func fontMaterialIcon(code: String) -> String? {
         if let icon = materialIconArr[code] {
             return icon
         }
@@ -142,19 +139,19 @@ public extension String {
     }
 }
 
-func replace(with string: NSString) -> NSString {
-    if string.lowercaseString.rangeOfString("-") != nil {
-        return string.stringByReplacingOccurrencesOfString("-", withString: "_")
+func replaceHyphens(with string: NSString) -> NSString {
+    if string.lowercased.range(of: "-") != nil {
+        return string.replacingOccurrences(of: "-", with: "_") as NSString
     }
     return string
 }
 
 
-func getAttributedString(text: NSString, ofSize size: CGFloat) -> NSAttributedString {
+func getAttributedString(_ text: NSString, ofSize size: CGFloat) -> NSAttributedString {
     let textRange = NSMakeRange(0, text.length)
     let attributedString = NSMutableAttributedString(string: text as String)
     
-    text.enumerateSubstringsInRange(textRange, options: .ByWords, usingBlock: {
+    text.enumerateSubstrings(in: textRange, options: .byWords, using: {
         (substring, substringRange, _, _) in
         var splitArr = ["", ""]
         splitArr = substring!.characters.split{$0 == ":"}.map(String.init)
@@ -162,11 +159,11 @@ func getAttributedString(text: NSString, ofSize size: CGFloat) -> NSAttributedSt
             return
         }
         
-        let fontPrefix: String  = splitArr[0].lowercaseString
+        let fontPrefix: String  = splitArr[0].lowercased()
         var fontCode: String = splitArr[1]
         
-        if fontCode.lowercaseString.rangeOfString("_") != nil {
-            fontCode = fontCode.stringByReplacingOccurrencesOfString("_", withString: "-")
+        if fontCode.lowercased().range(of: "_") != nil {
+            fontCode = fontCode.replacingOccurrences(of: "_", with: "-")
         }
         
         
@@ -197,7 +194,7 @@ func getAttributedString(text: NSString, ofSize size: CGFloat) -> NSAttributedSt
         }
         
         if let _ = fontArr[fontCode] {
-            attributedString.replaceCharactersInRange(substringRange, withString: String.getIcon(from: fontType, code: fontCode)!)
+            attributedString.replaceCharacters(in: substringRange, with: String.getIcon(from: fontType, code: fontCode)!)
             let newRange = NSRange(location: substringRange.location, length: 1)
             attributedString.addAttribute(NSFontAttributeName, value: UIFont.icon(from: fontType, ofSize: size), range: newRange)
         }
@@ -207,11 +204,11 @@ func getAttributedString(text: NSString, ofSize size: CGFloat) -> NSAttributedSt
     return attributedString
 }
 
-func GetIconIndexWithSelectedIcon(icon: String) -> String {
+func GetIconIndexWithSelectedIcon(_ icon: String) -> String {
     let text = icon as NSString
     let textRange = NSMakeRange(0, text.length)
     var iconIndex: String = ""
-    text.enumerateSubstringsInRange(textRange, options: .ByWords, usingBlock: {
+    text.enumerateSubstrings(in: textRange, options: .byWords, using: {
         (substring, substringRange, _, _) in
         var splitArr = ["", ""]
         splitArr = substring!.characters.split{$0 == ":"}.map(String.init)
@@ -221,8 +218,8 @@ func GetIconIndexWithSelectedIcon(icon: String) -> String {
         
         var fontCode: String = splitArr[1]
         
-        if fontCode.lowercaseString.rangeOfString("_") != nil {
-            fontCode = fontCode.stringByReplacingOccurrencesOfString("_", withString: "-")
+        if fontCode.lowercased().range(of: "_") != nil {
+            fontCode = fontCode.replacingOccurrences(of: "_", with: "-")
         }
         iconIndex = fontCode
     })
@@ -230,12 +227,12 @@ func GetIconIndexWithSelectedIcon(icon: String) -> String {
     return iconIndex
 }
 
-func GetFontTypeWithSelectedIcon(icon: String) -> Fonts {
+func GetFontTypeWithSelectedIcon(_ icon: String) -> Fonts {
     let text = icon as NSString
     let textRange = NSMakeRange(0, text.length)
     var fontType: Fonts = Fonts.FontAwesome
     
-    text.enumerateSubstringsInRange(textRange, options: .ByWords, usingBlock: {
+    text.enumerateSubstrings(in: textRange, options: .byWords, using: {
         (substring, substringRange, _, _) in
         var splitArr = ["", ""]
         splitArr = substring!.characters.split{$0 == ":"}.map(String.init)
@@ -243,11 +240,11 @@ func GetFontTypeWithSelectedIcon(icon: String) -> Fonts {
             return
         }
         
-        let fontPrefix: String  = splitArr[0].lowercaseString
+        let fontPrefix: String  = splitArr[0].lowercased()
         var fontCode: String = splitArr[1]
         
-        if fontCode.lowercaseString.rangeOfString("_") != nil {
-            fontCode = fontCode.stringByReplacingOccurrencesOfString("_", withString: "-")
+        if fontCode.lowercased().range(of: "_") != nil {
+            fontCode = fontCode.replacingOccurrences(of: "_", with: "-")
         }
         
         
@@ -277,14 +274,14 @@ func GetFontTypeWithSelectedIcon(icon: String) -> Fonts {
 
 public extension UILabel {
     func parseIcon() {
-        let text = replace(with: self.text! as NSString)
+        let text = replaceHyphens(with: self.text! as NSString)
         self.attributedText = getAttributedString(text, ofSize: self.font!.pointSize)
     }
 }
 
 public extension UITextView {
     func parseIcon() {
-        let text = replace(with: self.text! as NSString)
+        let text = replaceHyphens(with: self.text! as NSString)
         self.attributedText = getAttributedString(text, ofSize: self.font!.pointSize)
     }
 }
@@ -292,22 +289,22 @@ public extension UITextView {
 
 public extension UITextField {
     func parseIcon() {
-        let text = replace(with: self.text! as NSString)
+        let text = replaceHyphens(with: self.text! as NSString)
         self.attributedText = getAttributedString(text, ofSize: self.font!.pointSize)
     }
 }
 
 public extension UIButton {
     func parseIcon() {
-        let text = replace(with: (self.currentTitle)! as NSString)
-        self.setAttributedTitle(getAttributedString(text, ofSize: (self.titleLabel?.font!.pointSize)!), forState: .Normal)
+        let text = replaceHyphens(with: (self.currentTitle)! as NSString)
+        self.setAttributedTitle(getAttributedString(text, ofSize: (self.titleLabel?.font!.pointSize)!), for: UIControlState())
     }
 }
 
 public extension UIBarButtonItem {
     func icon(from font: Fonts, code: String, ofSize size: CGFloat){
-        var textAttributes: [String: AnyObject] = [NSFontAttributeName: UIFont.icon(from: font, ofSize: size)]
-        let currentTextAttributes: [String: AnyObject]? = self.titleTextAttributesForState(.Normal)
+        var textAttributes: [String: Any] = [NSFontAttributeName: UIFont.icon(from: font, ofSize: size)]
+        let currentTextAttributes: [String: Any]? = self.titleTextAttributes(for: UIControlState())
         
         if currentTextAttributes != nil {
             for (key, value) in currentTextAttributes! {
@@ -316,7 +313,7 @@ public extension UIBarButtonItem {
                 }
             }
         }
-        self.setTitleTextAttributes(textAttributes, forState: .Normal)
+        self.setTitleTextAttributes(textAttributes, for: UIControlState())
         self.title = String.getIcon(from: font, code: code)
     }
 }
