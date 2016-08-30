@@ -148,15 +148,18 @@ func replaceHyphens(with string: NSString) -> NSString {
 
 
 func getAttributedString(_ text: NSString, ofSize size: CGFloat) -> NSAttributedString {
-    let textRange = NSMakeRange(0, text.length)
     let attributedString = NSMutableAttributedString(string: text as String)
     
-    text.enumerateSubstrings(in: textRange, options: .byWords, using: {
-        (substring, substringRange, _, _) in
+    var characters = NSMutableCharacterSet.whitespacesAndNewlines
+    let punctuation = NSCharacterSet.punctuationCharacters
+    characters.formUnion(punctuation)
+    characters.remove(charactersIn: "':-_")
+    
+    for substring in text.components(separatedBy: characters) {
         var splitArr = ["", ""]
-        splitArr = substring!.characters.split{$0 == ":"}.map(String.init)
+        splitArr = substring.characters.split{$0 == ":"}.map(String.init)
         if splitArr.count == 1{
-            return
+            continue
         }
         
         let fontPrefix: String  = splitArr[0].lowercased()
@@ -194,12 +197,12 @@ func getAttributedString(_ text: NSString, ofSize size: CGFloat) -> NSAttributed
         }
         
         if let _ = fontArr[fontCode] {
+            let substringRange: NSRange = text.range(of: substring)
             attributedString.replaceCharacters(in: substringRange, with: String.getIcon(from: fontType, code: fontCode)!)
             let newRange = NSRange(location: substringRange.location, length: 1)
             attributedString.addAttribute(NSFontAttributeName, value: UIFont.icon(from: fontType, ofSize: size), range: newRange)
         }
-        
-    })
+    }
     
     return attributedString
 }
@@ -282,7 +285,8 @@ public extension UILabel {
 public extension UITextView {
     func parseIcon() {
         let text = replaceHyphens(with: self.text! as NSString)
-        self.attributedText = getAttributedString(text, ofSize: self.font!.pointSize)
+        let attributedString = getAttributedString(text, ofSize: self.font!.pointSize)
+        self.attributedText = attributedString
     }
 }
 
