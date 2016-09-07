@@ -158,7 +158,7 @@ func getAttributedString(_ text: NSString, ofSize size: CGFloat) -> NSAttributed
     for substring in text.components(separatedBy: characters) {
         var splitArr = ["", ""]
         splitArr = substring.characters.split{$0 == ":"}.map(String.init)
-        if splitArr.count == 1{
+        if splitArr.count < 2 {
             continue
         }
         
