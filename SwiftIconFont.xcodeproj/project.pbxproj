@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BEDBB8CC1D92C73100369E9E /* EntypoIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDBB8CB1D92C73100369E9E /* EntypoIcons.swift */; };
 		DA8D9D151D345A3800F5E693 /* SwiftIconFont.h in Headers */ = {isa = PBXBuildFile; fileRef = DA8D9D141D345A3800F5E693 /* SwiftIconFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA8D9D331D345A4500F5E693 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA8D9D2C1D345A4500F5E693 /* FontAwesome.ttf */; };
 		DA8D9D341D345A4500F5E693 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA8D9D2D1D345A4500F5E693 /* Ionicons.ttf */; };
@@ -33,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BEDBB8CA1D92C72C00369E9E /* entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = entypo.ttf; sourceTree = "<group>"; };
+		BEDBB8CB1D92C73100369E9E /* EntypoIcons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntypoIcons.swift; sourceTree = "<group>"; };
 		DA8D9D111D345A3800F5E693 /* SwiftIconFont.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftIconFont.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8D9D141D345A3800F5E693 /* SwiftIconFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftIconFont.h; sourceTree = "<group>"; };
 		DA8D9D161D345A3800F5E693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,6 +104,7 @@
 		DA8D9D2B1D345A4500F5E693 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BEDBB8CA1D92C72C00369E9E /* entypo.ttf */,
 				DA8D9D2C1D345A4500F5E693 /* FontAwesome.ttf */,
 				DA8D9D2D1D345A4500F5E693 /* Ionicons.ttf */,
 				DA8D9D2E1D345A4500F5E693 /* map-icons.ttf */,
@@ -115,6 +119,7 @@
 		DA8D9D3A1D345A4900F5E693 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BEDBB8CB1D92C73100369E9E /* EntypoIcons.swift */,
 				DA8D9D3B1D345A4900F5E693 /* FontAwesome.swift */,
 				DA8D9D3C1D345A4900F5E693 /* FontLoader.swift */,
 				DA8D9D3D1D345A4900F5E693 /* Iconic.swift */,
@@ -228,6 +233,7 @@
 				DA8D9D531D345A4900F5E693 /* SwiftIconFont.swift in Sources */,
 				DA8D9D581D345A4900F5E693 /* ThemifyIcon.swift in Sources */,
 				DA8D9D551D345A4900F5E693 /* SwiftIconTabBarItem.swift in Sources */,
+				BEDBB8CC1D92C73100369E9E /* EntypoIcons.swift in Sources */,
 				DA8D9D561D345A4900F5E693 /* SwiftIconTextField.swift in Sources */,
 				DA8D9D4B1D345A4900F5E693 /* FontLoader.swift in Sources */,
 				DA8D9D571D345A4900F5E693 /* SwiftIconTextView.swift in Sources */,
