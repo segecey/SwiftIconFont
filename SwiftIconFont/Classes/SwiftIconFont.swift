@@ -16,6 +16,7 @@ public enum Fonts: String {
     case Themify = "themify"
     case MapIcon = "map-icons"
     case MaterialIcon = "MaterialIcons-Regular"
+    case Entypo = "entypo"
     
     var fontName: String {
         switch self {
@@ -33,6 +34,8 @@ public enum Fonts: String {
             return "map-icons"
         case .MaterialIcon:
             return "Material Icons"
+        case .Entypo:
+            return "Entypo"
         }
     }
     
@@ -85,6 +88,8 @@ public extension String {
             return fontOcticon(code: code)
         case .Themify:
             return fontThemifyIcon(code: code)
+        case .Entypo:
+            return fontEntypoIcon(code: code)
         }
     }
     
@@ -133,6 +138,13 @@ public extension String {
     
     public static func fontMaterialIcon(code: String) -> String? {
         if let icon = materialIconArr[code] {
+            return icon
+        }
+        return nil
+    }
+    
+    public static func fontEntypoIcon(code:String) -> String? {
+        if let icon = entypoIconsArr[code] {
             return icon
         }
         return nil
@@ -191,6 +203,9 @@ func getAttributedString(_ text: NSString, ofSize size: CGFloat) -> NSAttributed
         } else if fontPrefix == "ma" {
             fontType = Fonts.MaterialIcon
             fontArr = materialIconArr
+        } else if fontPrefix == "en" {
+            fontType = Fonts.Entypo
+            fontArr = entypoIconsArr
         }
         
         if let _ = fontArr[fontCode] {
@@ -262,6 +277,8 @@ func GetFontTypeWithSelectedIcon(_ icon: String) -> Fonts {
             fontType = Fonts.MapIcon
         } else if fontPrefix == "ma" {
             fontType = Fonts.MaterialIcon
+        } else if fontPrefix == "en" {
+            fontType = Fonts.Entypo
         }
         
     })
