@@ -131,6 +131,10 @@ Sedat Gokbek CIFTCI, me@sedat.ninja
 
 SwiftIconFont is available under the MIT license. See the LICENSE file for more info.
 
+## Thanks
+
+Thanks to @josejuanqm for their awesome work on [JQSwiftIcon](https://github.com/josejuanqm/JQSwiftIcon).
+
 ## Contributing
 
 1. Fork it (http://github.com/0x73/SwiftIconFont/fork)
