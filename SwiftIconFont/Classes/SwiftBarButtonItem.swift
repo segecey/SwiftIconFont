@@ -17,7 +17,7 @@ class SwiftBarButtonItem: UIBarButtonItem {
         parseIcon()
     }
 
-    private func parseIcon() {
+    fileprivate func parseIcon() {
         self.icon(from: GetFontTypeWithSelectedIcon(Icon), code: GetIconIndexWithSelectedIcon(Icon), ofSize: FontSize)
     }
 }

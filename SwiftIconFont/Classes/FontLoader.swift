@@ -10,25 +10,34 @@ import UIKit
 import CoreText
 
 class FontLoader: NSObject {
-    class func loadFont(fontName: String) {
-        let bundle = NSBundle(forClass: FontLoader.self)
-        var fontURL = NSURL()
-        for filePath : String in bundle.pathsForResourcesOfType("ttf", inDirectory: nil) {
+    class func loadFont(_ fontName: String) {
+        let bundle = Bundle(for: FontLoader.self)
+        var fontURL = NSURL(string: "")
+        for filePath : String in bundle.paths(forResourcesOfType: "ttf", inDirectory: nil) {
             let filename = NSURL(fileURLWithPath: filePath).lastPathComponent!
-            if filename.lowercaseString.rangeOfString(fontName.lowercaseString) != nil {
+            if filename.lowercased().range(of: fontName.lowercased()) != nil {
                 fontURL = NSURL(fileURLWithPath: filePath)
             }
         }
 
-        let data = NSData(contentsOfURL: fontURL)!
-        let provider = CGDataProviderCreateWithCFData(data)
-        let font = CGFontCreateWithDataProvider(provider)!
-
-        var error: Unmanaged<CFError>?
-        if !CTFontManagerRegisterGraphicsFont(font, &error) {
-            let errorDescription: CFStringRef = CFErrorCopyDescription(error!.takeUnretainedValue())
-            let nsError = error!.takeUnretainedValue() as AnyObject as! NSError
-            NSException(name: NSInternalInconsistencyException, reason: errorDescription as String, userInfo: [NSUnderlyingErrorKey: nsError]).raise()
+        do
+        {
+            let data = try Data(contentsOf: (fontURL as! URL))
+            
+            let provider = CGDataProvider(data: data as CFData)
+            let font = CGFont.init(provider!)
+            
+            var error: Unmanaged<CFError>?
+            if !CTFontManagerRegisterGraphicsFont(font, &error) {
+                let errorDescription: CFString = CFErrorCopyDescription(error!.takeUnretainedValue())
+                let nsError = error!.takeUnretainedValue() as AnyObject as! NSError
+                NSException(name: NSExceptionName.internalInconsistencyException, reason: errorDescription as String, userInfo: [NSUnderlyingErrorKey: nsError]).raise()
+            }
+            
+        } catch {
+        
         }
+        
+        
     }
 }
