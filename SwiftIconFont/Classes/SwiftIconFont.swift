@@ -66,7 +66,7 @@ public extension UIImage
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = NSTextAlignment.center
         
-		
+		drawText!.draw(in: CGRect(x:0, y:0, width:imageSize.width, height:imageSize.height), withAttributes: [NSFontAttributeName : UIFont.icon(from: font, ofSize: size), NSParagraphStyleAttributeName: paragraphStyle])
         
 		let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -167,7 +167,9 @@ func getAttributedString(_ text: NSString, ofSize size: CGFloat) -> NSAttributed
             continue
         }
         
-        var substringRange = text.range(of: substring)
+        
+        
+        let substringRange = text.range(of: substring)
         
         let fontPrefix: String  = splitArr[0].lowercased()
         var fontCode: String = splitArr[1]
@@ -176,6 +178,8 @@ func getAttributedString(_ text: NSString, ofSize size: CGFloat) -> NSAttributed
             fontCode = (fontCode as NSString).replacingOccurrences(of: "_", with: "-")
         }
         
+        
+        print(fontCode, fontPrefix)
         
         var fontType: Fonts = Fonts.FontAwesome
         var fontArr: [String: String] = ["": ""]
