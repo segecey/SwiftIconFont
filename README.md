@@ -126,14 +126,12 @@ twitterTabBarButton.icon(from: .FontAwesome, code: "twitter", imageSize: CGSizeM
 ## Author
 
 Sedat Gokbek CIFTCI, me@sedat.ninja
+Jose Quintero, [JQSwiftIcon](https://github.com/josejuanqm)
 
 ## License
 
 SwiftIconFont is available under the MIT license. See the LICENSE file for more info.
 
-## Thanks
-
-Thanks to @josejuanqm for their awesome work on [JQSwiftIcon](https://github.com/josejuanqm/JQSwiftIcon).
 
 ## Contributing
 
