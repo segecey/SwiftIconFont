@@ -178,9 +178,6 @@ func getAttributedString(_ text: NSString, ofSize size: CGFloat) -> NSAttributed
             fontCode = (fontCode as NSString).replacingOccurrences(of: "_", with: "-")
         }
         
-        
-        print(fontCode, fontPrefix)
-        
         var fontType: Fonts = Fonts.FontAwesome
         var fontArr: [String: String] = ["": ""]
         
