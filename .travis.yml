@@ -1,17 +1,17 @@
 language: objective-c
 osx_image: xcode8
 
-rvm: 2.2.2
 before_install:
-    - gem install cocoapods
-    - pod setup > /dev/null
-    - gem install xcpretty
+  - gem install cocoapods
+  - gem install xcpretty
+  - pod install --project-directory=Example
 
-#podfile: Example/Podfile
+cache: cocoapods
+podfile: Example/Podfile
 xcode_workspace: Example/Example.xcworkspace
 xcode_scheme: Example
 xcode_sdk:
     - iphonesimulator
 
 script:
-   - xcodebuild -project SwiftIconFont.xcodeproj -scheme SwiftIconFont -sdk iphonesimulator build test | xcpretty
+   - xcodebuild -workspace Example/Example.xcworkspace -scheme Example -sdk iphonesimulator build test | xcpretty
