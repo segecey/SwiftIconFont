@@ -126,7 +126,7 @@ twitterTabBarButton.icon(from: .FontAwesome, code: "twitter", imageSize: CGSizeM
 ## Author
 
 * Sedat Gokbek CIFTCI, me@sedat.ninja
-* Jose Quintero, [JQSwiftIcon](https://github.com/josejuanqm)
+* Jose Quintero, [@josejuanqm](https://github.com/josejuanqm)
 
 ## License
 
