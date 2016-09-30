@@ -12,17 +12,17 @@ import CoreText
 class FontLoader: NSObject {
     class func loadFont(_ fontName: String) {
         let bundle = Bundle(for: FontLoader.self)
-        var fontURL = NSURL(string: "")
+        var fontURL = URL(string: "")
         for filePath : String in bundle.paths(forResourcesOfType: "ttf", inDirectory: nil) {
             let filename = NSURL(fileURLWithPath: filePath).lastPathComponent!
             if filename.lowercased().range(of: fontName.lowercased()) != nil {
-                fontURL = NSURL(fileURLWithPath: filePath)
+                fontURL = NSURL(fileURLWithPath: filePath) as URL
             }
         }
 
         do
         {
-            let data = try Data(contentsOf: (fontURL as! URL))
+            let data = try Data(contentsOf: fontURL!)
             
             let provider = CGDataProvider(data: data as CFData)
             let font = CGFont.init(provider!)

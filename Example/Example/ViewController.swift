@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         testLabel1.parseIcon()
         testLabel2.font = UIFont.icon(from: .FontAwesome, ofSize: 17.0)
-        testLabel2.text = String.fontAwesomeIcon(code: "twitter")
+        testLabel2.text = String.fontAwesomeIcon("twitter")
         // Do any additional setup after loading the view, typically from a nib.
     }
 
