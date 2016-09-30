@@ -1,17 +1,17 @@
-# references:
-# * http://www.objc.io/issue-6/travis-ci.html
-# * https://github.com/supermarin/xcpretty#usage
-
 language: objective-c
 osx_image: xcode8
-xcode_workspace: Example/Example.xcworkspace #3
-xcode_scheme: Example #4
-xcode_sdk: iphonesimulator10.0 #5
 
-# cache: cocoapods
-# podfile: Example/Podfile
-# before_install:
-# - gem install cocoapods # Since Travis is not always on latest version
-# - pod install --project-directory=Example
+rvm: 2.2.2
+before_install:
+    - gem install cocoapods
+    - pod setup > /dev/null
+    - gem install xcpretty
+
+#podfile: Example/Podfile
+xcode_workspace: Example/Example.xcworkspace
+xcode_scheme: Example
+xcode_sdk:
+    - iphonesimulator
+
 script:
-- pod lib lint
+   - xcodebuild -project SwiftIconFont.xcodeproj -scheme SwiftIconFont -sdk iphonesimulator build test | xcpretty
