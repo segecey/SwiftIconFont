@@ -41,7 +41,6 @@ public extension UIFont{
     
     static func icon(from font: Fonts, ofSize size: CGFloat) -> UIFont {
         let fontName = font.rawValue
-        var token: Int = 0
         if (UIFont.fontNames(forFamilyName: font.fontName).count == 0)
         {
             /*
@@ -157,7 +156,6 @@ func replace(withText string: NSString) -> NSString {
 
 
 func getAttributedString(_ text: NSString, ofSize size: CGFloat) -> NSAttributedString {
-    let textRange = NSMakeRange(0, text.length)
     let attributedString = NSMutableAttributedString(string: text as String)
     
     for substring in ((text as String).characters.split{$0 == " "}.map(String.init)) {
@@ -217,7 +215,6 @@ func getAttributedString(_ text: NSString, ofSize size: CGFloat) -> NSAttributed
 
 func GetIconIndexWithSelectedIcon(_ icon: String) -> String {
     let text = icon as NSString
-    let textRange = NSMakeRange(0, text.length)
     var iconIndex: String = ""
     
     for substring in ((text as String).characters.split{$0 == " "}.map(String.init)) {
@@ -240,7 +237,6 @@ func GetIconIndexWithSelectedIcon(_ icon: String) -> String {
 
 func GetFontTypeWithSelectedIcon(_ icon: String) -> Fonts {
     let text = icon as NSString
-    let textRange = NSMakeRange(0, text.length)
     var fontType: Fonts = Fonts.FontAwesome
     
     for substring in ((text as String).characters.split{$0 == " "}.map(String.init)) {
