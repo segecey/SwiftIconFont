@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Foundation
 import CoreText
 
 class FontLoader: NSObject {
     class func loadFont(_ fontName: String) {
+        
         let bundle = Bundle(for: FontLoader.self)
         var fontURL = URL(string: "")
         for filePath : String in bundle.paths(forResourcesOfType: "ttf", inDirectory: nil) {
@@ -19,7 +21,7 @@ class FontLoader: NSObject {
                 fontURL = NSURL(fileURLWithPath: filePath) as URL
             }
         }
-
+        
         do
         {
             let data = try Data(contentsOf: fontURL!)
@@ -35,7 +37,7 @@ class FontLoader: NSObject {
             }
             
         } catch {
-        
+            
         }
         
         

@@ -166,7 +166,6 @@ func getAttributedString(_ text: NSString, ofSize size: CGFloat) -> NSAttributed
         }
         
         
-        
         let substringRange = text.range(of: substring)
         
         let fontPrefix: String  = splitArr[0].lowercased()
@@ -201,7 +200,6 @@ func getAttributedString(_ text: NSString, ofSize size: CGFloat) -> NSAttributed
             fontType = Fonts.MaterialIcon
             fontArr = materialIconArr
         }
-        
         
         if let _ = fontArr[fontCode] {
             attributedString.replaceCharacters(in: substringRange, with: String.getIcon(from: fontType, code: fontCode)!)

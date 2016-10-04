@@ -1,6 +1,7 @@
 Pod::Spec.new do |s|
   s.platform = :ios
   s.ios.deployment_target = '8.0'
+  s.tvos.deployment_target = '9.0'
   s.name = "SwiftIconFont"
   s.summary = "Icons fonts for Swift (FontAwesome, Ionicons, Octicons, Iconic)"
   s.requires_arc = true

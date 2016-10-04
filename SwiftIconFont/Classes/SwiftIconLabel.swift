@@ -13,7 +13,6 @@ class SwiftIconLabel: UILabel {
     @IBInspectable var Icon: String = "" {
         didSet {
             self.text = Icon
-            print("icon:", self.Icon)
             self.parseIcon()
         }
     }
