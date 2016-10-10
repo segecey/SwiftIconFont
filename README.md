@@ -3,7 +3,8 @@
 [![Build Status](https://travis-ci.org/0x73/SwiftIconFont.svg)](https://travis-ci.org/0x73/SwiftIconFont)
 [![Version](https://img.shields.io/cocoapods/v/SwiftIconFont.svg?style=flat)](http://cocoapods.org/pods/SwiftIconFont)
 [![License](https://img.shields.io/cocoapods/l/SwiftIconFont.svg?style=flat)](http://cocoapods.org/pods/SwiftIconFont)
-[![Platform](https://img.shields.io/cocoapods/p/SwiftIconFont.svg?style=flat)](http://cocoapods.org/pods/SwiftIconFont)
+[![Platform](https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS-green.svg)](http://cocoapods.org/pods/SwiftIconFont)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ## Installation
 
