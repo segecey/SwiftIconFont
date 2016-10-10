@@ -1,17 +1,17 @@
 language: objective-c
 osx_image: xcode8
 
-before_install:
-  - gem install cocoapods
-  - gem install xcpretty
-  - pod install --project-directory=Example
+#before_install:
+  #- gem install cocoapods
+  #- gem install xcpretty
+  #- pod install --project-directory=Example
 
-cache: cocoapods
-podfile: Example/Podfile
-xcode_workspace: Example/Example.xcworkspace
-xcode_scheme: Example
-xcode_sdk:
-    - iphonesimulator
+#cache: cocoapods
+#podfile: Example/Podfile
+#xcode_workspace: Example/Example.xcworkspace
+#xcode_scheme: Example
+#xcode_sdk:
+    #- iphonesimulator
 
 script:
-   - xcodebuild -workspace Example/Example.xcworkspace -scheme Example -sdk iphonesimulator build test | xcpretty
+   - set -o pipefail && xcodebuild -project 'SwiftIconFont.xcodeproj' -scheme 'SwiftIconFont' -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=10.0,name=iPhone 6' clean test build | xcpretty -c
