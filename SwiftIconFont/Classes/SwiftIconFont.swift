@@ -155,7 +155,7 @@ func replace(withText string: NSString) -> NSString {
 
 
 
-func getAttributedString(_ text: NSString, ofSize size: CGFloat) -> NSAttributedString {
+func getAttributedString(_ text: NSString, ofSize size: CGFloat) -> NSMutableAttributedString {
     let attributedString = NSMutableAttributedString(string: text as String)
     
     for substring in ((text as String).characters.split{$0 == " "}.map(String.init)) {
@@ -303,7 +303,10 @@ public extension UITextField {
 public extension UIButton {
     func parseIcon() {
         let text = replace(withText: (self.currentTitle)! as NSString)
-        self.setAttributedTitle(getAttributedString(text, ofSize: (self.titleLabel?.font!.pointSize)!), for: UIControlState())
+        let attrTitle = getAttributedString(text, ofSize: (self.titleLabel?.font!.pointSize)!)
+        let all = NSRange(location: 0, length: attrTitle.length)
+        attrTitle.addAttribute(NSForegroundColorAttributeName, value: self.currentTitleColor, range: all)
+        self.setAttributedTitle(attrTitle, for: UIControlState())
     }
 }
 
