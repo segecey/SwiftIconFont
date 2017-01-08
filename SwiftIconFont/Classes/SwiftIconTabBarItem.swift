@@ -13,9 +13,10 @@ class SwiftIconTabBarItem: UITabBarItem {
     @IBInspectable var Icon: String = ""
     @IBInspectable var FontSize: CGFloat = 20.0
     @IBInspectable var ImageSize: CGSize = CGSize(width: 20, height: 20)
+    @IBInspectable var IconColor: UIColor = UIColor.black
     
     override func awakeFromNib() {
-        icon(from: GetFontTypeWithSelectedIcon(Icon), code:GetIconIndexWithSelectedIcon(Icon), imageSize: ImageSize, ofSize: FontSize)
+        icon(from: GetFontTypeWithSelectedIcon(Icon), code:GetIconIndexWithSelectedIcon(Icon), iconColor: IconColor, imageSize: ImageSize, ofSize: FontSize)
     }
 
 }

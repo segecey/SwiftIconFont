@@ -325,7 +325,7 @@ public extension UIBarButtonItem {
 }
 
 public extension UITabBarItem {
-    func icon(from font: Fonts, code: String, imageSize: CGSize, ofSize size: CGFloat) {
-        self.image = UIImage.icon(from: font, code: code, imageSize: imageSize, ofSize: size)
+    func icon(from font: Fonts, code: String, iconColor: UIColor, imageSize: CGSize, ofSize size: CGFloat) {
+        self.image = UIImage.icon(from: font, iconColor: iconColor, code: code, imageSize: imageSize, ofSize: size)
     }
 }
