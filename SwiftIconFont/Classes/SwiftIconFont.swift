@@ -57,7 +57,7 @@ public extension UIFont{
 
 public extension UIImage
 {
-    public static func icon(from font: Fonts, code: String, imageSize: CGSize, ofSize size: CGFloat) -> UIImage
+    public static func icon(from font: Fonts, iconColor: UIColor, code: String, imageSize: CGSize, ofSize size: CGFloat) -> UIImage
     {
         let drawText = String.getIcon(from: font, code: code)
         
@@ -65,7 +65,7 @@ public extension UIImage
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = NSTextAlignment.center
         
-		drawText!.draw(in: CGRect(x:0, y:0, width:imageSize.width, height:imageSize.height), withAttributes: [NSFontAttributeName : UIFont.icon(from: font, ofSize: size), NSParagraphStyleAttributeName: paragraphStyle])
+		drawText!.draw(in: CGRect(x:0, y:0, width:imageSize.width, height:imageSize.height), withAttributes: [NSFontAttributeName : UIFont.icon(from: font, ofSize: size), NSParagraphStyleAttributeName: paragraphStyle, NSForegroundColorAttributeName: iconColor])
         
 		let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -325,7 +325,7 @@ public extension UIBarButtonItem {
 }
 
 public extension UITabBarItem {
-    func icon(from font: Fonts, code: String, imageSize: CGSize, ofSize size: CGFloat) {
-        self.image = UIImage.icon(from: font, code: code, imageSize: imageSize, ofSize: size)
+    func icon(from font: Fonts, code: String, iconColor: UIColor, imageSize: CGSize, ofSize size: CGFloat) {
+        self.image = UIImage.icon(from: font, iconColor: iconColor, code: code, imageSize: imageSize, ofSize: size)
     }
 }
