@@ -16,7 +16,12 @@ class SwiftIconButton: UIButton {
             self.parseIcon()
         }
     }
-    
+
+    override func setTitleColor(_ color: UIColor?, for state: UIControlState) {
+        super.setTitleColor(color, for: state)
+        self.parseIcon()
+    }
+
     override func awakeFromNib() {
         self.parseIcon()
     }
