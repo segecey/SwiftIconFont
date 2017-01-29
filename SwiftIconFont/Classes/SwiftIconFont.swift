@@ -161,7 +161,7 @@ func getAttributedString(_ text: NSString, ofSize size: CGFloat) -> NSMutableAtt
     for substring in ((text as String).characters.split{$0 == " "}.map(String.init)) {
         var splitArr = ["", ""]
         splitArr = substring.characters.split{$0 == ":"}.map(String.init)
-        if splitArr.count == 1 {
+        if splitArr.count < 2 {
             continue
         }
         
