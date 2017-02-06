@@ -302,7 +302,8 @@ public extension UITextField {
 
 public extension UIButton {
     func parseIcon() {
-        let text = replace(withText: (self.currentTitle)! as NSString)
+        guard let currentTitle = self.titleLabel?.text as? NSString else { return }
+        let text = replace(withText: currentTitle)
         let attrTitle = getAttributedString(text, ofSize: (self.titleLabel?.font!.pointSize)!)
         let all = NSRange(location: 0, length: attrTitle.length)
         attrTitle.addAttribute(NSForegroundColorAttributeName, value: self.currentTitleColor, range: all)
