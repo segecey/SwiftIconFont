@@ -245,7 +245,7 @@ public let materialIconArr: [String: String] = [
     "directions.railway":"\u{e534}",
     "directions.run":"\u{e566}",
     "directions.subway":"\u{e533}",
-    "directions.transit":"\u{e535}",
+    "directions.transit":"\u{e565}",
     "directions.walk":"\u{e536}",
     "disc.full":"\u{e610}",
     "dns":"\u{e875}",
