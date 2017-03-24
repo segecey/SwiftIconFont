@@ -76,7 +76,7 @@ public enum Fonts: String {
 > ###< Prefix >:< Icon >
 
 
-##Usage
+## Usage
 
 In your UILabel, UIButton or UITextField, set a text containing a placeholder anywhere you want the icon to be. Somethink like this
 
@@ -85,7 +85,7 @@ In your UILabel, UIButton or UITextField, set a text containing a placeholder an
 
 Then you can choose between 3 ways you can use SwiftIconFont.
 
-####1. No Custom Class
+#### 1. No Custom Class
 
 Simply import SwiftIconFont and call processIcons on any UILabel, UIButton or UITextField that has a placeholder.
 
@@ -93,12 +93,12 @@ Simply import SwiftIconFont and call processIcons on any UILabel, UIButton or UI
 label.parseIcon()
 ```
 
-####2. Custom Class
+#### 2. Custom Class
 
 The lazy way, just set your UILabel, UITextField, UIButton, UITextView, UIBarButtonItem class as SwiftIconLabel, SwiftIconTextField, SwiftIconButton, SwiftIconTextView, SwiftBarButtonItem, and thats it, your icons will be processed at runtime.
 
 
-####3. Programmatically
+#### 3. Programmatically
 
 ````swift
 import SwiftIconFont
@@ -108,7 +108,7 @@ label.text = String.fontAwesomeIcon(code: "twitter")
 ````
 
 
-####UIBarButtonItem (No Custom Class)
+#### UIBarButtonItem (No Custom Class)
 
 ````swift
 import SwiftIconFont
@@ -116,7 +116,7 @@ import SwiftIconFont
 twitterBarButton.icon(from: .FontAwesome, code: "twitter", ofSize: 20)
 ````
 
-####UITabBarItem (No Custom Class)
+#### UITabBarItem (No Custom Class)
 
 ````swift
 import SwiftIconFont
