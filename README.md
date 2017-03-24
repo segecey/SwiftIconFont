@@ -73,7 +73,7 @@ public enum Fonts: String {
 ````
 
 ## Runtime Structure
-> ###< Prefix >:< Icon >
+> < Prefix >:< Icon >
 
 
 ## Usage
