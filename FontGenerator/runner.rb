@@ -1,5 +1,6 @@
 require "./font"
-require "./icons/font_awesome/map"
+require "./font_generator"
+require 'fileutils'
 
 class Runner
 
@@ -14,6 +15,7 @@ class Runner
     end
 
     def self.parse_fonts
+      create_folder
       fonts.each_pair do |name, opts|
         name = Array(name)
         names = [name.reverse.join('-'), name.join(' ')] if name.length > 1
@@ -29,7 +31,11 @@ class Runner
 
 	def self.fonts
       @fonts ||= {}
-    end
+  end
+
+  def self.create_folder
+    FileUtils.mkdir_p("./generated")
+  end
 end
 
 
