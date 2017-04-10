@@ -1,7 +1,7 @@
-class FontAwesome < FontGenerator
+class MapIcon < FontGenerator
 	attr_reader :font
 	def initialize
-		@font = Font.new "font_awesome", read_icons
+		@font = Font.new "map_icons", read_icons
 	end
 
 	def run
@@ -11,16 +11,16 @@ class FontAwesome < FontGenerator
 	protected
 
 	def array_name
-		"fontAwesomeIconArr"
+		"mapIconArr"
 	end
 
 	def read_icons
 		icons = []
-		File.read("./icons/font_awesome/icons.scss").each_line do |line|
+		File.read("./icons/map_icons/icons.scss").each_line do |line|
 			parts = line.split(' ')
 			icon_name = parts[0]
-			if icon_name && icon_name.start_with?('$fa-var-')
-				icon_name = icon_name['$fa-var-'.length..(icon_name.length) -2]
+			if icon_name && icon_name.start_with?('$map-icon-')
+				icon_name = icon_name['$map-icon-'.length..(icon_name.length) -2]
 				nameParts = icon_name.split('-')
 			  	icon_name = nameParts.join
 				icon_code = parts[1]

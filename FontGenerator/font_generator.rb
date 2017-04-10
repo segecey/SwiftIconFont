@@ -1,4 +1,3 @@
-require "./runner"
 require "ERB"
 
 class FontGenerator
@@ -24,7 +23,7 @@ class FontGenerator
   	end
 
   	def generate_code
-  		File.open("./generated/#{self.class.name}.swift", "w") { |f| f.write(get_template) }
+  		File.open("./generated/#{self.class.name}.swift", "w+") { |f| f.write(get_template) }
   	end
 
   	private
