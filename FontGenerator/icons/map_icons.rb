@@ -17,7 +17,7 @@ class MapIcon < FontGenerator
 
   def read_icons
     icons = []
-    File.read("./icons/map_icons/icons.scss").each_line do |line|
+    File.read("./../IconFontCss/map_icons.scss").each_line do |line|
       parts = line.split(' ')
       icon_name = parts[0]
       if icon_name && icon_name.start_with?('$map-icon-')

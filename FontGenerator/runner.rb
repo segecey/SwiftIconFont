@@ -8,7 +8,7 @@ class Runner
   attr_accessor :main
 
   def self.load_fonts
-    Dir[File.join(File.dirname(__FILE__), 'icons/*', '*.rb')].each do |file|
+    Dir[File.join(File.dirname(__FILE__), 'icons', '*.rb')].each do |file|
       require file
     end
     self

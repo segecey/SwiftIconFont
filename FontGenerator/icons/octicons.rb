@@ -1,8 +1,8 @@
-class Iconic < FontGenerator
+class Octicons < FontGenerator
   attr_reader :font
 
   def initialize
-    @font = Font.new "iconic", read_icons
+    @font = Font.new "octicons", read_icons
   end
 
   def run
@@ -12,14 +12,14 @@ class Iconic < FontGenerator
   protected
 
   def array_name
-    "iconicIconArr"
+    "octiconArr"
   end
 
   def read_icons
     icons = []
-    File.read("./icons/iconic/icons.css").each_line do |line|
+    File.read("./../IconFontCss/octicons.css").each_line do |line|
       icon_name = ''
-      line.gsub(/(?<=oi-).*(?=:before)/i) { |match| icon_name = match }
+      line.gsub(/(?<=octicon-).*(?=:before)/i) { |match| icon_name = match }
       nameParts = icon_name.split('-')
       icon_name = nameParts.join
       icon_code = ''
