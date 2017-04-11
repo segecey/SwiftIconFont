@@ -1,41 +1,40 @@
-
-
 class MaterialIcons < FontGenerator
-	attr_reader :font
-	def initialize
-		@font = Font.new "material_icons", read_icons
-	end
+  attr_reader :font
 
-	def run
-		self.generate_code
-	end
+  def initialize
+    @font = Font.new "material_icons", read_icons
+  end
 
-	protected
+  def run
+    self.generate_code
+  end
 
-	def array_name
-		"materialIconArr"
-	end
+  protected
 
-	def read_icons
-		icons = []
-		File.read("./icons/material_icons/icons.scss").each_line do |line|
-			parts = line.split(' ')
-			icon_name = parts[0]
-			if icon_name && icon_name.start_with?('$zmdi-var-')
-				icon_name = icon_name['$zmdi-var-'.length..(icon_name.length) -2]
+  def array_name
+    "materialIconArr"
+  end
 
-				nameParts = icon_name.split('-')
-				icon_name = nameParts.join
-				icon_code = parts[1]
-		    	icon_code = icon_code[2..5]
+  def read_icons
+    icons = []
+    File.read("./icons/material_icons/icons.scss").each_line do |line|
+      parts = line.split(' ')
+      icon_name = parts[0]
+      if icon_name && icon_name.start_with?('$zmdi-var-')
+        icon_name = icon_name['$zmdi-var-'.length..(icon_name.length) -2]
 
-		    	icons.push({
-					"name": icon_name,
-					"code": "\\u{#{icon_code}}"
-				})
+        nameParts = icon_name.split('-')
+        icon_name = nameParts.join
+        icon_code = parts[1]
+        icon_code = icon_code[2..5]
 
-			end
-		end
-		icons
-	end
+        icons.push({
+                       "name": icon_name,
+                       "code": "\\u{#{icon_code}}"
+                   })
+
+      end
+    end
+    icons
+  end
 end
