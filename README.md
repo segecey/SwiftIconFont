@@ -85,7 +85,7 @@ In your UILabel, UIButton or UITextField, set a text containing a placeholder an
 
 Then you can choose between 3 ways you can use SwiftIconFont.
 
-#### 1. No Custom Class
+#### 1. Without Custom Class
 
 Simply import SwiftIconFont and call processIcons on any UILabel, UIButton or UITextField that has a placeholder.
 
@@ -108,7 +108,7 @@ label.text = String.fontAwesomeIcon(code: "twitter")
 ````
 
 
-#### UIBarButtonItem (No Custom Class)
+#### UIBarButtonItem (Without Custom Class)
 
 ````swift
 import SwiftIconFont
@@ -116,7 +116,7 @@ import SwiftIconFont
 twitterBarButton.icon(from: .FontAwesome, code: "twitter", ofSize: 20)
 ````
 
-#### UITabBarItem (No Custom Class)
+#### UITabBarItem (Without Custom Class)
 
 ````swift
 import SwiftIconFont
