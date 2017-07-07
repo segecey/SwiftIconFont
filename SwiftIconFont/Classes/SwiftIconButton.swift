@@ -12,16 +12,11 @@ import UIKit
 class SwiftIconButton: UIButton {    
     @IBInspectable var Icon: String = "" {
         didSet {
-            self.titleLabel?.text = Icon
             self.parseIcon()
+            self.setTitle(Icon, for: .normal)
+            
         }
-    }
-
-    override func setTitleColor(_ color: UIColor?, for state: UIControlState) {
-        super.setTitleColor(color, for: state)
-        self.parseIcon()
-    }
-
+    }    
     override func awakeFromNib() {
         self.parseIcon()
     }
