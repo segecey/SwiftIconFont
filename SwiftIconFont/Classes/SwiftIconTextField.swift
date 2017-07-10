@@ -8,8 +8,76 @@
 
 import UIKit
 
+@IBDesignable
 class SwiftIconTextField: UITextField {
-    override func awakeFromNib() {
+    
+    @IBInspectable var RuntimeParse: Bool = false
+    
+    override public func awakeFromNib() {
         self.parseIcon()
+        if RuntimeParse {
+            self.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
+        }
+    }
+    
+    public func textFieldDidChange(textField: SwiftIconTextField) {
+        do {
+            let input = textField.text
+            let regex = try NSRegularExpression(pattern: "icon:\\((\\w+):(\\w+)\\)", options: NSRegularExpression.Options.caseInsensitive)
+            let matches = regex.matches(in: input!, options: [], range: NSRange(location: 0, length: (input?.utf16.count)!))
+            
+            
+            for match in matches {
+                var fontPrefix = ""
+                var fontCode = ""
+                let iconLibraryNameRange = match.rangeAt(1)
+                let iconNameRange = match.rangeAt(2)
+                
+                if let swiftRange = iconLibraryNameRange.range(for: input!) {
+                    fontPrefix = (input?.substring(with: swiftRange))!
+                }
+                
+                
+                if let swiftRange = iconNameRange.range(for: input!) {
+                    fontCode = (input?.substring(with: swiftRange))!
+                }
+                
+                if fontPrefix.utf16.count > 0 && fontCode.utf16.count > 0 {
+                    
+                    var fontType: Fonts = Fonts.FontAwesome
+                    var fontArr: [String: String] = ["": ""]
+                    
+                    if fontPrefix == "fa" {
+                        fontType = Fonts.FontAwesome
+                        fontArr = fontAwesomeIconArr
+                    } else if fontPrefix == "ic" {
+                        fontType = Fonts.Iconic
+                        fontArr = iconicIconArr
+                    } else if fontPrefix == "io" {
+                        fontType = Fonts.Ionicon
+                        fontArr = ioniconArr
+                    } else if fontPrefix == "oc" {
+                        fontType = Fonts.Octicon
+                        fontArr = octiconArr
+                    } else if fontPrefix == "ti" {
+                        fontType = Fonts.Themify
+                        fontArr = temifyIconArr
+                    } else if fontPrefix == "mi" {
+                        fontType = Fonts.MapIcon
+                        fontArr = mapIconArr
+                    } else if fontPrefix == "ma" {
+                        fontType = Fonts.MaterialIcon
+                        fontArr = materialIconArr
+                    }
+                    
+                    if let _ = fontArr[fontCode] {
+                        self.parseIconForRuntime()
+                    }
+                }
+            }
+        } catch {
+            // regex was bad!
+        }
+        
     }
 }

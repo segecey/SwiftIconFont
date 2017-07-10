@@ -211,10 +211,79 @@ func getAttributedString(_ text: NSString, ofSize size: CGFloat) -> NSMutableAtt
     return attributedString
 }
 
+
+func getAttributedStringForRuntimeReplace(_ text: NSString, ofSize size: CGFloat) -> NSMutableAttributedString {
+    let attributedString = NSMutableAttributedString(string: text as String)
+    
+    do {
+        let input = text as String
+        let regex = try NSRegularExpression(pattern: "icon:\\((\\w+):(\\w+)\\)", options: NSRegularExpression.Options.caseInsensitive)
+        let matches = regex.matches(in: input, options: [], range: NSRange(location: 0, length: input.utf16.count))
+        
+        if let match = matches.first {
+            var fontPrefix = ""
+            var fontCode = ""
+            let iconLibraryNameRange = match.rangeAt(1)
+            let iconNameRange = match.rangeAt(2)
+            
+            if let swiftRange = iconLibraryNameRange.range(for: text as String) {
+                fontPrefix = (input.substring(with: swiftRange))
+            }
+            
+            
+            if let swiftRange = iconNameRange.range(for: text as String) {
+                fontCode = (input.substring(with: swiftRange))
+            }
+            
+            if fontPrefix.utf16.count > 0 && fontCode.utf16.count > 0 {
+                
+                var fontType: Fonts = Fonts.FontAwesome
+                var fontArr: [String: String] = ["": ""]
+                
+                if fontPrefix == "fa" {
+                    fontType = Fonts.FontAwesome
+                    fontArr = fontAwesomeIconArr
+                } else if fontPrefix == "ic" {
+                    fontType = Fonts.Iconic
+                    fontArr = iconicIconArr
+                } else if fontPrefix == "io" {
+                    fontType = Fonts.Ionicon
+                    fontArr = ioniconArr
+                } else if fontPrefix == "oc" {
+                    fontType = Fonts.Octicon
+                    fontArr = octiconArr
+                } else if fontPrefix == "ti" {
+                    fontType = Fonts.Themify
+                    fontArr = temifyIconArr
+                } else if fontPrefix == "mi" {
+                    fontType = Fonts.MapIcon
+                    fontArr = mapIconArr
+                } else if fontPrefix == "ma" {
+                    fontType = Fonts.MaterialIcon
+                    fontArr = materialIconArr
+                }
+                
+                
+                if let _ = fontArr[fontCode] {
+                    attributedString.replaceCharacters(in: match.range, with: String.getIcon(from: fontType, code: fontCode)!)
+                    let newRange = NSRange(location: match.range.location, length: 1)
+                    attributedString.addAttribute(NSFontAttributeName, value: UIFont.icon(from: fontType, ofSize: size), range: newRange)
+                }
+                
+            }
+        }
+        
+    } catch {
+        // regex was bad!
+    }
+    
+    return attributedString
+}
+
 func GetIconIndexWithSelectedIcon(_ icon: String) -> String {
     let text = icon as NSString
     var iconIndex: String = ""
-    
+ 
     for substring in ((text as String).characters.split{$0 == " "}.map(String.init)) {
         var splitArr = ["", ""]
         splitArr = substring.characters.split{$0 == ":"}.map(String.init)
@@ -294,10 +363,17 @@ public extension UITextView {
 
 
 public extension UITextField {
+    
     func parseIcon() {
         let text = SwiftIconFont.replace(withText: (self.text! as NSString))
         self.attributedText = getAttributedString(text, ofSize: self.font!.pointSize)
     }
+    
+    func parseIconForRuntime() {
+        let text = SwiftIconFont.replace(withText: (self.text! as NSString))
+        self.attributedText = getAttributedStringForRuntimeReplace(text, ofSize: self.font!.pointSize)
+    }
+    
 }
 
 public extension UIButton {
@@ -331,5 +407,18 @@ public extension UIBarButtonItem {
 public extension UITabBarItem {
     func icon(from font: Fonts, code: String, iconColor: UIColor, imageSize: CGSize, ofSize size: CGFloat) {
         self.image = UIImage.icon(from: font, iconColor: iconColor, code: code, imageSize: imageSize, ofSize: size)
+    }
+}
+
+extension NSRange {
+    func range(for str: String) -> Range<String.Index>? {
+        guard location != NSNotFound else { return nil }
+        
+        guard let fromUTFIndex = str.utf16.index(str.utf16.startIndex, offsetBy: location, limitedBy: str.utf16.endIndex) else { return nil }
+        guard let toUTFIndex = str.utf16.index(fromUTFIndex, offsetBy: length, limitedBy: str.utf16.endIndex) else { return nil }
+        guard let fromIndex = String.Index(fromUTFIndex, within: str) else { return nil }
+        guard let toIndex = String.Index(toUTFIndex, within: str) else { return nil }
+        
+        return fromIndex ..< toIndex
     }
 }
