@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable
 class SwiftIconTextView: UITextView {
-    @IBInspectable var Icon: String = "" {
+    @IBInspectable public var Icon: String = "" {
         didSet {
             self.text = Icon
             self.parseIcon()

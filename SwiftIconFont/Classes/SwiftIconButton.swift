@@ -14,7 +14,6 @@ class SwiftIconButton: UIButton {
         didSet {
             self.parseIcon()
             self.setTitle(Icon, for: .normal)
-            
         }
     }    
     override func awakeFromNib() {

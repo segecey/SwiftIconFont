@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA223AA91F160FAC005915D0 /* SwiftIconFontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA223AA81F160FAC005915D0 /* SwiftIconFontView.swift */; };
 		DA8D9D151D345A3800F5E693 /* SwiftIconFont.h in Headers */ = {isa = PBXBuildFile; fileRef = DA8D9D141D345A3800F5E693 /* SwiftIconFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA8D9D1C1D345A3800F5E693 /* SwiftIconFont.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D9D111D345A3800F5E693 /* SwiftIconFont.framework */; };
 		DA8D9D211D345A3800F5E693 /* SwiftIconFontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D9D201D345A3800F5E693 /* SwiftIconFontTests.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA223AA81F160FAC005915D0 /* SwiftIconFontView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftIconFontView.swift; sourceTree = "<group>"; };
 		DA8D9D111D345A3800F5E693 /* SwiftIconFont.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftIconFont.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8D9D141D345A3800F5E693 /* SwiftIconFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftIconFont.h; sourceTree = "<group>"; };
 		DA8D9D161D345A3800F5E693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				DA8D9D471D345A4900F5E693 /* SwiftIconTextField.swift */,
 				DA8D9D481D345A4900F5E693 /* SwiftIconTextView.swift */,
 				DA8D9D491D345A4900F5E693 /* ThemifyIcon.swift */,
+				DA223AA81F160FAC005915D0 /* SwiftIconFontView.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				DA8D9D561D345A4900F5E693 /* SwiftIconTextField.swift in Sources */,
 				DA8D9D4B1D345A4900F5E693 /* FontLoader.swift in Sources */,
 				DA8D9D571D345A4900F5E693 /* SwiftIconTextView.swift in Sources */,
+				DA223AA91F160FAC005915D0 /* SwiftIconFontView.swift in Sources */,
 				DA8D9D521D345A4900F5E693 /* SwiftIconButton.swift in Sources */,
 				DA8D9D501D345A4900F5E693 /* Octicon.swift in Sources */,
 				DA8D9D4F1D345A4900F5E693 /* MaterialIcon.swift in Sources */,

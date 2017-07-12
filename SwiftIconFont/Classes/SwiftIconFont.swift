@@ -387,6 +387,7 @@ public extension UIButton {
     }
 }
 
+
 public extension UIBarButtonItem {
     func icon(from font: Fonts, code: String, ofSize size: CGFloat){
         var textAttributes: [String: AnyObject] = [NSFontAttributeName: UIFont.icon(from: font, ofSize: size)]
