@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="y9L-uo-mWA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="y9L-uo-mWA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,48 +14,46 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bVl-1i-UU9"/>
+                        <viewControllerLayoutGuide type="bottom" id="8hc-OS-wSh"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fGj-5X-lTE" customClass="SwiftIconButton" customModule="SwiftIconFont">
-                                <rect key="frame" x="67" y="113" width="240" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGj-5X-lTE" customClass="SwiftIconButton" customModule="SwiftIconFont">
+                                <rect key="frame" x="67" y="208" width="240" height="30"/>
                                 <state key="normal" title="Tools oc:tools"/>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Map ic:map" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="z4e-nV-j3n" customClass="SwiftIconTextField" customModule="SwiftIconFont">
-                                <rect key="frame" x="85" y="163" width="205" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Map ic:map" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z4e-nV-j3n" customClass="SwiftIconTextField" customModule="SwiftIconFont">
+                                <rect key="frame" x="85" y="258" width="205" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="RuntimeParse" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="io:battery-charging" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1tG-vu-G0t" customClass="SwiftIconLabel" customModule="SwiftIconFont">
-                                <rect key="frame" x="85" y="231" width="205" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="io:battery-charging" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tG-vu-G0t" customClass="SwiftIconLabel" customModule="SwiftIconFont">
+                                <rect key="frame" x="85" y="326" width="205" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;!-fa-test-&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QSU-EJ-ItH">
-                                <rect key="frame" x="80" y="270" width="210" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;!-fa-test-&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSU-EJ-ItH">
+                                <rect key="frame" x="80" y="365" width="210" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hey fa:home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5V1-tB-fmp" customClass="SwiftIconLabel" customModule="SwiftIconFont">
-                                <rect key="frame" x="85" y="76" width="205" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey fa:home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5V1-tB-fmp" customClass="SwiftIconLabel" customModule="SwiftIconFont">
+                                <rect key="frame" x="85" y="171" width="205" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tabBar contentMode="scaleToFill" id="mna-pe-zNz">
-                                <rect key="frame" x="1" y="618" width="375" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mna-pe-zNz">
+                                <rect key="frame" x="1" y="618" width="373" height="49"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <tabBarItem title="Twitter" id="QSW-vD-FHK" customClass="SwiftIconTabBarItem" customModule="SwiftIconFont">
@@ -81,27 +80,8 @@
                                     </tabBarItem>
                                 </items>
                             </tabBar>
-                            <view contentMode="scaleToFill" misplaced="YES" id="FPK-AT-BLW" customClass="SwiftIconFontView" customModule="SwiftIconFont">
-                                <rect key="frame" x="49" y="336" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" red="0.65490196079999996" green="0.7725490196" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="iconCode" value="fa:home"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" misplaced="YES" id="SKU-WM-Y8p" customClass="SwiftIconFontView" customModule="SwiftIconFont">
-                                <rect key="frame" x="109" y="336" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="iconCode" value="oc:heart"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" misplaced="YES" id="llU-Ij-InW" customClass="SwiftIconFontView" customModule="SwiftIconFont">
-                                <rect key="frame" x="169" y="336" width="158" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="llU-Ij-InW" customClass="SwiftIconFontView" customModule="SwiftIconFont">
+                                <rect key="frame" x="73" y="79" width="234" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.14117647059999999" green="0.19215686269999999" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
@@ -110,6 +90,30 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mna-pe-zNz" firstAttribute="bottom" secondItem="8hc-OS-wSh" secondAttribute="top" id="6nr-WH-lz8"/>
+                            <constraint firstItem="fGj-5X-lTE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7mp-Pu-9G4"/>
+                            <constraint firstItem="1tG-vu-G0t" firstAttribute="trailing" secondItem="QSU-EJ-ItH" secondAttribute="trailing" id="AUa-6y-OkF"/>
+                            <constraint firstItem="5V1-tB-fmp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="69" id="AvV-Cm-ALM"/>
+                            <constraint firstItem="z4e-nV-j3n" firstAttribute="trailing" secondItem="1tG-vu-G0t" secondAttribute="trailing" id="Jzv-pB-AV2"/>
+                            <constraint firstItem="5V1-tB-fmp" firstAttribute="leading" secondItem="z4e-nV-j3n" secondAttribute="leading" id="Nll-gD-bWj"/>
+                            <constraint firstItem="fGj-5X-lTE" firstAttribute="top" secondItem="5V1-tB-fmp" secondAttribute="bottom" constant="16" id="P1z-Kc-Ryc"/>
+                            <constraint firstItem="llU-Ij-InW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="57" id="PAK-c0-gfG"/>
+                            <constraint firstItem="QSU-EJ-ItH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="64" id="QYa-l6-h8p"/>
+                            <constraint firstItem="1tG-vu-G0t" firstAttribute="centerX" secondItem="mna-pe-zNz" secondAttribute="centerX" id="TDm-rP-Ntk"/>
+                            <constraint firstItem="z4e-nV-j3n" firstAttribute="leading" secondItem="1tG-vu-G0t" secondAttribute="leading" id="TjN-Ki-voi"/>
+                            <constraint firstItem="llU-Ij-InW" firstAttribute="trailing" secondItem="fGj-5X-lTE" secondAttribute="trailing" id="bb2-FY-3Gp"/>
+                            <constraint firstItem="5V1-tB-fmp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="171" id="eD2-il-Frz"/>
+                            <constraint firstItem="5V1-tB-fmp" firstAttribute="centerX" secondItem="fGj-5X-lTE" secondAttribute="centerX" id="gST-6l-SZY"/>
+                            <constraint firstItem="mna-pe-zNz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-15" id="h1Q-Sm-5cC"/>
+                            <constraint firstItem="5V1-tB-fmp" firstAttribute="top" secondItem="llU-Ij-InW" secondAttribute="bottom" constant="42" id="ly5-fN-bhN"/>
+                            <constraint firstItem="1tG-vu-G0t" firstAttribute="top" secondItem="z4e-nV-j3n" secondAttribute="bottom" constant="38" id="mAR-w8-R5m"/>
+                            <constraint firstItem="z4e-nV-j3n" firstAttribute="top" secondItem="fGj-5X-lTE" secondAttribute="bottom" constant="20" id="tg3-ih-jM6"/>
+                            <constraint firstItem="llU-Ij-InW" firstAttribute="top" secondItem="bVl-1i-UU9" secondAttribute="bottom" constant="15" id="vBc-ic-opL"/>
+                            <constraint firstItem="fGj-5X-lTE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="vva-Af-wZr"/>
+                            <constraint firstItem="QSU-EJ-ItH" firstAttribute="top" secondItem="1tG-vu-G0t" secondAttribute="bottom" constant="18" id="xkO-nZ-MU4"/>
+                            <constraint firstItem="5V1-tB-fmp" firstAttribute="trailing" secondItem="z4e-nV-j3n" secondAttribute="trailing" id="xvp-9h-XMG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Fl3-Xb-Srd">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="tC4-G6-RpW" customClass="SwiftBarButtonItem" customModule="SwiftIconFont">
