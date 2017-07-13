@@ -16,6 +16,10 @@ class SwiftIconTabBarItem: UITabBarItem {
     @IBInspectable var IconColor: UIColor = UIColor.black
     
     override func awakeFromNib() {
+        setIcon()
+    }
+    
+    func setIcon() {
         icon(from: GetFontTypeWithSelectedIcon(Icon), code:GetIconIndexWithSelectedIcon(Icon), iconColor: IconColor, imageSize: ImageSize, ofSize: FontSize)
     }
 
