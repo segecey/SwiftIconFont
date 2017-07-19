@@ -44,29 +44,21 @@ class SwiftIconTextField: UITextField {
                 
                 if fontPrefix.utf16.count > 0 && fontCode.utf16.count > 0 {
                     
-                    var fontType: Fonts = Fonts.FontAwesome
                     var fontArr: [String: String] = ["": ""]
                     
                     if fontPrefix == "fa" {
-                        fontType = Fonts.FontAwesome
                         fontArr = fontAwesomeIconArr
                     } else if fontPrefix == "ic" {
-                        fontType = Fonts.Iconic
                         fontArr = iconicIconArr
                     } else if fontPrefix == "io" {
-                        fontType = Fonts.Ionicon
                         fontArr = ioniconArr
                     } else if fontPrefix == "oc" {
-                        fontType = Fonts.Octicon
                         fontArr = octiconArr
                     } else if fontPrefix == "ti" {
-                        fontType = Fonts.Themify
                         fontArr = temifyIconArr
                     } else if fontPrefix == "mi" {
-                        fontType = Fonts.MapIcon
                         fontArr = mapIconArr
                     } else if fontPrefix == "ma" {
-                        fontType = Fonts.MaterialIcon
                         fontArr = materialIconArr
                     }
                     
