@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.license = { :type => "MIT", :file => "LICENSE" }
   s.author = { "Sedat CIFTCI" => "me@sedat.us" }
   s.homepage = "http://sedat.ninja"
-  s.source = { :git => "https://github.com/0x73/SwiftIconFont.git", :tag => "#{s.version}"}
+  s.source = { :git => "https://github.com/ddcrobert/SwiftIconFont.git", :tag => "#{s.version}"}
   s.framework = "UIKit"
   s.source_files = "SwiftIconFont/Classes/**/*.{swift}"
   s.resources = "SwiftIconFont/**/*.{ttf}"
