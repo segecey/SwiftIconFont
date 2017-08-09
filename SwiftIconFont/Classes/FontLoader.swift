@@ -37,13 +37,13 @@ class FontLoader: NSObject {
         }
         
         guard !CTFontManagerRegisterGraphicsFont(font, &error),
-            let unwrappedError = error else {
-            
+            let unwrappedError = error,
+            let nsError = (unwrappedError.takeUnretainedValue() as AnyObject) as? NSError else {
+                
             return
         }
         
         let errorDescription: CFString = CFErrorCopyDescription(unwrappedError.takeUnretainedValue())
-        let nsError = error!.takeUnretainedValue() as AnyObject as! NSError
 
         NSException(name: NSExceptionName.internalInconsistencyException,
                     reason: errorDescription as String,
