@@ -19,9 +19,9 @@ class FontLoader: NSObject {
         var fontURL = URL(string: "")
         var error: Unmanaged<CFError>?
         
-        paths.forEach() {
+        paths.forEach {
             guard let filename = NSURL(fileURLWithPath: $0).lastPathComponent,
-                let _ = filename.lowercased().range(of: fontName.lowercased()) else {
+                filename.lowercased().range(of: fontName.lowercased()) != nil else {
                     return
             }
             
@@ -36,13 +36,17 @@ class FontLoader: NSObject {
                 return
         }
         
-        guard CTFontManagerRegisterGraphicsFont(font, &error) else {
+        guard !CTFontManagerRegisterGraphicsFont(font, &error),
+            let unwrappedError = error else {
             
             return
         }
         
-        let errorDescription: CFString = CFErrorCopyDescription(error!.takeUnretainedValue())
+        let errorDescription: CFString = CFErrorCopyDescription(unwrappedError.takeUnretainedValue())
         let nsError = error!.takeUnretainedValue() as AnyObject as! NSError
-        NSException(name: NSExceptionName.internalInconsistencyException, reason: errorDescription as String, userInfo: [NSUnderlyingErrorKey: nsError]).raise()
+
+        NSException(name: NSExceptionName.internalInconsistencyException,
+                    reason: errorDescription as String,
+                    userInfo: [NSUnderlyingErrorKey: nsError]).raise()
     }
 }
