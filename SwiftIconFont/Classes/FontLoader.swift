@@ -11,38 +11,38 @@ import Foundation
 import CoreText
 
 class FontLoader: NSObject {
-    
+
     class func loadFont(_ fontName: String) {
-        
+
         let bundle = Bundle(for: FontLoader.self)
         let paths = bundle.paths(forResourcesOfType: "ttf", inDirectory: nil)
         var fontURL = URL(string: "")
         var error: Unmanaged<CFError>?
-        
+
         paths.forEach {
             guard let filename = NSURL(fileURLWithPath: $0).lastPathComponent,
                 filename.lowercased().range(of: fontName.lowercased()) != nil else {
                     return
             }
-            
+
             fontURL = NSURL(fileURLWithPath: $0) as URL
         }
-        
+
         guard let unwrappedFontURL = fontURL,
             let data = try? Data(contentsOf: unwrappedFontURL),
             let provider = CGDataProvider(data: data as CFData),
             let font = CGFont.init(provider) else {
-                
+
                 return
         }
-        
+
         guard !CTFontManagerRegisterGraphicsFont(font, &error),
             let unwrappedError = error,
             let nsError = (unwrappedError.takeUnretainedValue() as AnyObject) as? NSError else {
-                
+
             return
         }
-        
+
         let errorDescription: CFString = CFErrorCopyDescription(unwrappedError.takeUnretainedValue())
 
         NSException(name: NSExceptionName.internalInconsistencyException,
