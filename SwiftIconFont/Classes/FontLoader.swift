@@ -11,35 +11,38 @@ import Foundation
 import CoreText
 
 class FontLoader: NSObject {
+    
     class func loadFont(_ fontName: String) {
         
         let bundle = Bundle(for: FontLoader.self)
+        let paths = bundle.paths(forResourcesOfType: "ttf", inDirectory: nil)
         var fontURL = URL(string: "")
-        for filePath : String in bundle.paths(forResourcesOfType: "ttf", inDirectory: nil) {
-            let filename = NSURL(fileURLWithPath: filePath).lastPathComponent!
-            if filename.lowercased().range(of: fontName.lowercased()) != nil {
-                fontURL = NSURL(fileURLWithPath: filePath) as URL
-            }
-        }
+        var error: Unmanaged<CFError>?
         
-        do
-        {
-            let data = try Data(contentsOf: fontURL!)
-            
-            let provider = CGDataProvider(data: data as CFData)
-            let font = CGFont.init(provider!)
-            
-            var error: Unmanaged<CFError>?
-            if !CTFontManagerRegisterGraphicsFont(font, &error) {
-                let errorDescription: CFString = CFErrorCopyDescription(error!.takeUnretainedValue())
-                let nsError = error!.takeUnretainedValue() as AnyObject as! NSError
-                NSException(name: NSExceptionName.internalInconsistencyException, reason: errorDescription as String, userInfo: [NSUnderlyingErrorKey: nsError]).raise()
+        paths.forEach() {
+            guard let filename = NSURL(fileURLWithPath: $0).lastPathComponent,
+                let _ = filename.lowercased().range(of: fontName.lowercased()) else {
+                    return
             }
             
-        } catch {
-            
+            fontURL = NSURL(fileURLWithPath: $0) as URL
         }
         
+        guard let unwrappedFontURL = fontURL,
+            let data = try? Data(contentsOf: unwrappedFontURL),
+            let provider = CGDataProvider(data: data as CFData),
+            let font = CGFont.init(provider) else {
+                
+                return
+        }
         
+        guard CTFontManagerRegisterGraphicsFont(font, &error) else {
+            
+            return
+        }
+        
+        let errorDescription: CFString = CFErrorCopyDescription(error!.takeUnretainedValue())
+        let nsError = error!.takeUnretainedValue() as AnyObject as! NSError
+        NSException(name: NSExceptionName.internalInconsistencyException, reason: errorDescription as String, userInfo: [NSUnderlyingErrorKey: nsError]).raise()
     }
 }
