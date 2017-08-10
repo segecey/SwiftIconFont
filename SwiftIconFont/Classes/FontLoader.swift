@@ -30,11 +30,12 @@ class FontLoader: NSObject {
 
         guard let unwrappedFontURL = fontURL,
             let data = try? Data(contentsOf: unwrappedFontURL),
-            let provider = CGDataProvider(data: data as CFData),
-            let font = CGFont.init(provider) else {
+            let provider = CGDataProvider(data: data as CFData) else {
 
                 return
         }
+
+        let font = CGFont.init(provider)
 
         guard !CTFontManagerRegisterGraphicsFont(font, &error),
             let unwrappedError = error,
