@@ -8,19 +8,35 @@
 
 import UIKit
 
+
 @IBDesignable
 class SwiftIconTabBarItem: UITabBarItem {
     @IBInspectable var Icon: String = ""
-    @IBInspectable var FontSize: CGFloat = 20.0
-    @IBInspectable var ImageSize: CGSize = CGSize(width: 20, height: 20)
+    @IBInspectable var IconFontSize: CGFloat = 20.0
+    @IBInspectable var IconImageSize: CGSize = CGSize(width: 20, height: 20)
     @IBInspectable var IconColor: UIColor = UIColor.black
+    
+    @IBInspectable var SelectedIcon: String? {
+        didSet {
+            setIcon()
+        }
+    }
+    @IBInspectable var SelectedIconFontSize: CGFloat = 20.0
+    @IBInspectable var SelectedIconImageSize: CGSize = CGSize(width: 20, height: 20)
+    @IBInspectable var SelectedIconColor: UIColor = UIColor.black
     
     override func awakeFromNib() {
         setIcon()
     }
     
     func setIcon() {
-        icon(from: GetFontTypeWithSelectedIcon(Icon), code:GetIconIndexWithSelectedIcon(Icon), iconColor: IconColor, imageSize: ImageSize, ofSize: FontSize)
+        let defaultIcon = SwiftIcon(font: GetFontTypeWithSelectedIcon(Icon), code: GetIconIndexWithSelectedIcon(Icon), color: IconColor, imageSize: IconImageSize, fontSize: IconFontSize)
+        if SelectedIcon != nil {
+            let selectedIcon = SwiftIcon(font: GetFontTypeWithSelectedIcon(SelectedIcon!), code: GetIconIndexWithSelectedIcon(SelectedIcon!), color: SelectedIconColor, imageSize: CGSize(width: 20, height: 20), fontSize: SelectedIconFontSize)
+            iconWithSelectedIcon(from: defaultIcon, selectedIcon: selectedIcon)
+        } else {
+            iconWithSwiftIcon(defaultIcon: defaultIcon)
+        }
     }
 
 }

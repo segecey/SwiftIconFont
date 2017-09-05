@@ -8,6 +8,16 @@
 
 import UIKit
 
+//func icon(from font: Fonts, code: String, iconColor: UIColor, imageSize: CGSize, ofSize size: CGFloat)
+
+public struct SwiftIcon {
+    let font: Fonts
+    let code: String
+    let color: UIColor
+    let imageSize: CGSize
+    let fontSize: CGFloat
+}
+
 public enum Fonts: String {
     case FontAwesome = "FontAwesome"
     case Iconic = "open-iconic"
@@ -406,9 +416,25 @@ public extension UIBarButtonItem {
 }
 
 public extension UITabBarItem {
+    
+    func iconWithSwiftIcon(defaultIcon: SwiftIcon) {
+        self.image = UIImage.icon(from: defaultIcon.font, iconColor: defaultIcon.color, code: defaultIcon.code, imageSize: defaultIcon.imageSize, ofSize: defaultIcon.fontSize)
+    }
+    
     func icon(from font: Fonts, code: String, iconColor: UIColor, imageSize: CGSize, ofSize size: CGFloat) {
         self.image = UIImage.icon(from: font, iconColor: iconColor, code: code, imageSize: imageSize, ofSize: size)
     }
+    
+    func iconWithSelectedIcon(from defaultIcon: SwiftIcon, selectedIcon: SwiftIcon) {
+        self.image = UIImage.icon(from: defaultIcon.font, iconColor: defaultIcon.color, code: defaultIcon.code, imageSize: defaultIcon.imageSize, ofSize: defaultIcon.fontSize)
+        
+        print("sel: \(selectedIcon.code)")
+        
+        self.selectedImage = UIImage.icon(from: selectedIcon.font, iconColor: selectedIcon.color, code: selectedIcon.code, imageSize: selectedIcon.imageSize, ofSize: selectedIcon.fontSize)
+        //self.image = UIImage.icon(from: font, iconColor: iconColor, code: code, imageSize: imageSize, ofSize: size)
+    }
+    
+    //self.selectedImage = UIImage.icon(from: GetFontTypeWithSelectedIcon("fa:home"), iconColor: UIColor.red, code: GetIconIndexWithSelectedIcon("fa:home"), imageSize: imageSize, ofSize: size)
 }
 
 extension NSRange {
