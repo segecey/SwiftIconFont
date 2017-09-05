@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.7.1] - 2017-09-05
+
+- UITTabbar selected image support.
+- Minor imp.
+
 ## [2.7.0] - 2017-07-19
 
 - SwiftIconFontView Added for Storyboard
