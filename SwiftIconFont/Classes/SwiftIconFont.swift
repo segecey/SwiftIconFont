@@ -427,14 +427,8 @@ public extension UITabBarItem {
     
     func iconWithSelectedIcon(from defaultIcon: SwiftIcon, selectedIcon: SwiftIcon) {
         self.image = UIImage.icon(from: defaultIcon.font, iconColor: defaultIcon.color, code: defaultIcon.code, imageSize: defaultIcon.imageSize, ofSize: defaultIcon.fontSize)
-        
-        print("sel: \(selectedIcon.code)")
-        
         self.selectedImage = UIImage.icon(from: selectedIcon.font, iconColor: selectedIcon.color, code: selectedIcon.code, imageSize: selectedIcon.imageSize, ofSize: selectedIcon.fontSize)
-        //self.image = UIImage.icon(from: font, iconColor: iconColor, code: code, imageSize: imageSize, ofSize: size)
     }
-    
-    //self.selectedImage = UIImage.icon(from: GetFontTypeWithSelectedIcon("fa:home"), iconColor: UIColor.red, code: GetIconIndexWithSelectedIcon("fa:home"), imageSize: imageSize, ofSize: size)
 }
 
 extension NSRange {
