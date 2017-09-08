@@ -141,7 +141,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Fl3-Xb-Srd">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="tC4-G6-RpW" customClass="SwiftBarButtonItem" customModule="SwiftIconFont">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="tC4-G6-RpW" customClass="SwiftIconBarButtonItem" customModule="SwiftIconFont">
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="Icon" value="fa:twitter"/>
                                 <userDefinedRuntimeAttribute type="number" keyPath="FontSize">
@@ -149,7 +149,7 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="mRJ-0J-voK" customClass="SwiftBarButtonItem" customModule="SwiftIconFont">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="mRJ-0J-voK" customClass="SwiftIconBarButtonItem" customModule="SwiftIconFont">
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="Icon" value="fa:facebook"/>
                                 <userDefinedRuntimeAttribute type="number" keyPath="FontSize">

@@ -26,7 +26,7 @@
 		DA8D9D4E1D345A4900F5E693 /* MapIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D9D3F1D345A4900F5E693 /* MapIcon.swift */; };
 		DA8D9D4F1D345A4900F5E693 /* MaterialIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D9D401D345A4900F5E693 /* MaterialIcon.swift */; };
 		DA8D9D501D345A4900F5E693 /* Octicon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D9D411D345A4900F5E693 /* Octicon.swift */; };
-		DA8D9D511D345A4900F5E693 /* SwiftBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D9D421D345A4900F5E693 /* SwiftBarButtonItem.swift */; };
+		DA8D9D511D345A4900F5E693 /* SwiftIconBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D9D421D345A4900F5E693 /* SwiftIconBarButtonItem.swift */; };
 		DA8D9D521D345A4900F5E693 /* SwiftIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D9D431D345A4900F5E693 /* SwiftIconButton.swift */; };
 		DA8D9D531D345A4900F5E693 /* SwiftIconFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D9D441D345A4900F5E693 /* SwiftIconFont.swift */; };
 		DA8D9D541D345A4900F5E693 /* SwiftIconLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D9D451D345A4900F5E693 /* SwiftIconLabel.swift */; };
@@ -69,7 +69,7 @@
 		DA8D9D3F1D345A4900F5E693 /* MapIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapIcon.swift; sourceTree = "<group>"; };
 		DA8D9D401D345A4900F5E693 /* MaterialIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialIcon.swift; sourceTree = "<group>"; };
 		DA8D9D411D345A4900F5E693 /* Octicon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Octicon.swift; sourceTree = "<group>"; };
-		DA8D9D421D345A4900F5E693 /* SwiftBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftBarButtonItem.swift; sourceTree = "<group>"; };
+		DA8D9D421D345A4900F5E693 /* SwiftIconBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftIconBarButtonItem.swift; sourceTree = "<group>"; };
 		DA8D9D431D345A4900F5E693 /* SwiftIconButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftIconButton.swift; sourceTree = "<group>"; };
 		DA8D9D441D345A4900F5E693 /* SwiftIconFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftIconFont.swift; sourceTree = "<group>"; };
 		DA8D9D451D345A4900F5E693 /* SwiftIconLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftIconLabel.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 				DA8D9D3F1D345A4900F5E693 /* MapIcon.swift */,
 				DA8D9D401D345A4900F5E693 /* MaterialIcon.swift */,
 				DA8D9D411D345A4900F5E693 /* Octicon.swift */,
-				DA8D9D421D345A4900F5E693 /* SwiftBarButtonItem.swift */,
+				DA8D9D421D345A4900F5E693 /* SwiftIconBarButtonItem.swift */,
 				DA8D9D431D345A4900F5E693 /* SwiftIconButton.swift */,
 				DA8D9D441D345A4900F5E693 /* SwiftIconFont.swift */,
 				DA8D9D451D345A4900F5E693 /* SwiftIconLabel.swift */,
@@ -292,7 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA8D9D541D345A4900F5E693 /* SwiftIconLabel.swift in Sources */,
-				DA8D9D511D345A4900F5E693 /* SwiftBarButtonItem.swift in Sources */,
+				DA8D9D511D345A4900F5E693 /* SwiftIconBarButtonItem.swift in Sources */,
 				DA8D9D4C1D345A4900F5E693 /* Iconic.swift in Sources */,
 				DA8D9D4A1D345A4900F5E693 /* FontAwesome.swift in Sources */,
 				DA8D9D531D345A4900F5E693 /* SwiftIconFont.swift in Sources */,

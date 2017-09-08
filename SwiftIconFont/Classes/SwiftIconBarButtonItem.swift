@@ -1,5 +1,5 @@
 //
-//  SwiftBarButtonItem.swift
+//  SwiftIconBarButtonItem.swift
 //  Exm
 //
 //  Created by Sedat Gökbek ÇİFTÇİ on 10/07/16.
@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class SwiftBarButtonItem: UIBarButtonItem {
+class SwiftIconBarButtonItem: UIBarButtonItem {
     @IBInspectable var Icon: String = ""
     @IBInspectable var FontSize: CGFloat = 15.00
 
