@@ -101,7 +101,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="incrementIcon" value="fa:home"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="decrementIcon" value="fa:twitter"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                        <real key="value" value="15"/>
+                                        <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="width">
                                         <real key="value" value="20"/>
