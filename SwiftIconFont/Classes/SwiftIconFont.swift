@@ -410,7 +410,9 @@ public extension UIBarButtonItem {
                 }
             }
         }
-        self.setTitleTextAttributes(textAttributes, for: UIControlState())
+        self.setTitleTextAttributes(textAttributes, for: UIControlState.normal)
+        self.setTitleTextAttributes(textAttributes, for: UIControlState.highlighted)
+
         self.title = String.getIcon(from: font, code: code)
     }
 }
