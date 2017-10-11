@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 ## [2.7.2] - 2017-10-11
 
 - Swift 4 Support
+- Button state fixed
+- UIStepper fixed for tvOS builds.
 - Minor imp.
 
 ## [2.7.1] - 2017-09-05
