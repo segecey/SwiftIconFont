@@ -8,6 +8,7 @@
 
 import UIKit
 
+#if os(iOS)
 @IBDesignable
 class SwiftIconStepper: UIStepper {
     @IBInspectable var incrementIcon: String?
@@ -34,3 +35,4 @@ class SwiftIconStepper: UIStepper {
     }
     
 }
+#endif
