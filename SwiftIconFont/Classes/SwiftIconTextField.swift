@@ -20,7 +20,7 @@ class SwiftIconTextField: UITextField {
         }
     }
     
-    public func textFieldDidChange(textField: SwiftIconTextField) {
+    @objc public func textFieldDidChange(textField: SwiftIconTextField) {
         do {
             let input = textField.text
             let regex = try NSRegularExpression(pattern: "icon:\\((\\w+):(\\w+)\\)", options: NSRegularExpression.Options.caseInsensitive)
@@ -30,16 +30,16 @@ class SwiftIconTextField: UITextField {
             for match in matches {
                 var fontPrefix = ""
                 var fontCode = ""
-                let iconLibraryNameRange = match.rangeAt(1)
-                let iconNameRange = match.rangeAt(2)
+                let iconLibraryNameRange = match.range(at: 1)
+                let iconNameRange = match.range(at: 2)
                 
                 if let swiftRange = iconLibraryNameRange.range(for: input!) {
-                    fontPrefix = (input?.substring(with: swiftRange))!
+                    fontPrefix = String((input?[swiftRange])!)
                 }
                 
                 
                 if let swiftRange = iconNameRange.range(for: input!) {
-                    fontCode = (input?.substring(with: swiftRange))!
+                    fontCode = String((input?[swiftRange])!)
                 }
                 
                 if fontPrefix.utf16.count > 0 && fontCode.utf16.count > 0 {
