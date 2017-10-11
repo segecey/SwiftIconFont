@@ -75,7 +75,7 @@ public extension UIImage
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = NSTextAlignment.center
         
-		drawText!.draw(in: CGRect(x:0, y:0, width:imageSize.width, height:imageSize.height), withAttributes: [NSFontAttributeName : UIFont.icon(from: font, ofSize: size), NSParagraphStyleAttributeName: paragraphStyle, NSForegroundColorAttributeName: iconColor])
+        drawText!.draw(in: CGRect(x:0, y:0, width:imageSize.width, height:imageSize.height), withAttributes: [NSAttributedStringKey.font : UIFont.icon(from: font, ofSize: size), NSAttributedStringKey.paragraphStyle: paragraphStyle, NSAttributedStringKey.foregroundColor: iconColor])
         
 		let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -214,7 +214,7 @@ func getAttributedString(_ text: NSString, ofSize size: CGFloat) -> NSMutableAtt
         if let _ = fontArr[fontCode] {
             attributedString.replaceCharacters(in: substringRange, with: String.getIcon(from: fontType, code: fontCode)!)
             let newRange = NSRange(location: substringRange.location, length: 1)
-            attributedString.addAttribute(NSFontAttributeName, value: UIFont.icon(from: fontType, ofSize: size), range: newRange)
+            attributedString.addAttribute(NSAttributedStringKey.font, value: UIFont.icon(from: fontType, ofSize: size), range: newRange)
         }
     }
     
@@ -233,16 +233,16 @@ func getAttributedStringForRuntimeReplace(_ text: NSString, ofSize size: CGFloat
         if let match = matches.first {
             var fontPrefix = ""
             var fontCode = ""
-            let iconLibraryNameRange = match.rangeAt(1)
-            let iconNameRange = match.rangeAt(2)
+            let iconLibraryNameRange = match.range(at: 1)
+            let iconNameRange = match.range(at: 2)
             
             if let swiftRange = iconLibraryNameRange.range(for: text as String) {
-                fontPrefix = (input.substring(with: swiftRange))
+                fontPrefix = String(input[swiftRange])
             }
             
             
             if let swiftRange = iconNameRange.range(for: text as String) {
-                fontCode = (input.substring(with: swiftRange))
+                fontCode = String(input[swiftRange])
             }
             
             if fontPrefix.utf16.count > 0 && fontCode.utf16.count > 0 {
@@ -277,7 +277,7 @@ func getAttributedStringForRuntimeReplace(_ text: NSString, ofSize size: CGFloat
                 if let _ = fontArr[fontCode] {
                     attributedString.replaceCharacters(in: match.range, with: String.getIcon(from: fontType, code: fontCode)!)
                     let newRange = NSRange(location: match.range.location, length: 1)
-                    attributedString.addAttribute(NSFontAttributeName, value: UIFont.icon(from: fontType, ofSize: size), range: newRange)
+                    attributedString.addAttribute(NSAttributedStringKey.font, value: UIFont.icon(from: fontType, ofSize: size), range: newRange)
                 }
                 
             }
@@ -392,7 +392,7 @@ public extension UIButton {
         let text = replace(withText: currentTitle)
         let attrTitle = getAttributedString(text, ofSize: (self.titleLabel?.font!.pointSize)!)
         let all = NSRange(location: 0, length: attrTitle.length)
-        attrTitle.addAttribute(NSForegroundColorAttributeName, value: self.currentTitleColor, range: all)
+        attrTitle.addAttribute(NSAttributedStringKey.foregroundColor, value: self.currentTitleColor, range: all)
         self.setAttributedTitle(attrTitle, for: UIControlState())
     }
 }
@@ -400,12 +400,13 @@ public extension UIButton {
 
 public extension UIBarButtonItem {
     func icon(from font: Fonts, code: String, ofSize size: CGFloat){
-        var textAttributes: [String: AnyObject] = [NSFontAttributeName: UIFont.icon(from: font, ofSize: size)]
+        var textAttributes: [NSAttributedStringKey: AnyObject] = [NSAttributedStringKey.font: UIFont.icon(from: font, ofSize: size)]
         let currentTextAttributes: [String: AnyObject]? = self.titleTextAttributes(for: UIControlState()) as [String : AnyObject]?
         
         if currentTextAttributes != nil {
-            for (key, value) in currentTextAttributes! {
-                if key != "NSFont" {
+            for (rawKey, value) in currentTextAttributes! {
+                let key = NSAttributedStringKey.init(rawKey)
+                if key != NSAttributedStringKey.font {
                     textAttributes[key] = value
                 }
             }

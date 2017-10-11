@@ -37,7 +37,8 @@ class FontLoader: NSObject {
 
         let font = CGFont.init(provider)
 
-        guard !CTFontManagerRegisterGraphicsFont(font, &error),
+        guard let unwrappedFont = font,
+            !CTFontManagerRegisterGraphicsFont(unwrappedFont, &error),
             let unwrappedError = error,
             let nsError = (unwrappedError.takeUnretainedValue() as AnyObject) as? NSError else {
 
