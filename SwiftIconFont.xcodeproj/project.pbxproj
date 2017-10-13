@@ -34,6 +34,15 @@
 		DA8D9D561D345A4900F5E693 /* SwiftIconTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D9D471D345A4900F5E693 /* SwiftIconTextField.swift */; };
 		DA8D9D571D345A4900F5E693 /* SwiftIconTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D9D481D345A4900F5E693 /* SwiftIconTextView.swift */; };
 		DA8D9D581D345A4900F5E693 /* ThemifyIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D9D491D345A4900F5E693 /* ThemifyIcon.swift */; };
+		DAD008211F90D16500D4FC34 /* SwiftIconFont+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD008201F90D16500D4FC34 /* SwiftIconFont+UIImage.swift */; };
+		DAD008241F90D1D500D4FC34 /* SwiftIconFont+NSRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD008231F90D1D500D4FC34 /* SwiftIconFont+NSRange.swift */; };
+		DAD008261F90D21F00D4FC34 /* SwiftIconFont+UITabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD008251F90D21F00D4FC34 /* SwiftIconFont+UITabBarItem.swift */; };
+		DAD008281F90D23300D4FC34 /* SwiftIconFont+UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD008271F90D23300D4FC34 /* SwiftIconFont+UIBarButtonItem.swift */; };
+		DAD0082A1F90D24F00D4FC34 /* SwiftIconFont+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD008291F90D24F00D4FC34 /* SwiftIconFont+UIButton.swift */; };
+		DAD0082C1F90D26700D4FC34 /* SwiftIconFont+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0082B1F90D26700D4FC34 /* SwiftIconFont+UITextField.swift */; };
+		DAD0082E1F90D28300D4FC34 /* SwiftIconFont+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0082D1F90D28300D4FC34 /* SwiftIconFont+UITextView.swift */; };
+		DAD008301F90D2A700D4FC34 /* SwiftIconFont+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0082F1F90D2A700D4FC34 /* SwiftIconFont+UILabel.swift */; };
+		DAD008341F90D2FC00D4FC34 /* SwiftIconFont+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD008331F90D2FC00D4FC34 /* SwiftIconFont+String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +86,15 @@
 		DA8D9D471D345A4900F5E693 /* SwiftIconTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftIconTextField.swift; sourceTree = "<group>"; };
 		DA8D9D481D345A4900F5E693 /* SwiftIconTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftIconTextView.swift; sourceTree = "<group>"; };
 		DA8D9D491D345A4900F5E693 /* ThemifyIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemifyIcon.swift; sourceTree = "<group>"; };
+		DAD008201F90D16500D4FC34 /* SwiftIconFont+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftIconFont+UIImage.swift"; sourceTree = "<group>"; };
+		DAD008231F90D1D500D4FC34 /* SwiftIconFont+NSRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftIconFont+NSRange.swift"; sourceTree = "<group>"; };
+		DAD008251F90D21F00D4FC34 /* SwiftIconFont+UITabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftIconFont+UITabBarItem.swift"; sourceTree = "<group>"; };
+		DAD008271F90D23300D4FC34 /* SwiftIconFont+UIBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftIconFont+UIBarButtonItem.swift"; sourceTree = "<group>"; };
+		DAD008291F90D24F00D4FC34 /* SwiftIconFont+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftIconFont+UIButton.swift"; sourceTree = "<group>"; };
+		DAD0082B1F90D26700D4FC34 /* SwiftIconFont+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftIconFont+UITextField.swift"; sourceTree = "<group>"; };
+		DAD0082D1F90D28300D4FC34 /* SwiftIconFont+UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftIconFont+UITextView.swift"; sourceTree = "<group>"; };
+		DAD0082F1F90D2A700D4FC34 /* SwiftIconFont+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftIconFont+UILabel.swift"; sourceTree = "<group>"; };
+		DAD008331F90D2FC00D4FC34 /* SwiftIconFont+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftIconFont+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,25 +171,58 @@
 		DA8D9D3A1D345A4900F5E693 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DA8D9D3B1D345A4900F5E693 /* FontAwesome.swift */,
+				DAD008361F90D37D00D4FC34 /* Fonts */,
+				DAD008351F90D35800D4FC34 /* UI */,
+				DAD008221F90D1A100D4FC34 /* Extensions */,
 				DA8D9D3C1D345A4900F5E693 /* FontLoader.swift */,
+				DA8D9D441D345A4900F5E693 /* SwiftIconFont.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		DAD008221F90D1A100D4FC34 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DAD008201F90D16500D4FC34 /* SwiftIconFont+UIImage.swift */,
+				DAD008231F90D1D500D4FC34 /* SwiftIconFont+NSRange.swift */,
+				DAD008251F90D21F00D4FC34 /* SwiftIconFont+UITabBarItem.swift */,
+				DAD008271F90D23300D4FC34 /* SwiftIconFont+UIBarButtonItem.swift */,
+				DAD008291F90D24F00D4FC34 /* SwiftIconFont+UIButton.swift */,
+				DAD0082B1F90D26700D4FC34 /* SwiftIconFont+UITextField.swift */,
+				DAD0082D1F90D28300D4FC34 /* SwiftIconFont+UITextView.swift */,
+				DAD0082F1F90D2A700D4FC34 /* SwiftIconFont+UILabel.swift */,
+				DAD008331F90D2FC00D4FC34 /* SwiftIconFont+String.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DAD008351F90D35800D4FC34 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				DA8D9D421D345A4900F5E693 /* SwiftIconBarButtonItem.swift */,
+				DA8D9D431D345A4900F5E693 /* SwiftIconButton.swift */,
+				DA8D9D451D345A4900F5E693 /* SwiftIconLabel.swift */,
+				DA8D9D461D345A4900F5E693 /* SwiftIconTabBarItem.swift */,
+				DA8D9D471D345A4900F5E693 /* SwiftIconTextField.swift */,
+				DA8D9D481D345A4900F5E693 /* SwiftIconTextView.swift */,
+				DA223AA81F160FAC005915D0 /* SwiftIconFontView.swift */,
+				DA639C411F62B959004810A6 /* SwiftIconStepper.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		DAD008361F90D37D00D4FC34 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DA8D9D3B1D345A4900F5E693 /* FontAwesome.swift */,
 				DA8D9D3D1D345A4900F5E693 /* Iconic.swift */,
 				DA8D9D3E1D345A4900F5E693 /* IonIcons.swift */,
 				DA8D9D3F1D345A4900F5E693 /* MapIcon.swift */,
 				DA8D9D401D345A4900F5E693 /* MaterialIcon.swift */,
 				DA8D9D411D345A4900F5E693 /* Octicon.swift */,
-				DA8D9D421D345A4900F5E693 /* SwiftIconBarButtonItem.swift */,
-				DA8D9D431D345A4900F5E693 /* SwiftIconButton.swift */,
-				DA8D9D441D345A4900F5E693 /* SwiftIconFont.swift */,
-				DA8D9D451D345A4900F5E693 /* SwiftIconLabel.swift */,
-				DA8D9D461D345A4900F5E693 /* SwiftIconTabBarItem.swift */,
-				DA8D9D471D345A4900F5E693 /* SwiftIconTextField.swift */,
-				DA8D9D481D345A4900F5E693 /* SwiftIconTextView.swift */,
 				DA8D9D491D345A4900F5E693 /* ThemifyIcon.swift */,
-				DA223AA81F160FAC005915D0 /* SwiftIconFontView.swift */,
-				DA639C411F62B959004810A6 /* SwiftIconStepper.swift */,
 			);
-			path = Classes;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,19 +346,28 @@
 				DA8D9D511D345A4900F5E693 /* SwiftIconBarButtonItem.swift in Sources */,
 				DA8D9D4C1D345A4900F5E693 /* Iconic.swift in Sources */,
 				DA8D9D4A1D345A4900F5E693 /* FontAwesome.swift in Sources */,
+				DAD008261F90D21F00D4FC34 /* SwiftIconFont+UITabBarItem.swift in Sources */,
 				DA8D9D531D345A4900F5E693 /* SwiftIconFont.swift in Sources */,
 				DA639C421F62B959004810A6 /* SwiftIconStepper.swift in Sources */,
 				DA8D9D581D345A4900F5E693 /* ThemifyIcon.swift in Sources */,
+				DAD008341F90D2FC00D4FC34 /* SwiftIconFont+String.swift in Sources */,
 				DA8D9D551D345A4900F5E693 /* SwiftIconTabBarItem.swift in Sources */,
 				DA8D9D561D345A4900F5E693 /* SwiftIconTextField.swift in Sources */,
+				DAD008211F90D16500D4FC34 /* SwiftIconFont+UIImage.swift in Sources */,
 				DA8D9D4B1D345A4900F5E693 /* FontLoader.swift in Sources */,
+				DAD008241F90D1D500D4FC34 /* SwiftIconFont+NSRange.swift in Sources */,
 				DA8D9D571D345A4900F5E693 /* SwiftIconTextView.swift in Sources */,
 				DA223AA91F160FAC005915D0 /* SwiftIconFontView.swift in Sources */,
 				DA8D9D521D345A4900F5E693 /* SwiftIconButton.swift in Sources */,
 				DA8D9D501D345A4900F5E693 /* Octicon.swift in Sources */,
+				DAD008301F90D2A700D4FC34 /* SwiftIconFont+UILabel.swift in Sources */,
+				DAD0082A1F90D24F00D4FC34 /* SwiftIconFont+UIButton.swift in Sources */,
 				DA8D9D4F1D345A4900F5E693 /* MaterialIcon.swift in Sources */,
 				DA8D9D4E1D345A4900F5E693 /* MapIcon.swift in Sources */,
+				DAD0082C1F90D26700D4FC34 /* SwiftIconFont+UITextField.swift in Sources */,
 				DA8D9D4D1D345A4900F5E693 /* IonIcons.swift in Sources */,
+				DAD008281F90D23300D4FC34 /* SwiftIconFont+UIBarButtonItem.swift in Sources */,
+				DAD0082E1F90D28300D4FC34 /* SwiftIconFont+UITextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

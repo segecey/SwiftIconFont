@@ -11,9 +11,7 @@ import Foundation
 import CoreText
 
 class FontLoader: NSObject {
-
     class func loadFont(_ fontName: String) {
-
         let bundle = Bundle(for: FontLoader.self)
         let paths = bundle.paths(forResourcesOfType: "ttf", inDirectory: nil)
         var fontURL = URL(string: "")
@@ -50,5 +48,16 @@ class FontLoader: NSObject {
         NSException(name: NSExceptionName.internalInconsistencyException,
                     reason: errorDescription as String,
                     userInfo: [NSUnderlyingErrorKey: nsError]).raise()
+    }
+}
+
+public extension UIFont {
+    static func icon(from font: Fonts, ofSize size: CGFloat) -> UIFont {
+        let fontName = font.rawValue
+        if (UIFont.fontNames(forFamilyName: font.fontName).count == 0)
+        {
+            FontLoader.loadFont(fontName)
+        }
+        return UIFont(name: font.rawValue, size: size)!
     }
 }
