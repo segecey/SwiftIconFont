@@ -30,11 +30,9 @@ class ViewController: UIViewController, UITabBarDelegate {
         tabbar.delegate = self
         tabbar.selectedItem = tabbarItem
         
-        let testImage: UIImage = UIImage(from: .Octicon, code: "logo-github", textColor: .black, backgroundColor: .clear, size: CGSize(width: 150, height: 50))
         let imageView: UIImageView = UIImageView(frame: CGRect(x: 120, y: self.view.frame.size.height - 130, width: 150, height: 50))
-        imageView.image = testImage
+        imageView.setIcon(from: .Octicon, code: "logo-github", textColor: .black, backgroundColor: .clear, size: nil)
         self.view.addSubview(imageView)
-        
     }
 
     override func didReceiveMemoryWarning() {

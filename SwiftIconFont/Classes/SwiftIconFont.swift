@@ -8,8 +8,6 @@
 
 import UIKit
 
-//func icon(from font: Fonts, code: String, iconColor: UIColor, imageSize: CGSize, ofSize size: CGFloat)
-
 public struct SwiftIcon {
     let font: Fonts
     let code: String
