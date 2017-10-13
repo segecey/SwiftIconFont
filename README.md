@@ -124,6 +124,23 @@ import SwiftIconFont
 twitterTabBarButton.icon(from: .FontAwesome, code: "twitter", imageSize: CGSizeMake(20, 20), ofSize: 20)
 ````
 
+#### UIImage
+
+````swift
+import SwiftIconFont
+
+let githubLogo = UIImage(from: .Octicon, code: "logo-github", textColor: .black, backgroundColor: .clear, size: CGSize(width: 50, height: 50))
+````
+
+#### UIImageView
+
+````swift
+import SwiftIconFont
+
+let githubLogoImageView: UIImageView = UIImageView(frame: CGRect(x: 120, y: self.view.frame.size.height - 130, width: 150, height: 50))
+githubLogoImageView.setIcon(from: .Octicon, code: "logo-github", textColor: .black, backgroundColor: .clear, size: nil)
+````
+
 ## Author
 
 * Sedat Gokbek CIFTCI, me@sedat.ninja
