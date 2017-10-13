@@ -129,7 +129,7 @@ twitterTabBarButton.icon(from: .FontAwesome, code: "twitter", imageSize: CGSizeM
 ````swift
 import SwiftIconFont
 
-let githubLogo = UIImage(from: .Octicon, code: "logo-github", textColor: .black, backgroundColor: .clear, size: CGSize(width: 50, height: 50))
+let githubLogo = UIImage(from: .Octicon, code: "logo-github", textColor: .black, backgroundColor: .clear, size: CGSize(width: 150, height: 50))
 ````
 
 #### UIImageView
