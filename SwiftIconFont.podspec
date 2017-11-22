@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
   s.homepage = "http://sedat.ninja"
   s.source = { :git => "https://github.com/0x73/SwiftIconFont.git", :tag => "#{s.version}"}
   s.framework = "UIKit"
-  s.source_files = "SwiftIconFont/Classes/**/*.{swift}"
-  s.resources = "SwiftIconFont/**/*.{ttf}"
+  s.source_files = "SwiftIconFont/Classes/**/*"
+  s.resources = "SwiftIconFont/Resources/*.{ttf}"
 end
