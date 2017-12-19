@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.7.3] - 2017-12-19
+
+- Removed characters to get rid of warnings
+- Updated project settings
+
 ## [2.7.2] - 2017-10-11
 
 - Swift 4 Support
