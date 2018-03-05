@@ -11,19 +11,19 @@ import Foundation
 public extension String {
     public static func getIcon(from font: Fonts, code: String) -> String? {
         switch font {
-        case .FontAwesome:
+        case .fontAwesome:
             return fontAwesomeIcon(code)
-        case .Iconic:
+        case .iconic:
             return fontIconicIcon(code)
-        case .Ionicon:
+        case .ionicon:
             return fontIonIcon(code)
-        case .MapIcon:
+        case .mapIcon:
             return fontMapIcon(code)
-        case .MaterialIcon:
+        case .materialIcon:
             return fontMaterialIcon(code)
-        case .Octicon:
+        case .octicon:
             return fontOcticon(code)
-        case .Themify:
+        case .themify:
             return fontThemifyIcon(code)
         }
     }

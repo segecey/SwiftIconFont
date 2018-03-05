@@ -62,13 +62,13 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Fonts
 ````swift
 public enum Fonts: String {
-    case FontAwesome = "FontAwesome"
-    case Iconic = "open-iconic"
-    case Ionicon = "Ionicons"
-    case Octicon = "octicons"
-    case Themify = "themify"
-    case MapIcon = "map-icons"
-    case MaterialIcon = "MaterialIcons-Regular"
+    case fontAwesome = "FontAwesome"
+    case iconic = "open-iconic"
+    case ionicon = "Ionicons"
+    case octicon = "octicons"
+    case themify = "themify"
+    case mapIcon = "map-icons"
+    case materialIcon = "MaterialIcons-Regular"
 }
 ````
 
@@ -103,7 +103,7 @@ The lazy way, just set your UILabel, UITextField, UIButton, UITextView, UIBarBut
 ````swift
 import SwiftIconFont
 
-label.font = UIFont.icon(from: .FontAwesome, ofSize: 50.0)
+label.font = UIFont.icon(from: .fontAwesome, ofSize: 50.0)
 label.text = String.fontAwesomeIcon(code: "twitter")
 ````
 
@@ -113,7 +113,7 @@ label.text = String.fontAwesomeIcon(code: "twitter")
 ````swift
 import SwiftIconFont
 
-twitterBarButton.icon(from: .FontAwesome, code: "twitter", ofSize: 20)
+twitterBarButton.icon(from: .fontAwesome, code: "twitter", ofSize: 20)
 ````
 
 #### UITabBarItem (Without Custom Class)
@@ -121,7 +121,7 @@ twitterBarButton.icon(from: .FontAwesome, code: "twitter", ofSize: 20)
 ````swift
 import SwiftIconFont
 
-twitterTabBarButton.icon(from: .FontAwesome, code: "twitter", imageSize: CGSizeMake(20, 20), ofSize: 20)
+twitterTabBarButton.icon(from: .fontAwesome, code: "twitter", imageSize: CGSizeMake(20, 20), ofSize: 20)
 ````
 
 #### UIImage
@@ -129,7 +129,7 @@ twitterTabBarButton.icon(from: .FontAwesome, code: "twitter", imageSize: CGSizeM
 ````swift
 import SwiftIconFont
 
-let githubLogo = UIImage(from: .Octicon, code: "logo-github", textColor: .black, backgroundColor: .clear, size: CGSize(width: 150, height: 50))
+let githubLogo = UIImage(from: .octicon, code: "logo-github", textColor: .black, backgroundColor: .clear, size: CGSize(width: 150, height: 50))
 ````
 
 #### UIImageView
@@ -138,7 +138,7 @@ let githubLogo = UIImage(from: .Octicon, code: "logo-github", textColor: .black,
 import SwiftIconFont
 
 let githubLogoImageView: UIImageView = UIImageView(frame: CGRect(x: 120, y: self.view.frame.size.height - 130, width: 150, height: 50))
-githubLogoImageView.setIcon(from: .Octicon, code: "logo-github", textColor: .black, backgroundColor: .clear, size: nil)
+githubLogoImageView.setIcon(from: .octicon, code: "logo-github", textColor: .black, backgroundColor: .clear, size: nil)
 ````
 
 ## Author

@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITabBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         testLabel1.parseIcon()
-        testLabel2.font = UIFont.icon(from: .FontAwesome, ofSize: 17.0)
+        testLabel2.font = UIFont.icon(from: .fontAwesome, ofSize: 17.0)
         testLabel2.text = String.fontAwesomeIcon("twitter")
         tabbarItem.badgeValue = "1"
         //textField.runtimeParse = true
@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITabBarDelegate {
         tabbar.selectedItem = tabbarItem
         
         let imageView: UIImageView = UIImageView(frame: CGRect(x: 120, y: self.view.frame.size.height - 130, width: 150, height: 50))
-        imageView.setIcon(from: .Octicon, code: "logo-github", textColor: .black, backgroundColor: .clear, size: nil)
+        imageView.setIcon(from: .octicon, code: "logo-github", textColor: .black, backgroundColor: .clear, size: nil)
         self.view.addSubview(imageView)
     }
 
