@@ -57,7 +57,7 @@ public extension String {
         }
         return nil
     }
-	
+    
     public static func fontThemifyIcon(_ code: String) -> String? {
         if let icon = temifyIconArr[code] {
             return icon
@@ -78,11 +78,11 @@ public extension String {
         }
         return nil
     }
-	
-	public static func fontSegoeMDL2Icon(_ code: String) -> String? {
+    
+    public static func fontSegoeMDL2Icon(_ code: String) -> String? {
         if let icon = segoeMDL2[code] {
             return icon
         }
         return nil
-	}
+    }
 }
