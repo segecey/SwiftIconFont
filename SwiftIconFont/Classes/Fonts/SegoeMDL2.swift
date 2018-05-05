@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public let segoeMDL2: [String: String] = [
 	"GlobalNavigationButton": "\u{e700}",
 	"Wifi": "\u{e701}",
