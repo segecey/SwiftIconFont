@@ -60,6 +60,8 @@ class SwiftIconTextField: UITextField {
                         fontArr = mapIconArr
                     } else if fontPrefix == "ma" {
                         fontArr = materialIconArr
+                    } else if fontPrefix == "sm" {
+                        fontArr = segoeMDL2
                     }
                     
                     if let _ = fontArr[fontCode] {
