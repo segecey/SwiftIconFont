@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06575B5420ABDC88008ED097 /* IoniconsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06575B5320ABDC88008ED097 /* IoniconsTableViewController.swift */; };
 		99D30C1E6C04944A48CAA28C /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7036ECA8E807EA9605D9B25A /* Pods_Example.framework */; };
 		DA6A8B401D2FEC9600E9C03B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6A8B3F1D2FEC9600E9C03B /* AppDelegate.swift */; };
 		DA6A8B421D2FEC9600E9C03B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6A8B411D2FEC9600E9C03B /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06575B5320ABDC88008ED097 /* IoniconsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IoniconsTableViewController.swift; sourceTree = "<group>"; };
 		7036ECA8E807EA9605D9B25A /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74348D6BDFD51CA0DD8500B7 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		CA5D4FF92F93552E426AA167 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				DA6A8B461D2FEC9600E9C03B /* Assets.xcassets */,
 				DA6A8B481D2FEC9600E9C03B /* LaunchScreen.storyboard */,
 				DA6A8B4B1D2FEC9600E9C03B /* Info.plist */,
+				06575B5320ABDC88008ED097 /* IoniconsTableViewController.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06575B5420ABDC88008ED097 /* IoniconsTableViewController.swift in Sources */,
 				DA6A8B421D2FEC9600E9C03B /* ViewController.swift in Sources */,
 				DA6A8B401D2FEC9600E9C03B /* AppDelegate.swift in Sources */,
 			);

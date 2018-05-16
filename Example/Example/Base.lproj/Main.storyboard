@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="y9L-uo-mWA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="y9L-uo-mWA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -85,10 +85,15 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </tabBarItem>
+                                    <tabBarItem title="Ionicons" id="did-nf-T0j" customClass="SwiftIconTabBarItem" customModule="SwiftIconFont">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="Icon" value="io:logo-ionic"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tabBarItem>
                                 </items>
                             </tabBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="llU-Ij-InW" customClass="SwiftIconFontView" customModule="SwiftIconFont">
-                                <rect key="frame" x="73" y="99" width="234" height="30"/>
+                                <rect key="frame" x="73" y="79" width="234" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.14117647059999999" green="0.19215686269999999" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
@@ -164,11 +169,180 @@
                         <outlet property="testLabel1" destination="1tG-vu-G0t" id="t3g-LQ-0hn"/>
                         <outlet property="testLabel2" destination="QSU-EJ-ItH" id="gkv-og-vbT"/>
                         <outlet property="textField" destination="z4e-nV-j3n" id="9NG-pF-J5p"/>
+                        <segue destination="ODD-rk-yeH" kind="push" identifier="ShowIonIconsV4" id="FQy-df-73R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="832.5" y="483.5"/>
+        </scene>
+        <!--Ionicons v4.1.0-->
+        <scene sceneID="4dG-k6-fIr">
+            <objects>
+                <tableViewController id="ODD-rk-yeH" customClass="IoniconsTableViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zjT-Wd-NLM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="16" id="7XE-GT-rZZ">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="io:logo-apple" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POa-ns-A2K" customClass="SwiftIconLabel" customModule="SwiftIconFont">
+                                    <rect key="frame" x="0.0" y="46" width="114.5" height="36"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="io:logo-ionic" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MZk-7m-ofd" customClass="SwiftIconTextField" customModule="SwiftIconFont">
+                                    <rect key="frame" x="130.5" y="49" width="114" height="30"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="RuntimeParse" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPI-BL-wap" customClass="SwiftIconButton" customModule="SwiftIconFont">
+                                    <rect key="frame" x="260.5" y="40" width="114.5" height="48"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <state key="normal" title="io:logo-android"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="Icon" value="io:logo-android"/>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ioniconv4IconCell" rowHeight="200" id="lwu-zN-IvY" customClass="IoniconsIconCell" customModule="Example" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="156" width="375" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lwu-zN-IvY" id="8vL-Rj-QX7">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Icon name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uD-gE-qKx">
+                                            <rect key="frame" x="16" y="16" width="84.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="iOS Icon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvP-Ff-Hpy" customClass="SwiftIconLabel" customModule="SwiftIconFont">
+                                            <rect key="frame" x="16" y="52.5" width="155.5" height="89.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Android icon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yi6-l8-SvK" customClass="SwiftIconLabel" customModule="SwiftIconFont">
+                                            <rect key="frame" x="203.5" y="52.5" width="155.5" height="89.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS icon name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmU-MP-o3P">
+                                            <rect key="frame" x="40" y="150" width="109" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Android icon name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zek-Mz-iWu">
+                                            <rect key="frame" x="211" y="150" width="142" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="yi6-l8-SvK" secondAttribute="trailing" constant="16" id="4cx-a6-kbJ"/>
+                                        <constraint firstItem="kvP-Ff-Hpy" firstAttribute="top" secondItem="8uD-gE-qKx" secondAttribute="bottom" constant="16" id="5yU-Rx-1hA"/>
+                                        <constraint firstItem="8uD-gE-qKx" firstAttribute="top" secondItem="8vL-Rj-QX7" secondAttribute="top" constant="16" id="Ebb-f4-GQ3"/>
+                                        <constraint firstItem="MmU-MP-o3P" firstAttribute="centerX" secondItem="kvP-Ff-Hpy" secondAttribute="centerX" id="GfE-wJ-Bwr"/>
+                                        <constraint firstItem="kvP-Ff-Hpy" firstAttribute="width" secondItem="yi6-l8-SvK" secondAttribute="width" id="Oam-EY-Qra"/>
+                                        <constraint firstItem="8uD-gE-qKx" firstAttribute="leading" secondItem="8vL-Rj-QX7" secondAttribute="leading" constant="16" id="V1T-Oa-4bs"/>
+                                        <constraint firstItem="MmU-MP-o3P" firstAttribute="top" secondItem="kvP-Ff-Hpy" secondAttribute="bottom" constant="8" id="XE9-Va-SsY"/>
+                                        <constraint firstItem="zek-Mz-iWu" firstAttribute="centerX" secondItem="yi6-l8-SvK" secondAttribute="centerX" id="alq-s7-h2p"/>
+                                        <constraint firstItem="yi6-l8-SvK" firstAttribute="leading" secondItem="kvP-Ff-Hpy" secondAttribute="trailing" constant="32" id="k7M-HW-jIv"/>
+                                        <constraint firstItem="yi6-l8-SvK" firstAttribute="top" secondItem="8uD-gE-qKx" secondAttribute="bottom" constant="16" id="pMh-yj-1gY"/>
+                                        <constraint firstAttribute="bottom" secondItem="zek-Mz-iWu" secondAttribute="bottom" constant="28.5" id="qme-ib-uXo"/>
+                                        <constraint firstAttribute="bottom" secondItem="MmU-MP-o3P" secondAttribute="bottom" constant="28.5" id="sxO-ip-adh"/>
+                                        <constraint firstItem="kvP-Ff-Hpy" firstAttribute="leading" secondItem="8vL-Rj-QX7" secondAttribute="leading" constant="16" id="yP9-3L-9DO"/>
+                                        <constraint firstItem="zek-Mz-iWu" firstAttribute="top" secondItem="yi6-l8-SvK" secondAttribute="bottom" constant="8" id="ysw-dX-YcN"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="androidIconLabel" destination="yi6-l8-SvK" id="lIT-eA-t6L"/>
+                                    <outlet property="androidLabel" destination="zek-Mz-iWu" id="wea-JE-cjk"/>
+                                    <outlet property="iOsIconLabel" destination="kvP-Ff-Hpy" id="KJN-h4-hNI"/>
+                                    <outlet property="iOsLabel" destination="MmU-MP-o3P" id="EFd-ey-6aO"/>
+                                    <outlet property="titleLabel" destination="8uD-gE-qKx" id="p8B-Rl-SGb"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ioniconv4LogoCell" rowHeight="200" id="Ohn-7N-ytg" customClass="IoniconsLogoCell" customModule="Example" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="356" width="375" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ohn-7N-ytg" id="grF-Zc-GJw">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Icon name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kP-4r-Esa">
+                                            <rect key="frame" x="16" y="16" width="84.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Logo icon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1H-xX-TbH" customClass="SwiftIconLabel" customModule="SwiftIconFont">
+                                            <rect key="frame" x="16" y="52.5" width="343" height="102"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logo icon name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TyR-AY-cLR">
+                                            <rect key="frame" x="127.5" y="162.5" width="120.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="1kP-4r-Esa" firstAttribute="top" secondItem="grF-Zc-GJw" secondAttribute="top" constant="16" id="5da-3M-E9B"/>
+                                        <constraint firstAttribute="bottom" secondItem="TyR-AY-cLR" secondAttribute="bottom" constant="16" id="6eH-jz-1Zj"/>
+                                        <constraint firstItem="m1H-xX-TbH" firstAttribute="leading" secondItem="grF-Zc-GJw" secondAttribute="leading" constant="16" id="JX2-ah-AlP"/>
+                                        <constraint firstItem="1kP-4r-Esa" firstAttribute="leading" secondItem="grF-Zc-GJw" secondAttribute="leading" constant="16" id="SMx-FL-1M5"/>
+                                        <constraint firstAttribute="trailing" secondItem="m1H-xX-TbH" secondAttribute="trailing" constant="16" id="dsz-xl-caH"/>
+                                        <constraint firstItem="TyR-AY-cLR" firstAttribute="top" secondItem="m1H-xX-TbH" secondAttribute="bottom" constant="8" id="mPh-0G-O4m"/>
+                                        <constraint firstItem="TyR-AY-cLR" firstAttribute="centerX" secondItem="m1H-xX-TbH" secondAttribute="centerX" id="uaH-ob-u8b"/>
+                                        <constraint firstItem="m1H-xX-TbH" firstAttribute="top" secondItem="1kP-4r-Esa" secondAttribute="bottom" constant="16" id="xWv-FV-UPQ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="logoIconLabel" destination="m1H-xX-TbH" id="KcF-SQ-b4O"/>
+                                    <outlet property="logoLabel" destination="TyR-AY-cLR" id="icM-FR-DaV"/>
+                                    <outlet property="titleLabel" destination="1kP-4r-Esa" id="zdJ-lZ-l0a"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ODD-rk-yeH" id="loB-s7-47E"/>
+                            <outlet property="delegate" destination="ODD-rk-yeH" id="Dgk-VJ-KeL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Ionicons v4.1.0" id="zrw-dH-lEq">
+                        <barButtonItem key="rightBarButtonItem" title="Color" id="WIL-hp-puB" customClass="SwiftIconBarButtonItem" customModule="SwiftIconFont">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="Icon" value="io:md-color-fill"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="FontSize">
+                                    <real key="value" value="24"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="colorizeAction:" destination="ODD-rk-yeH" id="hOD-CA-Ywt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oDa-Ka-deI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1359.5" y="483.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mbE-12-Sah">

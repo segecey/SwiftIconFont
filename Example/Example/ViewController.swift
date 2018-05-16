@@ -56,6 +56,10 @@ class ViewController: UIViewController, UITabBarDelegate {
         }){ (a) in
             imageView.transform = otherT
         }
+
+        if i == 2 {// ionicons tab
+            self.performSegue(withIdentifier: "ShowIonIconsV4", sender: self)
+        }
     }
 
 }
