@@ -9,15 +9,15 @@
 import UIKit
 
 @IBDesignable
-class SwiftIconBarButtonItem: UIBarButtonItem {
-    @IBInspectable var Icon: String = ""
-    @IBInspectable var FontSize: CGFloat = 15.00
+public class SwiftIconBarButtonItem: UIBarButtonItem {
+    @IBInspectable public var Icon: String = ""
+    @IBInspectable public var FontSize: CGFloat = 15.00
 
     override func awakeFromNib() {
         parseIcon()
     }
 
-    fileprivate func parseIcon() {
+    @objc public func parseIcon() {
         self.icon(from: GetFontTypeWithSelectedIcon(Icon), code: GetIconIndexWithSelectedIcon(Icon), ofSize: FontSize)
     }
 }
