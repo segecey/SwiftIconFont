@@ -14,10 +14,8 @@ public extension UIBarButtonItem {
         let currentTextAttributes: [NSAttributedString.Key: Any]? = self.titleTextAttributes(for: UIControl.State())
         
         if currentTextAttributes != nil {
-            for (key, value) in currentTextAttributes! {
-                if key != .font {
-                    textAttributes[key] = value
-                }
+            for (key, value) in currentTextAttributes! where key != .font {
+                textAttributes[key] = value
             }
         }
         self.setTitleTextAttributes(textAttributes, for: .normal)
