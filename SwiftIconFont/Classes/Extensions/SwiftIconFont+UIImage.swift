@@ -40,7 +40,7 @@ public extension UIImage
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = NSTextAlignment.center
         
-        drawText!.draw(in: CGRect(x:0, y:0, width:imageSize.width, height:imageSize.height), withAttributes: [.font : UIFont.icon(from: font, ofSize: size), .paragraphStyle: paragraphStyle, .foregroundColor: iconColor])
+        drawText!.draw(in: CGRect(x:0, y:0, width:imageSize.width, height:imageSize.height), withAttributes: [.font: UIFont.icon(from: font, ofSize: size), .paragraphStyle: paragraphStyle, .foregroundColor: iconColor])
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
