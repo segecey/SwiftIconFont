@@ -200,7 +200,7 @@ func GetIconIndexWithSelectedIcon(_ icon: String) -> String {
         var fontCode: String = splitArr[1]
         
         if fontCode.lowercased().range(of: "_") != nil {
-            fontCode = (fontCode as NSString!).replacingOccurrences(of: "_", with: "-")
+            fontCode = fontCode.replacingOccurrences(of: "_", with: "-")
         }
         iconIndex = fontCode
     }
