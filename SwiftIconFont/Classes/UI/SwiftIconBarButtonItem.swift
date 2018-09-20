@@ -13,7 +13,7 @@ public class SwiftIconBarButtonItem: UIBarButtonItem {
     @IBInspectable public var icon: String = ""
     @IBInspectable public var fontSize: CGFloat = 15.00
 
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         parseIcon()
     }
 
