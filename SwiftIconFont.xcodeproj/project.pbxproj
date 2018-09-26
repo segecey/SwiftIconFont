@@ -296,7 +296,7 @@
 				TargetAttributes = {
 					DA8D9D101D345A3800F5E693 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1000;
 					};
 					DA8D9D1A1D345A3800F5E693 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -527,7 +527,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = tr.sdev.SwiftIconFont;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -546,7 +546,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = tr.sdev.SwiftIconFont;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

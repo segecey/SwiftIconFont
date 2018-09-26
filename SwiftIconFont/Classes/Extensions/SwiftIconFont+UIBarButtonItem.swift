@@ -10,20 +10,17 @@ import UIKit
 
 public extension UIBarButtonItem {
     func icon(from font: Fonts, code: String, ofSize size: CGFloat){
-        var textAttributes: [NSAttributedStringKey: AnyObject] = [NSAttributedStringKey.font: UIFont.icon(from: font, ofSize: size)]
-        let currentTextAttributes: [String: AnyObject]? = self.titleTextAttributes(for: UIControlState()) as [String : AnyObject]?
+        var textAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.icon(from: font, ofSize: size)]
+        let currentTextAttributes: [NSAttributedString.Key: Any]? = self.titleTextAttributes(for: UIControl.State())
         
         if currentTextAttributes != nil {
-            for (rawKey, value) in currentTextAttributes! {
-                let key = NSAttributedStringKey.init(rawKey)
-                if key != NSAttributedStringKey.font {
-                    textAttributes[key] = value
-                }
+            for (key, value) in currentTextAttributes! where key != .font {
+                textAttributes[key] = value
             }
         }
-        self.setTitleTextAttributes(textAttributes, for: UIControlState.normal)
-        self.setTitleTextAttributes(textAttributes, for: UIControlState.highlighted)
-        self.setTitleTextAttributes(textAttributes, for: UIControlState.disabled)
+        self.setTitleTextAttributes(textAttributes, for: .normal)
+        self.setTitleTextAttributes(textAttributes, for: .highlighted)
+        self.setTitleTextAttributes(textAttributes, for: .disabled)
         
         self.title = String.getIcon(from: font, code: code)
     }

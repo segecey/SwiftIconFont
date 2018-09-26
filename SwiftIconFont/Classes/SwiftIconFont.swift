@@ -108,7 +108,7 @@ func getAttributedString(_ text: NSString, ofSize size: CGFloat) -> NSMutableAtt
         if let _ = fontArr[fontCode] {
             attributedString.replaceCharacters(in: substringRange, with: String.getIcon(from: fontType, code: fontCode)!)
             let newRange = NSRange(location: substringRange.location, length: 1)
-            attributedString.addAttribute(NSAttributedStringKey.font, value: UIFont.icon(from: fontType, ofSize: size), range: newRange)
+            attributedString.addAttribute(.font, value: UIFont.icon(from: fontType, ofSize: size), range: newRange)
         }
     }
     
@@ -173,7 +173,7 @@ func getAttributedStringForRuntimeReplace(_ text: NSString, ofSize size: CGFloat
                 if let _ = fontArr[fontCode] {
                     attributedString.replaceCharacters(in: match.range, with: String.getIcon(from: fontType, code: fontCode)!)
                     let newRange = NSRange(location: match.range.location, length: 1)
-                    attributedString.addAttribute(NSAttributedStringKey.font, value: UIFont.icon(from: fontType, ofSize: size), range: newRange)
+                    attributedString.addAttribute(.font, value: UIFont.icon(from: fontType, ofSize: size), range: newRange)
                 }
                 
             }
@@ -200,7 +200,7 @@ func GetIconIndexWithSelectedIcon(_ icon: String) -> String {
         var fontCode: String = splitArr[1]
         
         if fontCode.lowercased().range(of: "_") != nil {
-            fontCode = (fontCode as NSString!).replacingOccurrences(of: "_", with: "-")
+            fontCode = fontCode.replacingOccurrences(of: "_", with: "-")
         }
         iconIndex = fontCode
     }
