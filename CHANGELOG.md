@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.9.0] - 2018-10-23
+-  Swift 4.2 Support
+
 ## [2.8.0] - 2018-05-18
 
 - Ionicons v4 support
