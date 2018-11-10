@@ -186,7 +186,7 @@ func getAttributedStringForRuntimeReplace(_ text: NSString, ofSize size: CGFloat
     return attributedString
 }
 
-func GetIconIndexWithSelectedIcon(_ icon: String) -> String {
+public func GetIconIndexWithSelectedIcon(_ icon: String) -> String {
     let text = icon as NSString
     var iconIndex: String = ""
  
@@ -208,7 +208,7 @@ func GetIconIndexWithSelectedIcon(_ icon: String) -> String {
     return iconIndex
 }
 
-func GetFontTypeWithSelectedIcon(_ icon: String) -> Fonts {
+public func GetFontTypeWithSelectedIcon(_ icon: String) -> Fonts {
     let text = icon as NSString
     var fontType: Fonts = Fonts.fontAwesome
     
