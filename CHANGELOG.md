@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [3.0.0] - 2018-11-21
+- Update project SWIFT_VERSION to 4.2 for Fix Swift 4.2 build error.
+- Make public GetIconIndexWithSelectedIcon and GetFontTypeWithSelectedIcon
+
 ## [2.9.0] - 2018-10-23
 -  Swift 4.2 Support
 
