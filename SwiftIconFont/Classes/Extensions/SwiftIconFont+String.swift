@@ -9,7 +9,7 @@
 import Foundation
 
 public extension String {
-    public static func getIcon(from font: Fonts, code: String) -> String? {
+    static func getIcon(from font: Fonts, code: String) -> String? {
         switch font {
         case .fontAwesome:
             return fontAwesomeIcon(code)
@@ -30,56 +30,56 @@ public extension String {
         }
     }
     
-    public static func fontAwesomeIcon(_ code: String) -> String? {
+    static func fontAwesomeIcon(_ code: String) -> String? {
         if let icon = fontAwesomeIconArr[code] {
             return icon
         }
         return nil
     }
     
-    public static func fontOcticon(_ code: String) -> String? {
+    static func fontOcticon(_ code: String) -> String? {
         if let icon = octiconArr[code] {
             return icon
         }
         return nil
     }
     
-    public static func fontIonIcon(_ code: String) -> String? {
+    static func fontIonIcon(_ code: String) -> String? {
         if let icon = ioniconArr[code] {
             return icon
         }
         return nil
     }
     
-    public static func fontIconicIcon(_ code: String) -> String? {
+    static func fontIconicIcon(_ code: String) -> String? {
         if let icon = iconicIconArr[code] {
             return icon
         }
         return nil
     }
     
-    public static func fontThemifyIcon(_ code: String) -> String? {
+    static func fontThemifyIcon(_ code: String) -> String? {
         if let icon = temifyIconArr[code] {
             return icon
         }
         return nil
     }
     
-    public static func fontMapIcon(_ code: String) -> String? {
+    static func fontMapIcon(_ code: String) -> String? {
         if let icon = mapIconArr[code] {
             return icon
         }
         return nil
     }
     
-    public static func fontMaterialIcon(_ code: String) -> String? {
+    static func fontMaterialIcon(_ code: String) -> String? {
         if let icon = materialIconArr[code] {
             return icon
         }
         return nil
     }
     
-    public static func fontSegoeMDL2Icon(_ code: String) -> String? {
+    static func fontSegoeMDL2Icon(_ code: String) -> String? {
         if let icon = segoeMDL2[code] {
             return icon
         }

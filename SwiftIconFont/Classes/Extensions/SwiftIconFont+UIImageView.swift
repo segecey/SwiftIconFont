@@ -9,7 +9,7 @@
 import UIKit
 
 public extension UIImageView {
-    public func setIcon(from font: Fonts, code: String, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize? = nil) {
+    func setIcon(from font: Fonts, code: String, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize? = nil) {
         self.image = UIImage(from: font, code: code, textColor: textColor, backgroundColor: backgroundColor, size: size ?? frame.size)
     }
 }
