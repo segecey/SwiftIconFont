@@ -66,7 +66,8 @@ public enum Fonts: String {
     case materialIcon = "MaterialIcons-Regular"
     case segoeMDL2 = "Segoe mdl2 assets"
     case foundation = "fontcustom"
-    case elegantIcons = "ElegantIcons"
+    case elegantIcon = "ElegantIcons"
+    case captain = "captainicon"
 }
 ````
 
