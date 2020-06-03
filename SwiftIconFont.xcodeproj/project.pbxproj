@@ -48,6 +48,7 @@
 		E8E47629248855DE005275C4 /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E47628248855DE005275C4 /* Foundation.swift */; };
 		E8E4762B24885663005275C4 /* FontAwesome5.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E4762A24885662005275C4 /* FontAwesome5.swift */; };
 		E8E47631248859A4005275C4 /* ElegantIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E47630248859A4005275C4 /* ElegantIcon.swift */; };
+		E8E4763424885D85005275C4 /* Captain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E4763324885D85005275C4 /* Captain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,8 @@
 		E8E4762E248856CB005275C4 /* FontAwesome5Free-Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontAwesome5Free-Solid.ttf"; sourceTree = "<group>"; };
 		E8E4762F24885945005275C4 /* ElegantIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ElegantIcons.ttf; sourceTree = "<group>"; };
 		E8E47630248859A4005275C4 /* ElegantIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElegantIcon.swift; sourceTree = "<group>"; };
+		E8E4763224885D4C005275C4 /* captainicon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = captainicon.ttf; sourceTree = "<group>"; };
+		E8E4763324885D85005275C4 /* Captain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Captain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +178,7 @@
 				1AF15B93209E196500E20C14 /* Segoe mdl2 assets.ttf */,
 				E8E4762F24885945005275C4 /* ElegantIcons.ttf */,
 				E8E476272488556C005275C4 /* fontcustom.ttf */,
+				E8E4763224885D4C005275C4 /* captainicon.ttf */,
 				E8E4762D248856CB005275C4 /* FontAwesome5Brands-Regular.ttf */,
 				E8E4762C248856CB005275C4 /* FontAwesome5Free-Regular.ttf */,
 				E8E4762E248856CB005275C4 /* FontAwesome5Free-Solid.ttf */,
@@ -246,6 +250,7 @@
 				1AF15B95209E198D00E20C14 /* SegoeMDL2.swift */,
 				E8E47628248855DE005275C4 /* Foundation.swift */,
 				E8E47630248859A4005275C4 /* ElegantIcon.swift */,
+				E8E4763324885D85005275C4 /* Captain.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -376,6 +381,7 @@
 				DA8D9D531D345A4900F5E693 /* SwiftIconFont.swift in Sources */,
 				DA639C421F62B959004810A6 /* SwiftIconStepper.swift in Sources */,
 				DA8D9D581D345A4900F5E693 /* ThemifyIcon.swift in Sources */,
+				E8E4763424885D85005275C4 /* Captain.swift in Sources */,
 				DAD008341F90D2FC00D4FC34 /* SwiftIconFont+String.swift in Sources */,
 				DA8D9D551D345A4900F5E693 /* SwiftIconTabBarItem.swift in Sources */,
 				DA8D9D561D345A4900F5E693 /* SwiftIconTextField.swift in Sources */,

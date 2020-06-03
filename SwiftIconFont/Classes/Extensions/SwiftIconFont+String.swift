@@ -33,9 +33,21 @@ public extension String {
             return fontAwesome5Icon(code)
         case .foundation:
             return foundationIcon(code)
-        case .elegantIcons:
+        case .elegantIcon:
             return elegantIcon(code)
+        case .captain:
+            return captainIcon(code)
         }
+    }
+    
+    
+    
+    static func captainIcon(_ code: String) -> String? {
+        if let icon = captainIconArr[code] {
+            return icon
+        }
+        
+        return nil
     }
     
     static func elegantIcon(_ code: String) -> String? {

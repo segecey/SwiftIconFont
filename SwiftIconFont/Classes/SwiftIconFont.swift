@@ -28,7 +28,8 @@ public enum Fonts: String {
     case materialIcon = "MaterialIcons-Regular"
     case segoeMDL2 = "Segoe mdl2 assets"
     case foundation = "fontcustom"
-    case elegantIcons = "ElegantIcons"
+    case elegantIcon = "ElegantIcons"
+    case captain = "captainicon"
     
     var fontFamilyName: String {
         switch self {
@@ -54,8 +55,10 @@ public enum Fonts: String {
             return "Segoe MDL2 Assets"
         case .foundation:
             return "fontcustom"
-        case .elegantIcons:
+        case .elegantIcon:
             return "ElegantIcons"
+        case .captain:
+            return "captainicon"
         }
     }
     
@@ -125,8 +128,11 @@ func getAttributedString(_ text: NSString, ofSize size: CGFloat) -> NSMutableAtt
             fontType = .foundation
             fontArr = foundationIconArr
         } else if fontPrefix == "el" {
-            fontType = .elegantIcons
+            fontType = .elegantIcon
             fontArr = elegantIconArr
+        } else if fontPrefix == "cp" {
+            fontType = .captain
+            fontArr = captainIconArr
         }
         
         if let _ = fontArr[fontCode] {
@@ -201,8 +207,11 @@ func getAttributedStringForRuntimeReplace(_ text: NSString, ofSize size: CGFloat
                     fontType = .foundation
                     fontArr = foundationIconArr
                 } else if fontPrefix == "el" {
-                    fontType = .elegantIcons
+                    fontType = .elegantIcon
                     fontArr = elegantIconArr
+                } else if fontPrefix == "cp" {
+                    fontType = .captain
+                    fontArr = captainIconArr
                 }
                 
                 
@@ -287,7 +296,9 @@ public func GetFontTypeWithSelectedIcon(_ icon: String) -> Fonts {
         } else if fontPrefix == "fo" {
             fontType = .foundation
         } else if fontPrefix == "el" {
-            fontType = .elegantIcons
+            fontType = .elegantIcon
+        } else if fontPrefix == "cp" {
+            fontType = .captain
         }
     }
     

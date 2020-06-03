@@ -70,6 +70,8 @@ class SwiftIconTextField: UITextField {
                         fontArr = foundationIconArr
                     } else if fontPrefix == "el" {
                         fontArr = elegantIconArr
+                    } else if fontPrefix == "cp" {
+                        fontArr = captainIconArr
                     }
                     
                     if let _ = fontArr[fontCode] {
