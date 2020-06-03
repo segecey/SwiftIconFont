@@ -63,7 +63,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 | Map Icons   | mi:    | [List](http://map-icons.com)       |
 | Segoe MDL2   | sm:    | [List](https://docs.microsoft.com/en-us/windows/uwp/design/style/segoe-ui-symbol-font)       |
 | Foundation 3   | fo:    | [List](https://zurb.com/playground/foundation-icon-fonts-3)       |
-| Elegant Icon   | fo:    | [List](https://www.elegantthemes.com/blog/resources/elegant-icon-font)       |
+| Elegant Icon   | el:    | [List](https://www.elegantthemes.com/blog/resources/elegant-icon-font)       |
 
 ## Fonts
 ````swift
