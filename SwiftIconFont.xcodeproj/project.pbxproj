@@ -47,6 +47,7 @@
 		DAD008381F90D44C00D4FC34 /* SwiftIconFont+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD008371F90D44C00D4FC34 /* SwiftIconFont+UIImageView.swift */; };
 		E8E47629248855DE005275C4 /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E47628248855DE005275C4 /* Foundation.swift */; };
 		E8E4762B24885663005275C4 /* FontAwesome5.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E4762A24885662005275C4 /* FontAwesome5.swift */; };
+		E8E47631248859A4005275C4 /* ElegantIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E47630248859A4005275C4 /* ElegantIcon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,8 @@
 		E8E4762C248856CB005275C4 /* FontAwesome5Free-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontAwesome5Free-Regular.ttf"; sourceTree = "<group>"; };
 		E8E4762D248856CB005275C4 /* FontAwesome5Brands-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontAwesome5Brands-Regular.ttf"; sourceTree = "<group>"; };
 		E8E4762E248856CB005275C4 /* FontAwesome5Free-Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontAwesome5Free-Solid.ttf"; sourceTree = "<group>"; };
+		E8E4762F24885945005275C4 /* ElegantIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ElegantIcons.ttf; sourceTree = "<group>"; };
+		E8E47630248859A4005275C4 /* ElegantIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElegantIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				1AF15B93209E196500E20C14 /* Segoe mdl2 assets.ttf */,
+				E8E4762F24885945005275C4 /* ElegantIcons.ttf */,
 				E8E476272488556C005275C4 /* fontcustom.ttf */,
 				E8E4762D248856CB005275C4 /* FontAwesome5Brands-Regular.ttf */,
 				E8E4762C248856CB005275C4 /* FontAwesome5Free-Regular.ttf */,
@@ -241,6 +245,7 @@
 				DA8D9D491D345A4900F5E693 /* ThemifyIcon.swift */,
 				1AF15B95209E198D00E20C14 /* SegoeMDL2.swift */,
 				E8E47628248855DE005275C4 /* Foundation.swift */,
+				E8E47630248859A4005275C4 /* ElegantIcon.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -375,6 +380,7 @@
 				DA8D9D551D345A4900F5E693 /* SwiftIconTabBarItem.swift in Sources */,
 				DA8D9D561D345A4900F5E693 /* SwiftIconTextField.swift in Sources */,
 				E8E47629248855DE005275C4 /* Foundation.swift in Sources */,
+				E8E47631248859A4005275C4 /* ElegantIcon.swift in Sources */,
 				E8E4762B24885663005275C4 /* FontAwesome5.swift in Sources */,
 				DAD008211F90D16500D4FC34 /* SwiftIconFont+UIImage.swift in Sources */,
 				DA8D9D4B1D345A4900F5E693 /* FontLoader.swift in Sources */,

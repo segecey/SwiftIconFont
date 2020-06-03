@@ -6,8 +6,6 @@
 //  Copyright © 2016 Sedat Gokbek Ciftci. All rights reserved.
 //
 
-import UIKit
-
 public let ioniconArr: [String: String] = [
     "ios-add":"\u{f102}",
     "ios-add-circle":"\u{f101}",

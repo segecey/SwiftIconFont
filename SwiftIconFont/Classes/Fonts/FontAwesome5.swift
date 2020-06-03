@@ -6,8 +6,6 @@
 //  Copyright © 2020 Sedat Gökbek ÇİFTÇİ. All rights reserved.
 //
 
-import UIKit
-
 public let fontAwesome5IconArr: [String: String] = [
     "500px": "\u{f26e}",
     "accessible-icon": "\u{f368}",

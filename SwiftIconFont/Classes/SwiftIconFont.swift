@@ -28,6 +28,7 @@ public enum Fonts: String {
     case materialIcon = "MaterialIcons-Regular"
     case segoeMDL2 = "Segoe mdl2 assets"
     case foundation = "fontcustom"
+    case elegantIcons = "ElegantIcons"
     
     var fontFamilyName: String {
         switch self {
@@ -53,6 +54,8 @@ public enum Fonts: String {
             return "Segoe MDL2 Assets"
         case .foundation:
             return "fontcustom"
+        case .elegantIcons:
+            return "ElegantIcons"
         }
     }
     
@@ -121,12 +124,12 @@ func getAttributedString(_ text: NSString, ofSize size: CGFloat) -> NSMutableAtt
         } else if fontPrefix == "fo" {
             fontType = .foundation
             fontArr = foundationIconArr
+        } else if fontPrefix == "el" {
+            fontType = .elegantIcons
+            fontArr = elegantIconArr
         }
         
-        if let xx = fontArr[fontCode] {
-            
-            print(xx)
-            
+        if let _ = fontArr[fontCode] {
             attributedString.replaceCharacters(in: substringRange, with: String.getIcon(from: fontType, code: fontCode)!)
             let newRange = NSRange(location: substringRange.location, length: 1)
             attributedString.addAttribute(.font, value: UIFont.icon(from: fontType, ofSize: size), range: newRange)
@@ -197,6 +200,9 @@ func getAttributedStringForRuntimeReplace(_ text: NSString, ofSize size: CGFloat
                 } else if fontPrefix == "fo" {
                     fontType = .foundation
                     fontArr = foundationIconArr
+                } else if fontPrefix == "el" {
+                    fontType = .elegantIcons
+                    fontArr = elegantIconArr
                 }
                 
                 
@@ -280,6 +286,8 @@ public func GetFontTypeWithSelectedIcon(_ icon: String) -> Fonts {
             fontType = Fonts.fontAwesome5Solid
         } else if fontPrefix == "fo" {
             fontType = .foundation
+        } else if fontPrefix == "el" {
+            fontType = .elegantIcons
         }
     }
     

@@ -6,8 +6,6 @@
 //  Copyright © 2016 Sedat Gökbek ÇİFTÇİ. All rights reserved.
 //
 
-import UIKit
-
 public let materialIconArr: [String: String] = [
     "3d.rotation":"\u{e84d}",
     "ac.unit":"\u{eb3b}",

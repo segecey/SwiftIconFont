@@ -6,8 +6,6 @@
 //  Copyright © 2016 Sedat Gokbek Ciftci. All rights reserved.
 //
 
-import UIKit
-
 public let octiconArr: [String: String] = [
     "alert":"\u{f02d}",
     "alignment-align":"\u{f08a}",

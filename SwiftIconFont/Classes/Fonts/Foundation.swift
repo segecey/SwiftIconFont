@@ -6,8 +6,6 @@
 //  Copyright © 2020 Sedat Gökbek ÇİFTÇİ. All rights reserved.
 //
 
-import Foundation
-
 public let foundationIconArr: [String: String] = [
     "address-book": "\u{f100}",
     "alert": "\u{f101}",

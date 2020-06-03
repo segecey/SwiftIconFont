@@ -6,8 +6,6 @@
 //  Copyright © 2018 Sedat Gökbek ÇİFTÇİ. All rights reserved.
 //
 
-import Foundation
-
 public let segoeMDL2: [String: String] = [
     "GlobalNavigationButton": "\u{e700}",
     "Wifi": "\u{e701}",

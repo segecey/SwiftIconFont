@@ -6,8 +6,6 @@
 //  Copyright © 2016 Sedat Gokbek Ciftci. All rights reserved.
 //
 
-import UIKit
-
 public let iconicIconArr: [String: String] =  [
     "account-login":"\u{e000}",
     "account-logout":"\u{e001}",

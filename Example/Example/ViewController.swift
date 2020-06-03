@@ -65,6 +65,11 @@ class ViewController: UIViewController {
             "title": "Foundation",
             "fonts": foundationIconArr,
             "prefix": "fo"
+        ],
+        [
+            "title": "Elegant Icon",
+            "fonts": elegantIconArr,
+            "prefix": "el"
         ]
     ]
     

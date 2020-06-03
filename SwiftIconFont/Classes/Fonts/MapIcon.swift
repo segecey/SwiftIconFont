@@ -6,8 +6,6 @@
 //  Copyright © 2016 Sedat Gökbek ÇİFTÇİ. All rights reserved.
 //
 
-import UIKit
-
 public let mapIconArr: [String: String] = [
     "map.icon.abseiling":"\u{e800}",
     "map.icon.accounting":"\u{e801}",

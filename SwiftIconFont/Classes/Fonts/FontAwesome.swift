@@ -5,7 +5,6 @@
 //  Created by Sedat Ciftci on 07/07/2017 12:32.
 //  Copyright © 2016 Sedat Gokbek Ciftci. All rights reserved.
 //
-import UIKit
 
 public let fontAwesomeIconArr: [String: String] = [
     "500px":"\u{f26e}",
