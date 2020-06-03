@@ -70,6 +70,11 @@ class ViewController: UIViewController {
             "title": "Elegant Icon",
             "fonts": elegantIconArr,
             "prefix": "el"
+        ],
+        [
+            "title": "Captain",
+            "fonts": captainIconArr,
+            "prefix": "cp"
         ]
     ]
     
