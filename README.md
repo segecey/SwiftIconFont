@@ -62,6 +62,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 | Themify   | ti:    | [List](https://themify.me/themify-icons)       |
 | Map Icons   | mi:    | [List](http://map-icons.com)       |
 | Segoe MDL2   | sm:    | [List](https://docs.microsoft.com/en-us/windows/uwp/design/style/segoe-ui-symbol-font)       |
+| Foundation 3   | fo:    | [List](https://zurb.com/playground/foundation-icon-fonts-3)       |
 
 ## Fonts
 ````swift
@@ -76,6 +77,7 @@ public enum Fonts: String {
     case mapIcon = "map-icons"
     case materialIcon = "MaterialIcons-Regular"
     case segoeMDL2 = "Segoe mdl2 assets"
+    case foundation = "fontcustom"
 }
 ````
 

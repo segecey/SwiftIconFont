@@ -60,6 +60,11 @@ class ViewController: UIViewController {
             "title": "Themify Icon",
             "fonts": temifyIconArr,
             "prefix": "ti"
+        ],
+        [
+            "title": "Foundation",
+            "fonts": foundationIconArr,
+            "prefix": "fo"
         ]
     ]
     
@@ -67,7 +72,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        // Do any additional setup after loading the view.
+        let label = UILabel()
+        label.font = UIFont.icon(from: .fontAwesome5, ofSize: 15)
+        label.text = String.fontAwesome5Icon("twitter")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

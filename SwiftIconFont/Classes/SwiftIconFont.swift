@@ -27,6 +27,7 @@ public enum Fonts: String {
     case mapIcon = "map-icons"
     case materialIcon = "MaterialIcons-Regular"
     case segoeMDL2 = "Segoe mdl2 assets"
+    case foundation = "fontcustom"
     
     var fontFamilyName: String {
         switch self {
@@ -50,6 +51,8 @@ public enum Fonts: String {
             return "Material Icons"
         case .segoeMDL2:
             return "Segoe MDL2 Assets"
+        case .foundation:
+            return "fontcustom"
         }
     }
     
@@ -115,6 +118,9 @@ func getAttributedString(_ text: NSString, ofSize size: CGFloat) -> NSMutableAtt
         } else if fontPrefix == "fa5s" {
             fontType = Fonts.fontAwesome5Solid
             fontArr = fontAwesome5IconArr
+        } else if fontPrefix == "fo" {
+            fontType = .foundation
+            fontArr = foundationIconArr
         }
         
         if let xx = fontArr[fontCode] {
@@ -188,6 +194,9 @@ func getAttributedStringForRuntimeReplace(_ text: NSString, ofSize size: CGFloat
                 } else if fontPrefix == "fa5s" {
                     fontType = Fonts.fontAwesome5Solid
                     fontArr = fontAwesome5IconArr
+                } else if fontPrefix == "fo" {
+                    fontType = .foundation
+                    fontArr = foundationIconArr
                 }
                 
                 
@@ -269,6 +278,8 @@ public func GetFontTypeWithSelectedIcon(_ icon: String) -> Fonts {
             fontType = Fonts.fontAwesome5Brand
         } else if fontPrefix == "fa5s" {
             fontType = Fonts.fontAwesome5Solid
+        } else if fontPrefix == "fo" {
+            fontType = .foundation
         }
     }
     

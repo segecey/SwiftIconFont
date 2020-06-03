@@ -1,4 +1,4 @@
 target 'Example' do		
  	use_frameworks!		
- 	pod 'SwiftIconFont', :path => '../'		
- end
+	pod 'SwiftIconFont', :path => '../'		
+end

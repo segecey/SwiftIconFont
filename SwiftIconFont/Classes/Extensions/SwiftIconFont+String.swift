@@ -31,7 +31,17 @@ public extension String {
             return fontAwesome5Icon(code)
         case .fontAwesome5Solid:
             return fontAwesome5Icon(code)
+        case .foundation:
+            return foundationIcon(code)
         }
+    }
+    
+    static func foundationIcon(_ code: String) -> String? {
+        if let icon = foundationIconArr[code] {
+            return icon
+        }
+        
+        return nil
     }
 
     static func fontAwesome5Icon(_ code: String) -> String? {

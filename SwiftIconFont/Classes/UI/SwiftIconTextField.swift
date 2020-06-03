@@ -66,6 +66,8 @@ class SwiftIconTextField: UITextField {
                         fontArr = fontAwesome5IconArr
                     } else if fontPrefix == "fa5s" {
                         fontArr = fontAwesome5IconArr
+                    } else if fontPrefix == "fo" {
+                        fontArr = foundationIconArr
                     }
                     
                     if let _ = fontArr[fontCode] {
