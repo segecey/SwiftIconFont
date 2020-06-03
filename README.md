@@ -78,7 +78,7 @@ public enum Fonts: String {
 ````
 
 ## Storyboard
-<p align="left"><img src="https://raw.githubusercontent.com/0x73/SwiftIconFont/master/Assets/storyboard-t.gif" alt="SwiftIconFont Banner"></p>
+<p align="left"><a href="https://www.youtube.com/watch?v=kWex5gqR8rs"><img src="https://raw.githubusercontent.com/0x73/SwiftIconFont/master/Assets/storyboard-t.gif" alt="SwiftIconFont Banner"></a></p>
 
 ## Runtime Structure
 > < Prefix >:< Icon >
