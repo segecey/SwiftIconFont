@@ -46,9 +46,7 @@ class SwiftIconTextField: UITextField {
                     
                     var fontArr: [String: String] = ["": ""]
                     
-                    if fontPrefix == "fa" {
-                        fontArr = fontAwesomeIconArr
-                    } else if fontPrefix == "ic" {
+                    if fontPrefix == "ic" {
                         fontArr = iconicIconArr
                     } else if fontPrefix == "io" {
                         fontArr = ioniconArr
@@ -62,6 +60,12 @@ class SwiftIconTextField: UITextField {
                         fontArr = materialIconArr
                     } else if fontPrefix == "sm" {
                         fontArr = segoeMDL2
+                    } else if fontPrefix == "fa5" {
+                        fontArr = fontAwesome5IconArr
+                    } else if fontPrefix == "fa5b" {
+                        fontArr = fontAwesome5IconArr
+                    } else if fontPrefix == "fa5s" {
+                        fontArr = fontAwesome5IconArr
                     }
                     
                     if let _ = fontArr[fontCode] {

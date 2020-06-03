@@ -21,7 +21,7 @@ import UIKit
     
     
     private var iconView = UILabel()
-    private var iconFont = Fonts.fontAwesome
+    private var iconFont = Fonts.fontAwesome5
     
     override init(frame: CGRect) {
         super.init(frame: frame)

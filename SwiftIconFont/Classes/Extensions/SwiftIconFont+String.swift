@@ -11,8 +11,6 @@ import Foundation
 public extension String {
     static func getIcon(from font: Fonts, code: String) -> String? {
         switch font {
-        case .fontAwesome:
-            return fontAwesomeIcon(code)
         case .iconic:
             return fontIconicIcon(code)
         case .ionicon:
@@ -27,13 +25,20 @@ public extension String {
             return fontThemifyIcon(code)
         case .segoeMDL2:
             return fontSegoeMDL2Icon(code)
+        case .fontAwesome5:
+            return fontAwesome5Icon(code)
+        case .fontAwesome5Brand:
+            return fontAwesome5Icon(code)
+        case .fontAwesome5Solid:
+            return fontAwesome5Icon(code)
         }
     }
-    
-    static func fontAwesomeIcon(_ code: String) -> String? {
-        if let icon = fontAwesomeIconArr[code] {
+
+    static func fontAwesome5Icon(_ code: String) -> String? {
+        if let icon = fontAwesome5IconArr[code] {
             return icon
         }
+        
         return nil
     }
     
