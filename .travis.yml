@@ -1,17 +1,37 @@
-language: objective-c
-osx_image: xcode8
-
-#before_install:
-  #- gem install cocoapods
-  #- gem install xcpretty
-  #- pod install --project-directory=Example
-
-#cache: cocoapods
-#podfile: Example/Podfile
-#xcode_workspace: Example/Example.xcworkspace
-#xcode_scheme: Example
-#xcode_sdk:
-    #- iphonesimulator
-
+language: swift
+before_install:
+  - gem uninstall fourflusher --force -a -q -I -x
+  - gem install fourflusher
+  - gem uninstall cocoapods --force -a -q -I -x
+  - gem install cocoapods -v 1.6.1
+osx_image: xcode11
+before_script: cd Example
+podfile: Example/Podfile
+branches:
+  only:
+  - master
+env:
+  global:
+  - WORKSPACE=Example.xcworkspace
+  - SCHEME=Example
+  matrix:
+    - DESTINATION="OS=13.0,name=iPhone 8 Plus"    SCHEME="$SCHEME"    RUN_TESTS="YES"     POD_LINT="YES"
+    - DESTINATION="OS=13.0,name=iPhone 11"   SCHEME="$SCHEME"    RUN_TESTS="YES"     POD_LINT="YES"
 script:
-   - set -o pipefail && xcodebuild -project 'SwiftIconFont.xcodeproj' -scheme 'SwiftIconFont' -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=10.0,name=iPhone 6' clean test build | xcpretty -c
+  - set -o pipefail
+  - xcodebuild -version
+  - xcodebuild -showsdks
+
+  # Build Framework in Debug and Run Tests if specified
+  - if [ $RUN_TESTS == "YES" ]; then
+      travis_retry xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty -c;
+    else
+      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
+    fi
+
+  - xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
+
+  # Run `pod lib lint` if specified
+  - if [ $POD_LINT == "YES" ]; then
+      cd .. && pod lib lint --allow-warnings && cd Example;
+    fi
