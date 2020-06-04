@@ -151,7 +151,6 @@ githubLogoImageView.setIcon(from: .octicon, code: "logo-github", textColor: .bla
 
 SwiftIconFont is available under the MIT license. See the LICENSE file for more info.
 
-
 ## Contributing
 
 1. Fork it (http://github.com/0x73/SwiftIconFont/fork)
