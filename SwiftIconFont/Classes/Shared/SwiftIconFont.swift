@@ -6,12 +6,21 @@
 //  Copyright © 2016 Sedat Gokbek Ciftci. All rights reserved.
 //
 
+
+#if os(iOS)
 import UIKit
+typealias Font = UIFont
+typealias Color = UIColor
+#elseif os(OSX)
+import AppKit
+typealias Font = NSFont
+typealias Color = NSColor
+#endif
 
 public struct SwiftIcon {
     let font: Fonts
     let code: String
-    let color: UIColor
+    let color: Color
     let imageSize: CGSize
     let fontSize: CGFloat
 }
@@ -138,7 +147,7 @@ func getAttributedString(_ text: NSString, ofSize size: CGFloat) -> NSMutableAtt
         if let _ = fontArr[fontCode] {
             attributedString.replaceCharacters(in: substringRange, with: String.getIcon(from: fontType, code: fontCode)!)
             let newRange = NSRange(location: substringRange.location, length: 1)
-            attributedString.addAttribute(.font, value: UIFont.icon(from: fontType, ofSize: size), range: newRange)
+            attributedString.addAttribute(.font, value: Font.icon(from: fontType, ofSize: size), range: newRange)
         }
     }
     
@@ -218,7 +227,7 @@ func getAttributedStringForRuntimeReplace(_ text: NSString, ofSize size: CGFloat
                 if let _ = fontArr[fontCode] {
                     attributedString.replaceCharacters(in: match.range, with: String.getIcon(from: fontType, code: fontCode)!)
                     let newRange = NSRange(location: match.range.location, length: 1)
-                    attributedString.addAttribute(.font, value: UIFont.icon(from: fontType, ofSize: size), range: newRange)
+                    attributedString.addAttribute(.font, value: Font.icon(from: fontType, ofSize: size), range: newRange)
                 }
                 
             }

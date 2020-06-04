@@ -16,7 +16,7 @@ public extension UIImage
         paragraphStyle.alignment = NSTextAlignment.center
         
         let fontSize = min(size.width / 1.28571429, size.height)
-        let attributes: [NSAttributedString.Key: Any] = [.font: UIFont.icon(from: font, ofSize: fontSize), .foregroundColor: textColor, .backgroundColor: backgroundColor, .paragraphStyle: paragraphStyle]
+        let attributes: [NSAttributedString.Key: Any] = [.font: Font.icon(from: font, ofSize: fontSize), .foregroundColor: textColor, .backgroundColor: backgroundColor, .paragraphStyle: paragraphStyle]
         
         let attributedString = NSAttributedString(string: drawText!, attributes: attributes)
         UIGraphicsBeginImageContextWithOptions(size, false , 0.0)
@@ -40,7 +40,7 @@ public extension UIImage
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = NSTextAlignment.center
         
-        drawText!.draw(in: CGRect(x:0, y:0, width:imageSize.width, height:imageSize.height), withAttributes: [.font: UIFont.icon(from: font, ofSize: size), .paragraphStyle: paragraphStyle, .foregroundColor: iconColor])
+        drawText!.draw(in: CGRect(x:0, y:0, width:imageSize.width, height:imageSize.height), withAttributes: [.font: Font.icon(from: font, ofSize: size), .paragraphStyle: paragraphStyle, .foregroundColor: iconColor])
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
