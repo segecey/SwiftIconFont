@@ -4,6 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/SwiftIconFont.svg?style=flat)](http://cocoapods.org/pods/SwiftIconFont)
 [![License](https://img.shields.io/cocoapods/l/SwiftIconFont.svg?style=flat)](http://cocoapods.org/pods/SwiftIconFont)
 [![Platform](https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS-green.svg)](http://cocoapods.org/pods/SwiftIconFont)
+[![Apache License](http://img.shields.io/cocoapods/l/SwiftIconFont.svg)](http://cocoapods.org/pods/SwiftIconFont)
 [![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
 
 ## Installation
