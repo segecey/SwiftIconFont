@@ -143,6 +143,10 @@ let githubLogoImageView: UIImageView = UIImageView(frame: CGRect(x: 120, y: self
 githubLogoImageView.setIcon(from: .octicon, code: "logo-github", textColor: .black, backgroundColor: .clear, size: nil)
 ````
 
+#### macOS
+- Just supported NSTextField and NSImage
+- Please check **ExampleMac** project
+
 ## Author
 
 * Sedat Gokbek CIFTCI, me@sedat.ninja
