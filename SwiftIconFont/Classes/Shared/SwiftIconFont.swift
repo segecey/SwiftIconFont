@@ -7,7 +7,7 @@
 //
 
 
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import UIKit
 typealias Font = UIFont
 typealias Color = UIColor

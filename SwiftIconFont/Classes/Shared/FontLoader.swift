@@ -58,7 +58,7 @@ class FontLoader: NSObject {
 }
 
 public extension Font {
-    #if os(iOS)
+    #if os(iOS) || os(tvOS)
     static func icon(from font: Fonts, ofSize size: CGFloat) -> UIFont {
         let fontName = font.rawValue
         if (UIFont.fontNames(forFamilyName: font.fontFamilyName).count == 0)
