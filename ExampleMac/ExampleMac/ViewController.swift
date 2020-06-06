@@ -7,13 +7,17 @@
 //
 
 import Cocoa
+import SwiftIconFont
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var testImageView: NSImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let image = NSImage(from: .elegantIcon, code: "arrow-left-right", size: CGSize(width: 50, height: 50))
+        testImageView.image = image
     }
 
     override var representedObject: Any? {

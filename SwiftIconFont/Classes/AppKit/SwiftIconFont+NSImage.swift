@@ -7,79 +7,43 @@
 //
 
 import AppKit
-
+import CoreGraphics
 
 public extension NSImage {
-//    convenience init(from font: Fonts, code: String, textColor: NSColor = .black, backgroundColor: NSColor = .clear, size: CGSize) {
-//        let drawText = String.getIcon(from: font, code: code)
-//        let paragraphStyle = NSMutableParagraphStyle()
-//        paragraphStyle.alignment = NSTextAlignment.center
-//
-//        let fontSize = min(size.width / 1.28571429, size.height)
-//        let attributes: [NSAttributedString.Key: Any] = [.font: Font.icon(from: font, ofSize: fontSize), .foregroundColor: textColor, .backgroundColor: backgroundColor, .paragraphStyle: paragraphStyle]
-//
-//        let attributedString = NSAttributedString(string: drawText!, attributes: attributes)
-//
-////
-////        attributedString.draw(in: CGRect(x: 0, y: (size.height - fontSize) * 0.5, width: size.width, height: fontSize))
-////
-//        let image = NSImage()
-//        image.backgro
-//        attributedString.draw(in: CGRect(x: 0, y: (size.height - fontSize) * 0.5, width: size.width, height: fontSize))
-//        
-//        
-//        
-////        let image = NSGraphicsGetImageFromCurrentImageContext()
-////        NSGraphicsEndImageContext()
-////
-////        if let image = image {
-////
-//////            self.init(cgImage: image.cgImage!, scale: image.scale, orientation: image.imageOrientation)
-////        } else {
-//////            self.init()
-////        }
-//    }
-}
-
-
-/*public extension UIImage
-{
-    convenience init(from font: Fonts, code: String, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize) {
-        let drawText = String.getIcon(from: font, code: code)
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = NSTextAlignment.center
-
-        let fontSize = min(size.width / 1.28571429, size.height)
-        let attributes: [NSAttributedString.Key: Any] = [.font: Font.icon(from: font, ofSize: fontSize), .foregroundColor: textColor, .backgroundColor: backgroundColor, .paragraphStyle: paragraphStyle]
-
-        let attributedString = NSAttributedString(string: drawText!, attributes: attributes)
-        UIGraphicsBeginImageContextWithOptions(size, false , 0.0)
-        attributedString.draw(in: CGRect(x: 0, y: (size.height - fontSize) * 0.5, width: size.width, height: fontSize))
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        if let image = image {
-            self.init(cgImage: image.cgImage!, scale: image.scale, orientation: image.imageOrientation)
+    convenience init(from font: Fonts, code: String, textColor: NSColor = .black, backgroundColor: NSColor = .clear, size: CGSize) {
+        
+        if
+            let image = NSImage.GetSwiftIcon(from: font, code: code, textColor: textColor, backgroundColor: backgroundColor, size: size),
+            let cgImage = image.cgImage(forProposedRect: nil, context: nil, hints: nil)
+        {
+            self.init(cgImage: cgImage, size: size)
         } else {
             self.init()
         }
-
     }
-
-    static func icon(from font: Fonts, iconColor: UIColor, code: String, imageSize: CGSize, ofSize size: CGFloat) -> UIImage
-    {
-        let drawText = String.getIcon(from: font, code: code)
-
-        UIGraphicsBeginImageContextWithOptions(imageSize, false, 0)
+    
+    static func GetSwiftIcon(from font: Fonts, code: String, textColor: NSColor = .black, backgroundColor: NSColor = .clear, size: CGSize) -> NSImage? {
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = NSTextAlignment.center
+        paragraphStyle.alignment = .center
 
-        drawText!.draw(in: CGRect(x:0, y:0, width:imageSize.width, height:imageSize.height), withAttributes: [.font: Font.icon(from: font, ofSize: size), .paragraphStyle: paragraphStyle, .foregroundColor: iconColor])
-
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        return image!
+        let fontSize = min(size.width / 1.28571429, size.height)
+        guard let icon = String.getIcon(from: font, code: code) else { return nil }
+        
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: Font.icon(from: font, ofSize: fontSize),
+            .foregroundColor: textColor,
+            .backgroundColor: backgroundColor,
+            .paragraphStyle: paragraphStyle
+        ]
+        
+        let attributedString = NSAttributedString(string:icon, attributes: attributes)
+        
+        let stringSize = attributedString.size()
+        let image = NSImage(size: stringSize)
+        image.lockFocus()
+        attributedString.draw(in: CGRect(x: 0, y: (size.height - fontSize) * 0.5, width: size.width, height: fontSize))
+        image.unlockFocus()
+    
+        return image
     }
-}*/
-
+}
