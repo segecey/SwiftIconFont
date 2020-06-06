@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [6.1.0] - 2020-06-03
+- macOS Support
+
 ## [6.0.0] - 2020-06-03
 - Foundation 3 support
 - Elegant Icon support
