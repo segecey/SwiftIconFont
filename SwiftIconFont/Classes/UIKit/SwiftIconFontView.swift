@@ -56,7 +56,7 @@ import UIKit
     override public func layoutSubviews() {
         super.layoutSubviews()
         self.clipsToBounds = true
-        self.iconView.font = UIFont.icon(from: iconFont, ofSize: bounds.size.width < bounds.size.height ? bounds.size.width : bounds.size.height)
+        self.iconView.font = Font.icon(from: iconFont, ofSize: bounds.size.width < bounds.size.height ? bounds.size.width : bounds.size.height)
         self.iconView.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: bounds.size.width, height: bounds.size.height))
     }
 }

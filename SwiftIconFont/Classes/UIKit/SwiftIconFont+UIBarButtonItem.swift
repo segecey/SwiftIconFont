@@ -10,7 +10,7 @@ import UIKit
 
 public extension UIBarButtonItem {
     func icon(from font: Fonts, code: String, ofSize size: CGFloat){
-        var textAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.icon(from: font, ofSize: size)]
+        var textAttributes: [NSAttributedString.Key: Any] = [.font: Font.icon(from: font, ofSize: size)]
         let currentTextAttributes: [NSAttributedString.Key: Any]? = self.titleTextAttributes(for: UIControl.State())
         
         if currentTextAttributes != nil {

@@ -6,7 +6,13 @@
 //  Copyright © 2016 Sedat Gokbek Ciftci. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
+#else
+import AppKit
+#endif
+
+
 import Foundation
 import CoreText
 
@@ -51,13 +57,28 @@ class FontLoader: NSObject {
     }
 }
 
-public extension UIFont {
+public extension Font {
+    #if os(iOS)
     static func icon(from font: Fonts, ofSize size: CGFloat) -> UIFont {
         let fontName = font.rawValue
         if (UIFont.fontNames(forFamilyName: font.fontFamilyName).count == 0)
         {
             FontLoader.loadFont(fontName)
         }
-        return UIFont(name: font.rawValue, size: size)!
+        return Font(name: font.rawValue, size: size)!
     }
+    #elseif os(OSX)
+    static func icon(from font: Fonts, ofSize size: CGFloat) -> NSFont {
+        let fontName = font.rawValue
+//        NSFont
+//        if (NSFont.fontNames(forFamilyName: font.fontFamilyName).count == 0)
+//        {
+//
+//        }
+        
+        FontLoader.loadFont(fontName)
+        return NSFont(name: font.rawValue, size: size)!
+//        return Font(name: font.rawValue, size: size)
+    }
+    #endif
 }

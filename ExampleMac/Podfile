@@ -1,0 +1,4 @@
+target 'ExampleMac' do		
+ 	use_frameworks!		
+	pod 'SwiftIconFont', :path => '../'		
+end
