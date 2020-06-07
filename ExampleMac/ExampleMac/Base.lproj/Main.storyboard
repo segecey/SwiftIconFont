@@ -709,28 +709,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sDC-t8-bez">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sDC-t8-bez">
                                 <rect key="frame" x="396" y="99" width="48" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="EK5-N6-1dH"/>
+                                </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="HgR-wU-sOn"/>
                             </imageView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gtf-FT-kie">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gtf-FT-kie">
                                 <rect key="frame" x="402" y="62" width="37" height="16"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="gFi-7E-taG">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dTf-dd-ZA6">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dTf-dd-ZA6">
                                 <rect key="frame" x="20" y="11" width="259" height="223"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="259" id="nRt-9w-ZGa"/>
+                                </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="udM-4z-CET"/>
                             </imageView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dc6-rh-2dp">
+                                <rect key="frame" x="202" y="155" width="258" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="258" id="AWa-Qq-4A3"/>
+                                    <constraint firstAttribute="height" constant="76" id="tGG-8t-dPI"/>
+                                </constraints>
+                                <buttonCell key="cell" type="bevel" title="Button" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="jl5-5n-Bxr">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system" size="18"/>
+                                </buttonCell>
+                                <color key="contentTintColor" red="0.0" green="0.73333333329999995" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </button>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="gtf-FT-kie" firstAttribute="top" secondItem="sDC-t8-bez" secondAttribute="bottom" constant="21" id="2mR-Rq-Ich"/>
+                            <constraint firstItem="sDC-t8-bez" firstAttribute="top" secondItem="dc6-rh-2dp" secondAttribute="bottom" constant="8" symbolic="YES" id="7In-d4-fzJ"/>
+                            <constraint firstItem="sDC-t8-bez" firstAttribute="centerX" secondItem="gtf-FT-kie" secondAttribute="centerX" id="AER-ZG-Jgo"/>
+                            <constraint firstAttribute="trailing" secondItem="gtf-FT-kie" secondAttribute="trailing" constant="43" id="UAt-ih-J4w"/>
+                            <constraint firstItem="dTf-dd-ZA6" firstAttribute="centerY" secondItem="sDC-t8-bez" secondAttribute="centerY" id="VEF-RQ-1t1"/>
+                            <constraint firstAttribute="bottom" secondItem="gtf-FT-kie" secondAttribute="bottom" constant="62" id="Zvp-Ze-Eod"/>
+                            <constraint firstItem="dTf-dd-ZA6" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="36" id="dPK-jF-R6d"/>
+                            <constraint firstAttribute="trailing" secondItem="sDC-t8-bez" secondAttribute="trailing" constant="36" id="dVx-Qi-LpF"/>
+                            <constraint firstAttribute="trailing" secondItem="dc6-rh-2dp" secondAttribute="trailing" constant="20" symbolic="YES" id="ggp-fN-FGj"/>
+                            <constraint firstItem="dc6-rh-2dp" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="39" id="mXX-KF-3aN"/>
+                            <constraint firstItem="dTf-dd-ZA6" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="yne-SR-F7f"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="button" destination="dc6-rh-2dp" id="jL8-3F-j1U"/>
                         <outlet property="testImageView" destination="sDC-t8-bez" id="OFJ-FO-le3"/>
                         <outlet property="textLbl" destination="gtf-FT-kie" id="YUA-6U-z3A"/>
                         <outlet property="tttImageView" destination="dTf-dd-ZA6" id="WuD-8t-bzL"/>

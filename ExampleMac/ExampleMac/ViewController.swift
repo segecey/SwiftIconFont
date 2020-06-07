@@ -14,6 +14,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var textLbl: NSTextField!
     @IBOutlet weak var testImageView: NSImageView!
     @IBOutlet weak var tttImageView: NSImageView!
+    @IBOutlet weak var button: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,8 @@ class ViewController: NSViewController {
         textLbl.parseIcon()
         
         tttImageView.image = NSImage(from: .fontAwesome5Solid, code: "coffee", textColor: .red, backgroundColor: .black, size: CGSize(width: 100, height: 100))
-        
+        button.title = "fa5b:500px"
+        button.parseIcon()
         
     }
 
