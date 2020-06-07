@@ -59,19 +59,19 @@ class FontLoader: NSObject {
 
 public extension Font {
     #if os(iOS) || os(tvOS)
-    static func icon(from font: Fonts, ofSize size: CGFloat) -> UIFont {
+    static func icon(from font: Fonts, ofSize size: CGFloat) -> Font {
         let fontName = font.rawValue
-        if (UIFont.fontNames(forFamilyName: font.fontFamilyName).count == 0)
+        if (Font.fontNames(forFamilyName: font.fontFamilyName).count == 0)
         {
             FontLoader.loadFont(fontName)
         }
         return Font(name: font.rawValue, size: size)!
     }
     #elseif os(OSX)
-    static func icon(from font: Fonts, ofSize size: CGFloat) -> NSFont {
+    static func icon(from font: Fonts, ofSize size: CGFloat) -> Font {
         let fontName = font.rawValue
         FontLoader.loadFont(fontName)
-        return NSFont(name: font.rawValue, size: size)!
+        return Font(name: font.rawValue, size: size)!
     }
     #endif
 }

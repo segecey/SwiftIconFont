@@ -9,12 +9,8 @@
 
 #if os(iOS) || os(tvOS)
 import UIKit
-typealias Font = UIFont
-typealias Color = UIColor
 #elseif os(OSX)
 import AppKit
-typealias Font = NSFont
-typealias Color = NSColor
 #endif
 
 public struct SwiftIcon {

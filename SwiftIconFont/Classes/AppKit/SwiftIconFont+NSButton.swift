@@ -16,7 +16,7 @@ public extension NSButton {
         var fontSize: CGFloat = 17.0
         
         let attrs = self.attributedTitle.attributes(at: 0, effectiveRange: nil)
-        if let font = attrs[NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue)] as? NSFont {
+        if let font = attrs[NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue)] as? Font {
             fontSize = font.pointSize
         }
         

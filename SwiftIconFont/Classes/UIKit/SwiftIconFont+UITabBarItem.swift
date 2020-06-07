@@ -14,7 +14,7 @@ public extension UITabBarItem {
         self.image = UIImage.icon(from: defaultIcon.font, iconColor: defaultIcon.color, code: defaultIcon.code, imageSize: defaultIcon.imageSize, ofSize: defaultIcon.fontSize)
     }
     
-    func icon(from font: Fonts, code: String, iconColor: UIColor, imageSize: CGSize, ofSize size: CGFloat) {
+    func icon(from font: Fonts, code: String, iconColor: Color, imageSize: CGSize, ofSize size: CGFloat) {
         self.image = UIImage.icon(from: font, iconColor: iconColor, code: code, imageSize: imageSize, ofSize: size)
     }
     

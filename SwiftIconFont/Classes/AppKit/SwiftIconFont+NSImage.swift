@@ -22,7 +22,7 @@ public extension NSImage {
         }
     }
     
-    static func GetSwiftIcon(from font: Fonts, code: String, textColor: NSColor = .black, backgroundColor: NSColor = .clear, size: CGSize) -> NSImage? {
+    static func GetSwiftIcon(from font: Fonts, code: String, textColor: Color = .black, backgroundColor: Color = .clear, size: CGSize) -> NSImage? {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
 

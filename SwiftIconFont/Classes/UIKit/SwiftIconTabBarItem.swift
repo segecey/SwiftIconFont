@@ -14,7 +14,7 @@ class SwiftIconTabBarItem: UITabBarItem {
     @IBInspectable var Icon: String = ""
     @IBInspectable var IconFontSize: CGFloat = 20.0
     @IBInspectable var IconImageSize: CGSize = CGSize(width: 20, height: 20)
-    @IBInspectable var IconColor: UIColor = UIColor.black
+    @IBInspectable var IconColor: Color = Color.black
     
     @IBInspectable var SelectedIcon: String? {
         didSet {
@@ -23,7 +23,7 @@ class SwiftIconTabBarItem: UITabBarItem {
     }
     @IBInspectable var SelectedIconFontSize: CGFloat = 20.0
     @IBInspectable var SelectedIconImageSize: CGSize = CGSize(width: 20, height: 20)
-    @IBInspectable var SelectedIconColor: UIColor = UIColor.black
+    @IBInspectable var SelectedIconColor: Color = Color.black
     
     override func awakeFromNib() {
         setIcon()

@@ -10,7 +10,7 @@ import UIKit
 
 public extension UIImage
 {
-    convenience init(from font: Fonts, code: String, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize) {
+    convenience init(from font: Fonts, code: String, textColor: Color = .black, backgroundColor: Color = .clear, size: CGSize) {
         let drawText = String.getIcon(from: font, code: code)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = NSTextAlignment.center
@@ -32,7 +32,7 @@ public extension UIImage
         
     }
     
-    static func icon(from font: Fonts, iconColor: UIColor, code: String, imageSize: CGSize, ofSize size: CGFloat) -> UIImage
+    static func icon(from font: Fonts, iconColor: Color, code: String, imageSize: CGSize, ofSize size: CGFloat) -> UIImage
     {
         let drawText = String.getIcon(from: font, code: code)
         

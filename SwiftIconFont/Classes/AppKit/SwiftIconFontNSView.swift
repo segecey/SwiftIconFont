@@ -16,7 +16,7 @@ import Cocoa
         }
     }
     
-    @IBInspectable var iconColor: NSColor = .red {
+    @IBInspectable var iconColor: Color = .red {
         didSet {
             setupViews()
         }
