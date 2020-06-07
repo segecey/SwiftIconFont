@@ -44,9 +44,7 @@ import Cocoa
             self.iconView.alignment = .center
             self.iconView.isEditable = false
             self.iconView.backgroundColor = .clear
-            self.iconView.layer?.borderWidth = 0
             self.iconView.isBordered = false
-            self.iconView.wantsLayer = false
             self.iconView.stringValue = String.getIcon(from: iconFont, code: iconText)!
             self.iconView.textColor = iconColor
             self.addSubview(iconView)
