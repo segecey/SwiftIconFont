@@ -70,15 +70,8 @@ public extension Font {
     #elseif os(OSX)
     static func icon(from font: Fonts, ofSize size: CGFloat) -> NSFont {
         let fontName = font.rawValue
-//        NSFont
-//        if (NSFont.fontNames(forFamilyName: font.fontFamilyName).count == 0)
-//        {
-//
-//        }
-        
         FontLoader.loadFont(fontName)
         return NSFont(name: font.rawValue, size: size)!
-//        return Font(name: font.rawValue, size: size)
     }
     #endif
 }

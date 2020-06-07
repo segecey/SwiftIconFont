@@ -45,6 +45,7 @@
 		DAD008301F90D2A700D4FC34 /* SwiftIconFont+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0082F1F90D2A700D4FC34 /* SwiftIconFont+UILabel.swift */; };
 		DAD008341F90D2FC00D4FC34 /* SwiftIconFont+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD008331F90D2FC00D4FC34 /* SwiftIconFont+String.swift */; };
 		DAD008381F90D44C00D4FC34 /* SwiftIconFont+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD008371F90D44C00D4FC34 /* SwiftIconFont+UIImageView.swift */; };
+		E809BAF9248D6A1E0039AAE0 /* SwiftIconFontNSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809BAF8248D6A1E0039AAE0 /* SwiftIconFontNSView.swift */; };
 		E8244846248D245A0029AA09 /* SwiftIconFont+NSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8244845248D245A0029AA09 /* SwiftIconFont+NSButton.swift */; };
 		E884A47D248C21E00002AAAA /* SwiftIconFont+NSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884A47C248C21E00002AAAA /* SwiftIconFont+NSTextField.swift */; };
 		E8D081632488F663005A139F /* SwiftIconFont+NSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D081622488F663005A139F /* SwiftIconFont+NSImage.swift */; };
@@ -106,6 +107,7 @@
 		DAD0082F1F90D2A700D4FC34 /* SwiftIconFont+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftIconFont+UILabel.swift"; sourceTree = "<group>"; };
 		DAD008331F90D2FC00D4FC34 /* SwiftIconFont+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftIconFont+String.swift"; sourceTree = "<group>"; usesTabs = 0; };
 		DAD008371F90D44C00D4FC34 /* SwiftIconFont+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftIconFont+UIImageView.swift"; sourceTree = "<group>"; };
+		E809BAF8248D6A1E0039AAE0 /* SwiftIconFontNSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftIconFontNSView.swift; sourceTree = "<group>"; };
 		E8244845248D245A0029AA09 /* SwiftIconFont+NSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftIconFont+NSButton.swift"; sourceTree = "<group>"; };
 		E884A47C248C21E00002AAAA /* SwiftIconFont+NSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftIconFont+NSTextField.swift"; sourceTree = "<group>"; };
 		E8D081622488F663005A139F /* SwiftIconFont+NSImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftIconFont+NSImage.swift"; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				E8D081622488F663005A139F /* SwiftIconFont+NSImage.swift */,
 				E884A47C248C21E00002AAAA /* SwiftIconFont+NSTextField.swift */,
 				E8244845248D245A0029AA09 /* SwiftIconFont+NSButton.swift */,
+				E809BAF8248D6A1E0039AAE0 /* SwiftIconFontNSView.swift */,
 			);
 			path = AppKit;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				DA223AA91F160FAC005915D0 /* SwiftIconFontView.swift in Sources */,
 				DA8D9D521D345A4900F5E693 /* SwiftIconButton.swift in Sources */,
 				DAD008381F90D44C00D4FC34 /* SwiftIconFont+UIImageView.swift in Sources */,
+				E809BAF9248D6A1E0039AAE0 /* SwiftIconFontNSView.swift in Sources */,
 				DA8D9D501D345A4900F5E693 /* Octicon.swift in Sources */,
 				DAD008301F90D2A700D4FC34 /* SwiftIconFont+UILabel.swift in Sources */,
 				1AF15B96209E198D00E20C14 /* SegoeMDL2.swift in Sources */,
