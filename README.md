@@ -144,7 +144,7 @@ githubLogoImageView.setIcon(from: .octicon, code: "logo-github", textColor: .bla
 ````
 
 #### macOS
-- Just supported NSTextField and NSImage
+- Just supported NSTextField, NSImage, NSView
 - Please check **ExampleMac** project
 
 ## Author
