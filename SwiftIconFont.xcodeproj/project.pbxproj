@@ -238,7 +238,6 @@
 		DAD008361F90D37D00D4FC34 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				DAD008231F90D1D500D4FC34 /* SwiftIconFont+NSRange.swift */,
 				DA8D9D3B1D345A4900F5E693 /* FontAwesome.swift */,
 				E8E4762A24885662005275C4 /* FontAwesome5.swift */,
 				DA8D9D3D1D345A4900F5E693 /* Iconic.swift */,
@@ -262,6 +261,7 @@
 				DA8D9D3C1D345A4900F5E693 /* FontLoader.swift */,
 				DA8D9D441D345A4900F5E693 /* SwiftIconFont.swift */,
 				DAD008331F90D2FC00D4FC34 /* SwiftIconFont+String.swift */,
+				DAD008231F90D1D500D4FC34 /* SwiftIconFont+NSRange.swift */,
 				E80E87F0248D7B230053475F /* Types.swift */,
 			);
 			path = Shared;
