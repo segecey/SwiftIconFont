@@ -4,13 +4,21 @@
 [![Version](https://img.shields.io/cocoapods/v/SwiftIconFont.svg?style=flat)](http://cocoapods.org/pods/SwiftIconFont)
 [![License](https://img.shields.io/cocoapods/l/SwiftIconFont.svg?style=flat)](http://cocoapods.org/pods/SwiftIconFont)
 [![Platform](https://img.shields.io/badge/Platforms-iOS%C2%A0%7C%20macOS%20%7C%20tvOS-green)](http://cocoapods.org/pods/SwiftIconFont)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Apache License](http://img.shields.io/cocoapods/l/SwiftIconFont.svg)](http://cocoapods.org/pods/SwiftIconFont)
 [![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
 
 ## Installation
 
-### SPM & Carthage
-<b>Not yet supported. Please use Cocoapods</b>
+### SPM
+
+**Not yet supported. Please use Cocoapods**
+
+### Carthage
+
+```bash
+github "0x73/SwiftIconFont"
+```
 
 ### Cocoapods
 
