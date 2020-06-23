@@ -11,7 +11,7 @@
 
 ### SPM
 
-**Not yet supported. Please use Cocoapods**
+**Not yet supported. Please use Cocoapods or Carthage**
 
 ### Carthage
 
