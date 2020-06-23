@@ -155,9 +155,8 @@ githubLogoImageView.setIcon(from: .octicon, code: "logo-github", textColor: .bla
 - Please check **ExampleMac** project
 
 ## Author
-
-* Sedat Gokbek CIFTCI, me@sedat.ninja
-* Jose Quintero, [@josejuanqm](https://github.com/josejuanqm)
+<span><a href="https://github.com/0x73"><img src="https://github.com/0x73.png" alt="0x73" width="50px"></a></span>
+<span><a href="https://github.com/josejuanqm"><img src="https://github.com/josejuanqm.png" alt="josejuanqm" width="50px"></a></span>
 
 ## License
 
