@@ -160,8 +160,7 @@ Sedat ÇİFTÇİ - me@sedat.ninja
 
 ## Contributors
 
-<span><a href="https://github.com/0x73"><img src="https://github.com/0x73.png" alt="0x73" width="50px"></a></span>
-<span><a href="https://github.com/josejuanqm"><img src="https://github.com/josejuanqm.png" alt="josejuanqm" width="50px"></a></span>
+<span><a href="https://github.com/josejuanqm">josejuanqm</a></span>
 
 ## License
 
