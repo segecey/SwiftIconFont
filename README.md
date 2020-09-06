@@ -57,7 +57,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 | Segoe MDL2   | sm:    | [List](https://docs.microsoft.com/en-us/windows/uwp/design/style/segoe-ui-symbol-font)       |
 | Foundation 3   | fo:    | [List](https://zurb.com/playground/foundation-icon-fonts-3)       |
 | Elegant Icon   | el:    | [List](https://www.elegantthemes.com/blog/resources/elegant-icon-font)       |
-| Captain   | cp:    | Please check Example project.       |
+| Captain   | cp:    | Please check example project.       |
 
 ## Fonts
 ````swift
