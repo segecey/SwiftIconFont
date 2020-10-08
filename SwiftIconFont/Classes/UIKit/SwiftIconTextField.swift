@@ -10,7 +10,6 @@ import UIKit
 
 @IBDesignable
 class SwiftIconTextField: UITextField {
-    
     @IBInspectable var RuntimeParse: Bool = false
     
     override public func awakeFromNib() {

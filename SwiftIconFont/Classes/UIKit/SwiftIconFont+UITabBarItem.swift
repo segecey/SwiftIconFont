@@ -9,7 +9,6 @@
 import UIKit
 
 public extension UITabBarItem {
-    
     func iconWithSwiftIcon(defaultIcon: SwiftIcon) {
         self.image = UIImage.icon(from: defaultIcon.font, iconColor: defaultIcon.color, code: defaultIcon.code, imageSize: defaultIcon.imageSize, ofSize: defaultIcon.fontSize)
     }

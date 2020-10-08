@@ -39,9 +39,7 @@ public extension String {
             return captainIcon(code)
         }
     }
-    
-    
-    
+
     static func captainIcon(_ code: String) -> String? {
         if let icon = captainIconArr[code] {
             return icon
