@@ -8,8 +8,7 @@
 
 import UIKit
 
-public extension UIImage
-{
+public extension UIImage {
     convenience init(from font: Fonts, code: String, textColor: Color = .black, backgroundColor: Color = .clear, size: CGSize) {
         let drawText = String.getIcon(from: font, code: code)
         let paragraphStyle = NSMutableParagraphStyle()
@@ -29,11 +28,9 @@ public extension UIImage
         } else {
             self.init()
         }
-        
     }
     
-    static func icon(from font: Fonts, iconColor: Color, code: String, imageSize: CGSize, ofSize size: CGFloat) -> UIImage
-    {
+    static func icon(from font: Fonts, iconColor: Color, code: String, imageSize: CGSize, ofSize size: CGFloat) -> UIImage {
         let drawText = String.getIcon(from: font, code: code)
         
         UIGraphicsBeginImageContextWithOptions(imageSize, false, 0)

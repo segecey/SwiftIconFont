@@ -9,7 +9,6 @@
 import UIKit
 
 @IBDesignable public class SwiftIconFontView: UIView {
-    
     @IBInspectable
     public var iconCode: String = "" {
         didSet {
@@ -18,7 +17,6 @@ import UIKit
             self.iconView.text = String.getIcon(from: iconFont, code: iconText)
         }
     }
-    
     
     private var iconView = UILabel()
     private var iconFont = Fonts.fontAwesome5

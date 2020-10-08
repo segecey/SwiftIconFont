@@ -15,7 +15,6 @@ class SwiftIconTabBarItem: UITabBarItem {
     @IBInspectable var IconFontSize: CGFloat = 20.0
     @IBInspectable var IconImageSize: CGSize = CGSize(width: 20, height: 20)
     @IBInspectable var IconColor: Color = Color.black
-    
     @IBInspectable var SelectedIcon: String? {
         didSet {
             setIcon()
