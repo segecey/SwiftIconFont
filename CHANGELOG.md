@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [6.1.1] - 2020-08-10
+- [Fix #101](https://useiconic.com/open/)
+
 ## [6.1.0] - 2020-06-06
 - macOS Support
 
