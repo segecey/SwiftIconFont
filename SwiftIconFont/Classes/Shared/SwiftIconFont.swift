@@ -31,7 +31,7 @@ public enum Fonts: String {
     case themify = "themify"
     case mapIcon = "map-icons"
     case materialIcon = "MaterialIcons-Regular"
-    case segoeMDL2 = "Segoe mdl2 assets"
+    case segoeMDL2 = "SegoeMDL2Assets"
     case foundation = "fontcustom"
     case elegantIcon = "ElegantIcons"
     case captain = "captainicon"

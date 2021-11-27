@@ -20,7 +20,7 @@ class FontLoader: NSObject {
     class func loadFont(_ fontName: String) {
         let bundle = Bundle(for: FontLoader.self)
         let paths = bundle.paths(forResourcesOfType: "ttf", inDirectory: nil)
-        var fontURL = URL(string: "")
+        var fontURL: NSURL?
         var error: Unmanaged<CFError>?
 
         paths.forEach {
@@ -29,20 +29,15 @@ class FontLoader: NSObject {
                     return
             }
 
-            fontURL = NSURL(fileURLWithPath: $0) as URL
+            fontURL = NSURL(fileURLWithPath: $0)
         }
 
-        guard let unwrappedFontURL = fontURL,
-            let data = try? Data(contentsOf: unwrappedFontURL),
-            let provider = CGDataProvider(data: data as CFData) else {
-
+        guard let fontURL = fontURL else {
                 return
         }
 
-        let font = CGFont.init(provider)
-
-        guard let unwrappedFont = font,
-            !CTFontManagerRegisterGraphicsFont(unwrappedFont, &error),
+        guard
+            !CTFontManagerRegisterFontsForURL(fontURL, .process, &error),
             let unwrappedError = error,
             let nsError = (unwrappedError.takeUnretainedValue() as AnyObject) as? NSError else {
 
@@ -61,11 +56,12 @@ public extension Font {
     #if os(iOS) || os(tvOS)
     static func icon(from font: Fonts, ofSize size: CGFloat) -> Font {
         let fontName = font.rawValue
-        if (Font.fontNames(forFamilyName: font.fontFamilyName).count == 0)
+        let fontNames = Font.fontNames(forFamilyName: font.fontFamilyName)
+        if !fontNames.contains(fontName)
         {
             FontLoader.loadFont(fontName)
         }
-        return Font(name: font.rawValue, size: size)!
+        return Font(name: fontName, size: size)!
     }
     #elseif os(OSX)
     static func icon(from font: Fonts, ofSize size: CGFloat) -> Font {
