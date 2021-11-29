@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1AF15B94209E196500E20C14 /* Segoe mdl2 assets.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AF15B93209E196500E20C14 /* Segoe mdl2 assets.ttf */; };
+		1AF15B94209E196500E20C14 /* SegoeMDL2Assets.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AF15B93209E196500E20C14 /* SegoeMDL2Assets.ttf */; };
 		1AF15B96209E198D00E20C14 /* SegoeMDL2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF15B95209E198D00E20C14 /* SegoeMDL2.swift */; };
 		DA223AA91F160FAC005915D0 /* SwiftIconFontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA223AA81F160FAC005915D0 /* SwiftIconFontView.swift */; };
 		DA639C421F62B959004810A6 /* SwiftIconStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA639C411F62B959004810A6 /* SwiftIconStepper.swift */; };
@@ -67,7 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1AF15B93209E196500E20C14 /* Segoe mdl2 assets.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Segoe mdl2 assets.ttf"; sourceTree = "<group>"; };
+		1AF15B93209E196500E20C14 /* SegoeMDL2Assets.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SegoeMDL2Assets.ttf; sourceTree = "<group>"; };
 		1AF15B95209E198D00E20C14 /* SegoeMDL2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegoeMDL2.swift; sourceTree = "<group>"; };
 		DA223AA81F160FAC005915D0 /* SwiftIconFontView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftIconFontView.swift; sourceTree = "<group>"; };
 		DA639C411F62B959004810A6 /* SwiftIconStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftIconStepper.swift; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 		DA8D9D2B1D345A4500F5E693 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1AF15B93209E196500E20C14 /* Segoe mdl2 assets.ttf */,
+				1AF15B93209E196500E20C14 /* SegoeMDL2Assets.ttf */,
 				E8E4762F24885945005275C4 /* ElegantIcons.ttf */,
 				E8E476272488556C005275C4 /* fontcustom.ttf */,
 				E8E4763224885D4C005275C4 /* captainicon.ttf */,
@@ -377,7 +377,7 @@
 				DA8D9D341D345A4500F5E693 /* Ionicons.ttf in Resources */,
 				DA8D9D351D345A4500F5E693 /* map-icons.ttf in Resources */,
 				DA8D9D391D345A4500F5E693 /* themify.ttf in Resources */,
-				1AF15B94209E196500E20C14 /* Segoe mdl2 assets.ttf in Resources */,
+				1AF15B94209E196500E20C14 /* SegoeMDL2Assets.ttf in Resources */,
 				DA8D9D361D345A4500F5E693 /* MaterialIcons-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
