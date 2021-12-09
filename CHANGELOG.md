@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [6.2.0] - 2021-12-09
+- Allow using both fontAwesome5 and fontAwesome5Solid
+- Segoe MDL2 fix
+
 ## [6.1.1] - 2020-08-10
 - [Fix #101](https://useiconic.com/open/)
 
