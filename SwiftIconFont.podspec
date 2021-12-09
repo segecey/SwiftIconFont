@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.version = "6.2.0"
   s.license = { :type => "MIT", :file => "LICENSE" }
-  s.author = { "Sedat CIFTCI" => "me@sedat.us" }
+  s.author = { "Sedat CIFTCI" => "me@sedat.ninja" }
   s.homepage = "http://sedat.ninja"
   s.source = { :git => "https://github.com/0x73/SwiftIconFont.git", :tag => "#{s.version}"}
   s.ios.frameworks = s.tvos.frameworks = 'UIKit'
