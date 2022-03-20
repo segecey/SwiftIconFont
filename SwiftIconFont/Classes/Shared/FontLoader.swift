@@ -32,12 +32,12 @@ class FontLoader: NSObject {
             fontURL = NSURL(fileURLWithPath: $0)
         }
 
-        guard let fontURL = fontURL else {
+        guard fontURL != nil else {
                 return
         }
 
         guard
-            !CTFontManagerRegisterFontsForURL(fontURL, .process, &error),
+            !CTFontManagerRegisterFontsForURL(fontURL!, .process, &error),
             let unwrappedError = error,
             let nsError = (unwrappedError.takeUnretainedValue() as AnyObject) as? NSError else {
 
