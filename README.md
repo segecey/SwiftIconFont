@@ -1,5 +1,9 @@
 <p align="center"><img src="https://raw.githubusercontent.com/0x73/SwiftIconFont/master/Assets/logo.png" alt="SwiftIconFont Banner"></p>
 
+[![Issues](https://img.shields.io/github/issues/0x73/SwiftIconFont)](#)
+[![Forks](https://img.shields.io/github/forks/0x73/SwiftIconFont)](#)
+[![Stars](https://img.shields.io/github/stars/0x73/SwiftIconFont)](#)
+[![Stars](https://img.shields.io/github/stars/0x73/SwiftIconFont)](#)
 [![Build Status](https://travis-ci.org/0x73/SwiftIconFont.svg)](https://travis-ci.org/0x73/SwiftIconFont)
 [![Version](https://img.shields.io/cocoapods/v/SwiftIconFont.svg?style=flat)](http://cocoapods.org/pods/SwiftIconFont)
 [![License](https://img.shields.io/cocoapods/l/SwiftIconFont.svg?style=flat)](http://cocoapods.org/pods/SwiftIconFont)
