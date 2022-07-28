@@ -1,31 +1,43 @@
 # Changelog
+
 All notable changes to this project will be documented in this file.
 
+## [6.2.1] - 2022-07-28
+
+- Change repo url.
+
 ## [6.2.0] - 2021-12-09
+
 - Allow using both fontAwesome5 and fontAwesome5Solid
 - Segoe MDL2 fix
 
 ## [6.1.1] - 2020-08-10
+
 - [Fix #101](https://useiconic.com/open/)
 
 ## [6.1.0] - 2020-06-06
+
 - macOS Support
 
 ## [6.0.0] - 2020-06-03
+
 - Foundation 3 support
 - Elegant Icon support
 - Captain support
 
 ## [5.0.0] - 2020-06-03
+
 - Font Awesome 5 support
 - Minor bug fix
 
 ## [3.0.0] - 2018-11-21
+
 - Update project SWIFT_VERSION to 4.2 for Fix Swift 4.2 build error.
 - Make public GetIconIndexWithSelectedIcon and GetFontTypeWithSelectedIcon
 
 ## [2.9.0] - 2018-10-23
--  Swift 4.2 Support
+
+- Swift 4.2 Support
 
 ## [2.8.0] - 2018-05-18
 

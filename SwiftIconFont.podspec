@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.name = "SwiftIconFont"
   s.summary = "Icons fonts for Swift (FontAwesome, Ionicons, Octicons, Iconic)"
   s.requires_arc = true
-  s.version = "6.2.0"
+  s.version = "6.2.1"
   s.license = { :type => "MIT", :file => "LICENSE" }
   s.author = { "Sedat CIFTCI" => "me@sedat.ninja" }
   s.homepage = "http://sedat.ninja"
