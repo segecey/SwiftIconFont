@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.license = { :type => "MIT", :file => "LICENSE" }
   s.author = { "Sedat CIFTCI" => "me@sedat.ninja" }
   s.homepage = "http://sedat.ninja"
-  s.source = { :git => "https://github.com/0x73/SwiftIconFont.git", :tag => "#{s.version}"}
+  s.source = { :git => "https://github.com/segecey/SwiftIconFont.git", :tag => "#{s.version}"}
   s.ios.frameworks = s.tvos.frameworks = 'UIKit'
   s.swift_version = "5.0"
   s.osx.frameworks = 'AppKit'
