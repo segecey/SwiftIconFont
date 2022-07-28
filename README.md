@@ -1,9 +1,9 @@
-<p align="center"><img src="https://raw.githubusercontent.com/0x73/SwiftIconFont/master/Assets/logo.png" alt="SwiftIconFont Banner"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/segecey/SwiftIconFont/master/Assets/logo.png" alt="SwiftIconFont Banner"></p>
 
-[![Issues](https://img.shields.io/github/issues/0x73/SwiftIconFont)](#)
-[![Forks](https://img.shields.io/github/forks/0x73/SwiftIconFont)](#)
-[![Stars](https://img.shields.io/github/stars/0x73/SwiftIconFont)](#)
-[![Build Status](https://travis-ci.org/0x73/SwiftIconFont.svg)](https://travis-ci.org/0x73/SwiftIconFont)
+[![Issues](https://img.shields.io/github/issues/segecey/SwiftIconFont)](#)
+[![Forks](https://img.shields.io/github/forks/segecey/SwiftIconFont)](#)
+[![Stars](https://img.shields.io/github/stars/segecey/SwiftIconFont)](#)
+[![Build Status](https://travis-ci.org/segecey/SwiftIconFont.svg)](https://travis-ci.org/segecey/SwiftIconFont)
 [![Version](https://img.shields.io/cocoapods/v/SwiftIconFont.svg?style=flat)](http://cocoapods.org/pods/SwiftIconFont)
 [![License](https://img.shields.io/cocoapods/l/SwiftIconFont.svg?style=flat)](http://cocoapods.org/pods/SwiftIconFont)
 [![Platform](https://img.shields.io/badge/Platforms-iOS%C2%A0%7C%20macOS%20%7C%20tvOS-green)](http://cocoapods.org/pods/SwiftIconFont)
@@ -19,7 +19,7 @@
 ### Carthage
 
 ```bash
-github "0x73/SwiftIconFont"
+github "segecey/SwiftIconFont"
 ```
 
 ### Cocoapods
@@ -29,7 +29,7 @@ github "0x73/SwiftIconFont"
 You can install it with the following command:
 
 ```bash
-$ gem install cocoapods
+gem install cocoapods
 ```
 
 To integrate SwiftIconFont into your Xcode project using CocoaPods, specify it in your `Podfile`:
@@ -46,24 +46,25 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Prefixes
 
-| Font         | Prefix | Cheat Sheet                               |
-|--------------|--------|-------------------------------------------|
-| Font Awesome 5 | fa5:    | [List](http://fontawesome.io/icons/) |
-| Font Awesome 5 Brand | fa5b:    | [List](http://fontawesome.io/icons/) |
-| Font Awesome 5 Solid | fa5s:    | [List](http://fontawesome.io/icons/) |
-| Ion Icons    | io:    | [List](http://ionicons.com)               |
-| Octicons     | oc:    | [List](https://octicons.github.com)       |
-| Open Iconic  | ic:    | [List](https://useiconic.com/open/)       |
-| Material Icon   | ma:    | [List](https://design.google.com/icons/)       |
-| Themify   | ti:    | [List](https://themify.me/themify-icons)       |
-| Map Icons   | mi:    | [List](http://map-icons.com)       |
-| Segoe MDL2   | sm:    | [List](https://docs.microsoft.com/en-us/windows/uwp/design/style/segoe-ui-symbol-font)       |
-| Foundation 3   | fo:    | [List](https://zurb.com/playground/foundation-icon-fonts-3)       |
-| Elegant Icon   | el:    | [List](https://www.elegantthemes.com/blog/resources/elegant-icon-font)       |
-| Captain   | cp:    | Please check example project.       |
+| Font                 | Prefix | Cheat Sheet                                                                            |
+| -------------------- | ------ | -------------------------------------------------------------------------------------- |
+| Font Awesome 5       | fa5:   | [List](http://fontawesome.io/icons/)                                                   |
+| Font Awesome 5 Brand | fa5b:  | [List](http://fontawesome.io/icons/)                                                   |
+| Font Awesome 5 Solid | fa5s:  | [List](http://fontawesome.io/icons/)                                                   |
+| Ion Icons            | io:    | [List](http://ionicons.com)                                                            |
+| Octicons             | oc:    | [List](https://octicons.github.com)                                                    |
+| Open Iconic          | ic:    | [List](https://useiconic.com/open/)                                                    |
+| Material Icon        | ma:    | [List](https://design.google.com/icons/)                                               |
+| Themify              | ti:    | [List](https://themify.me/themify-icons)                                               |
+| Map Icons            | mi:    | [List](http://map-icons.com)                                                           |
+| Segoe MDL2           | sm:    | [List](https://docs.microsoft.com/en-us/windows/uwp/design/style/segoe-ui-symbol-font) |
+| Foundation 3         | fo:    | [List](https://zurb.com/playground/foundation-icon-fonts-3)                            |
+| Elegant Icon         | el:    | [List](https://www.elegantthemes.com/blog/resources/elegant-icon-font)                 |
+| Captain              | cp:    | Please check example project.                                                          |
 
 ## Fonts
-````swift
+
+```swift
 public enum Fonts: String {
     case fontAwesome5 = "FontAwesome5Free-Regular"
     case fontAwesome5Brand = "FontAwesome5Brands-Regular"
@@ -79,21 +80,21 @@ public enum Fonts: String {
     case elegantIcon = "ElegantIcons"
     case captain = "captainicon"
 }
-````
+```
 
 ## Storyboard
-<p align="left"><a href="https://www.youtube.com/watch?v=kWex5gqR8rs"><img src="https://raw.githubusercontent.com/0x73/SwiftIconFont/master/Assets/storyboard-t.gif" alt="SwiftIconFont Banner"></a></p>
+
+<p align="left"><a href="https://www.youtube.com/watch?v=kWex5gqR8rs"><img src="https://raw.githubusercontent.com/segecey/SwiftIconFont/master/Assets/storyboard-t.gif" alt="SwiftIconFont Banner"></a></p>
 
 ## Runtime Structure
-> < Prefix >:< Icon >
 
+> < Prefix >:< Icon >
 
 ## Usage
 
 In your UILabel, UIButton or UITextField, set a text containing a placeholder anywhere you want the icon to be. Somethink like this
 
 > oc:logo-github
-
 
 Then you can choose between 3 ways you can use SwiftIconFont.
 
@@ -109,51 +110,50 @@ label.parseIcon()
 
 The lazy way, just set your UILabel, UITextField, UIButton, UITextView, UIBarButtonItem class as SwiftIconLabel, SwiftIconTextField, SwiftIconButton, SwiftIconTextView, SwiftBarButtonItem, and thats it, your icons will be processed at runtime.
 
-
 #### 3. Programmatically
 
-````swift
+```swift
 import SwiftIconFont
 
 label.font = UIFont.icon(from: .fontAwesome5, ofSize: 50.0)
 label.text = String.fontAwesome5Icon(code: "twitter")
-````
-
+```
 
 #### UIBarButtonItem (Without Custom Class)
 
-````swift
+```swift
 import SwiftIconFont
 
 twitterBarButton.icon(from: .fontAwesome5, code: "twitter", ofSize: 20)
-````
+```
 
 #### UITabBarItem (Without Custom Class)
 
-````swift
+```swift
 import SwiftIconFont
 
 twitterTabBarButton.icon(from: .fontAwesome5, code: "twitter", imageSize: CGSizeMake(20, 20), ofSize: 20)
-````
+```
 
 #### UIImage
 
-````swift
+```swift
 import SwiftIconFont
 
 let githubLogo = UIImage(from: .octicon, code: "logo-github", textColor: .black, backgroundColor: .clear, size: CGSize(width: 150, height: 50))
-````
+```
 
 #### UIImageView
 
-````swift
+```swift
 import SwiftIconFont
 
 let githubLogoImageView: UIImageView = UIImageView(frame: CGRect(x: 120, y: self.view.frame.size.height - 130, width: 150, height: 50))
 githubLogoImageView.setIcon(from: .octicon, code: "logo-github", textColor: .black, backgroundColor: .clear, size: nil)
-````
+```
 
 #### macOS
+
 - NSTextField, NSImage, NSView
 - Please check **ExampleMac** project
 
@@ -171,7 +171,7 @@ SwiftIconFont is available under the MIT license. See the LICENSE file for more 
 
 ## Contributing
 
-1. Fork it (http://github.com/0x73/SwiftIconFont/fork)
+1. Fork it (<http://github.com/segecey/SwiftIconFont/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
